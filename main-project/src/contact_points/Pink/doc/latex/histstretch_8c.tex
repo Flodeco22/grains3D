@@ -1,0 +1,25 @@
+\doxysection{histstretch.\+c File Reference}
+\label{histstretch_8c}\index{histstretch.c@{histstretch.c}}
+
+
+transforms the gray scale by stretching the histogram  
+
+
+
+
+\doxysubsection{Detailed Description}
+transforms the gray scale by stretching the histogram 
+
+{\bfseries{Usage\+:}} histstretch in.\+pgm vmin vmax p out.\+pgm
+
+{\bfseries{Description\+:}}
+
+Eliminates the levels of the histogram strictly less than {\bfseries{vmin}} or strictly greater than {\bfseries{vmax}}, and also the extremal levels that have strictly less than N$\ast$({\bfseries{p}}/100) pixels (N being the total number of pixels). If {\bfseries{p}} = 0, only the extremal levels with 0 pixels are eliminated. A linear histogram scaling is then performed.
+
+{\bfseries{Types supported\+:}} byte 2D
+
+{\bfseries{Category\+:}} histo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

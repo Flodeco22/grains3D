@@ -1,0 +1,47 @@
+\chapter{Compiling Pink with make}
+\label{compiling_make}\index{Compiling Pink with make@{Compiling Pink with make}}
+This page contains the installation instructions with the classical make framework.\doxysection{Linux}\label{compiling_make_Linux}
+To install Pink in Linux, type\+: \begin{DoxyVerb}tar zxvf pink.tgz
+mv Pinktmp Pink
+cd Pink
+makelin
+\end{DoxyVerb}
+
+
+The executables will be created in Pink/linux/bin, the scripts in Pink/scripts and in Pink/tcl Update your environment variables accordingly. For example\+:
+
+\begin{DoxyVerb}setenv PINK ~coupriem/Pink
+set path=( $path $PINK/linux/bin $PINK/scripts $PINK/tcl )
+\end{DoxyVerb}
+\doxysection{Windows}\label{compiling_make_Microsoft}
+Begin by installing {\texttt{ Min\+GW}} (Minimalist GNU For Windows), together with "{}make"{} (part of Min\+GW, but separate installation)
+
+Untar pink.\+tgz (you can use Win\+Zip or Win\+Rar).
+
+Modify "{}mgw.\+make"{} and "{}makemgw.\+bat"{} to match your configuration.
+
+Open a command promt and change to Pink \textquotesingle{}s directory.
+
+type\+: \begin{DoxyVerb}makemgw
+\end{DoxyVerb}
+
+
+The executables will be created in Pink/bin; update the PATH variable accordingly, for example\+:
+
+\begin{DoxyVerb}set PATH=c:\Pink\bin;%PATH%
+\end{DoxyVerb}
+\doxysection{Possible compilation errors and solutions\+:}\label{compiling_make_comperror}
+you get an error message containing "{}\+M\+\_\+\+PI"{}~\newline
+ {\bfseries{cause}}\+: obsolete Min\+GW version~\newline
+ {\bfseries{solution}}\+: copy Pink/tools/pinkconst.\+h in Min\+GW/include/math.\+h~\newline
+
+
+you get an error message containing "{}uint8\+\_\+t"{}, "{}int8\+\_\+t"{}, "{}uint16\+\_\+t"{}, etc ~\newline
+ {\bfseries{cause}}\+: obsolete Min\+GW version~\newline
+ {\bfseries{solution}}\+: copy Pink/tools/pinktypes.\+h in Min\+GW/include/math.\+h~\newline
+
+
+message d\textquotesingle{}erreur contenant "{}chrono"{}~\newline
+ {\bfseries{cause}}\+: compilation flag forgotten~\newline
+ {\bfseries{solution}}\+: delete the line "{}\#define CHRONO"{} from the source files.~\newline
+ 

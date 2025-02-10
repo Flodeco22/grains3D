@@ -1,0 +1,27 @@
+\doxysection{histodist.\+c File Reference}
+\label{histodist_8c}\index{histodist.c@{histodist.c}}
+
+
+computes the distance between two histograms  
+
+
+
+
+\doxysubsection{Detailed Description}
+computes the distance between two histograms 
+
+{\bfseries{Usage\+:}} histodist h1.\+list h2.\+list [type] out.\+list
+
+{\bfseries{Description\+:}} Computes the distance between the two histograms given in {\bfseries{h1.\+list}} and {\bfseries{h2.\+list}}. The result is written in {\bfseries{out.\+list}}.
+
+The distance is an edit distance, it is defined as the minimal number of elementary operations (moving one unit from a bin to the neighboring one) that is necessary to transform h1 into h2.
+
+Parameter {\bfseries{type}} (default 0) indicates whether the histogram must be interpreted as circular (type = 1) of not (type = 0). Circular interpretation implies that first and last bins are considered as neighbors.
+
+{\bfseries{Types supported\+:}} list
+
+{\bfseries{Category\+:}} histo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie, Mohamed Amine Salem 
+\end{DoxyAuthor}

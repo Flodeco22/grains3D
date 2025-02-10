@@ -1,0 +1,139 @@
+\doxysection{mcimage.\+h File Reference}
+\label{mcimage_8h}\index{mcimage.h@{mcimage.h}}
+
+
+This file holds the basic image allocation functions.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ xvimage} $\ast$ \textbf{ allocimage} (char $\ast$name, index\+\_\+t rs, index\+\_\+t cs, index\+\_\+t ds, int32\+\_\+t t)
+\begin{DoxyCompactList}\small\item\em Allocates an image object with the given size and type. \end{DoxyCompactList}\item 
+void \textbf{ razimage} (struct \textbf{ xvimage} $\ast$f)
+\begin{DoxyCompactList}\small\item\em fills the image with zeros description Sets every pixel of the image to binary zero. \end{DoxyCompactList}\item 
+void \textbf{ freeimage} (struct \textbf{ xvimage} $\ast$image)
+\begin{DoxyCompactList}\small\item\em Frees an image object. \end{DoxyCompactList}\item 
+void \textbf{ writeimage} (struct \textbf{ xvimage} $\ast$image, char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Writes an image to disk. \end{DoxyCompactList}\item 
+struct \textbf{ xvimage} $\ast$ \textbf{ readimage} (const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Reads an image from a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file holds the basic image allocation functions. 
+
+Pink
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie, 2009 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\label{mcimage_8h_a15b4e3cf8d61cb9dfa581facb17832d1} 
+\index{mcimage.h@{mcimage.h}!allocimage@{allocimage}}
+\index{allocimage@{allocimage}!mcimage.h@{mcimage.h}}
+\doxysubsubsection{allocimage()}
+{\footnotesize\ttfamily struct \textbf{ xvimage} $\ast$ allocimage (\begin{DoxyParamCaption}\item[{char $\ast$}]{name,  }\item[{index\+\_\+t}]{rs,  }\item[{index\+\_\+t}]{cs,  }\item[{index\+\_\+t}]{ds,  }\item[{int32\+\_\+t}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Allocates an image object with the given size and type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Not used \\
+\hline
+{\em rs} & x-\/size \\
+\hline
+{\em cs} & y-\/size \\
+\hline
+{\em ds} & z-\/size \\
+\hline
+{\em t} & t-\/size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pointer to the image. 
+\end{DoxyReturn}
+\label{mcimage_8h_a3287f1f904159ee2bf2d02adf9212ed9} 
+\index{mcimage.h@{mcimage.h}!freeimage@{freeimage}}
+\index{freeimage@{freeimage}!mcimage.h@{mcimage.h}}
+\doxysubsubsection{freeimage()}
+{\footnotesize\ttfamily void freeimage (\begin{DoxyParamCaption}\item[{struct \textbf{ xvimage} $\ast$}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Frees an image object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & The pointer to the image \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by \textbf{ pink\+::ujoi$<$ pixel\+\_\+type\+\_\+ $>$\+::ujoi()}.
+
+\label{mcimage_8h_ab94e6a3ad07584d505c554b175c79163} 
+\index{mcimage.h@{mcimage.h}!razimage@{razimage}}
+\index{razimage@{razimage}!mcimage.h@{mcimage.h}}
+\doxysubsubsection{razimage()}
+{\footnotesize\ttfamily void razimage (\begin{DoxyParamCaption}\item[{struct \textbf{ xvimage} $\ast$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+fills the image with zeros description Sets every pixel of the image to binary zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & the input image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no return value 
+\end{DoxyReturn}
+\label{mcimage_8h_ab939ad2ff760a9df20d3f39dfad0c184} 
+\index{mcimage.h@{mcimage.h}!readimage@{readimage}}
+\index{readimage@{readimage}!mcimage.h@{mcimage.h}}
+\doxysubsubsection{readimage()}
+{\footnotesize\ttfamily struct \textbf{ xvimage} $\ast$ readimage (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Reads an image from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the image file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Pointer to a newly allocated image. 
+\end{DoxyReturn}
+
+
+Referenced by \textbf{ pink\+::ujoi$<$ pixel\+\_\+type\+\_\+ $>$\+::ujoi()}.
+
+\label{mcimage_8h_a469569831948431a0e78f302bfa5207c} 
+\index{mcimage.h@{mcimage.h}!writeimage@{writeimage}}
+\index{writeimage@{writeimage}!mcimage.h@{mcimage.h}}
+\doxysubsubsection{writeimage()}
+{\footnotesize\ttfamily void writeimage (\begin{DoxyParamCaption}\item[{struct \textbf{ xvimage} $\ast$}]{image,  }\item[{char $\ast$}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Writes an image to disk. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & The pointer to the image \\
+\hline
+{\em filename} & The file to write the image at. \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by \textbf{ pink\+::ujoi$<$ pixel\+\_\+type\+\_\+ $>$\+::ujoi()}.
+

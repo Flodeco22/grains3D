@@ -1,0 +1,35 @@
+\doxysection{pink\+::python\+::convert\+\_\+if$<$ T $>$ Struct Template Reference}
+\label{structpink_1_1python_1_1convert__if}\index{pink::python::convert\_if$<$ T $>$@{pink::python::convert\_if$<$ T $>$}}
+
+
+This class casts an \textquotesingle{}ujoi$<$$>$\textquotesingle{} image class to \textquotesingle{}xvimage$\ast$\textquotesingle{}. If the template parameter is not derived from \textquotesingle{}\doxyref{pink\+\_\+image}{p.}{classpink_1_1pink__image}\textquotesingle{} class, then the type is unchanged.  
+
+
+
+
+{\ttfamily \#include $<$ui\+\_\+convert\+\_\+if.\+hpp$>$}
+
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+struct pink\+::python\+::convert\+\_\+if$<$ T $>$}
+This class casts an \textquotesingle{}ujoi$<$$>$\textquotesingle{} image class to \textquotesingle{}xvimage$\ast$\textquotesingle{}. If the template parameter is not derived from \textquotesingle{}\doxyref{pink\+\_\+image}{p.}{classpink_1_1pink__image}\textquotesingle{} class, then the type is unchanged. 
+
+Example of usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{convert\_if<char\_image>::type\ I;\ \textcolor{comment}{//\ I\ will\ be\ of\ 'xvimage*'\ type.\ }}
+\DoxyCodeLine{convert\_if<int\_image>::type\ I;\ \ \textcolor{comment}{//\ I\ will\ be\ of\ 'xvimage*'\ type.\ }}
+\DoxyCodeLine{convert\_if<float>::type\ I;\ \ \ \ \ \ \textcolor{comment}{//\ I\ will\ be\ of\ 'float'\ type.'\ }}
+
+\end{DoxyCode}
+ 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type to cast \\
+\hline
+\end{DoxyTemplParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ ui\+\_\+convert\+\_\+if.\+hpp}\end{DoxyCompactItemize}

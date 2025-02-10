@@ -1,0 +1,27 @@
+\doxysection{gradientcd.\+c File Reference}
+\label{gradientcd_8c}\index{gradientcd.c@{gradientcd.c}}
+
+
+Canny-\/\+Deriche gradient operator.  
+
+
+
+
+\doxysubsection{Detailed Description}
+Canny-\/\+Deriche gradient operator. 
+
+{\bfseries{Usage\+:}} gradientcd in.\+pgm alpha out.\+pgm
+
+{\bfseries{Description\+:}} Deriche\textquotesingle{}s recursive implementation of the Canny\textquotesingle{}s gradient operator. The parameter {\bfseries{alpha}} (double) controls the spatial extension of the filter\+: 0 $<$ alpha $<$ infinity, typical value\+: alpha = 1
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} signal
+
+Reference\+:
+
+[Der90] R. Deriche\+: "{}\+Fast algorithms for low-\/level vision"{}, {\itshape IEEE Transactions on PAMI}, Vol.~12, No.~1, pp.~78-\/87, 1990.
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

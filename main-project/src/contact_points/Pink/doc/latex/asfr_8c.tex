@@ -1,0 +1,23 @@
+\doxysection{asfr.\+c File Reference}
+\label{asfr_8c}\index{asfr.c@{asfr.c}}
+
+
+alternate sequential filter by reconstruction  
+
+
+
+
+\doxysubsection{Detailed Description}
+alternate sequential filter by reconstruction 
+
+{\bfseries{Usage\+:}} asfr in.\+pgm [rmin] rmax out.\+pgm
+
+{\bfseries{Description\+:}} Alternate sequential filter by reconstruction. Disc-\/shaped structuring elements of increasing radius, ranging from 1 (or {\bfseries{rmin}} if this parameter is specified) to {\bfseries{rmax}}, are generated. Let D1...Dn be these structuring elements, sorted by increasing radius. Let I0 = {\bfseries{in.\+pgm}}, the ith intermediate result Ii is obtained by the closure by reconstruction of Ii-\/1 by the structuring element Di. The result {\bfseries{out.\+pgm}} contains the final result In.
+
+{\bfseries{Types supported\+:}} byte 2d
+
+{\bfseries{Category\+:}} morpho
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

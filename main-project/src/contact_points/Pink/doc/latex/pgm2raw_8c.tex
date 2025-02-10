@@ -1,0 +1,31 @@
+\doxysection{pgm2raw.\+c File Reference}
+\label{pgm2raw_8c}\index{pgm2raw.c@{pgm2raw.c}}
+
+
+converts a pgm file to mhd format  
+
+
+
+
+\doxysubsection{Detailed Description}
+converts a pgm file to mhd format 
+
+suppress the header from a pgm file
+
+{\bfseries{Usage\+:}} pgm2raw in.\+pgm out.\+mhd out.\+raw
+
+{\bfseries{Description\+:}} converts a pgm file to mhd format {\bfseries{Types supported\+:}} byte 2d, byte 3d, short 2d, short 3d, long 2d, long 3d, float 2d, float 3d, double 2d, double 3d
+
+{\bfseries{Category\+:}} convert
+
+{\bfseries{Usage\+:}} pgm2raw image\+\_\+name[.pgm] [out.\+raw]
+
+{\bfseries{Description\+:}} suppress the header from a pgm file. If used with only one argument {\bfseries{image\+\_\+name}}, the operator searches for a file named {\bfseries{image\+\_\+name.\+pgm}} and generates a raw file named {\bfseries{image\+\_\+name.\+raw}}, a NRRD header file named {\bfseries{image\+\_\+name.\+nrrd}} (see {\texttt{ http\+://teem.\+sourceforge.\+net/nrrd/format.\+html}}), and a MHD header file named {\bfseries{image\+\_\+name.\+mfd}} (see {\texttt{ https\+://itk.\+org/\+Wiki/\+ITK/\+Meta\+IO/\+Documentation}})
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d, short 2d, short 3d, long 2d, long 3d, float 2d, float 3d, double 2d, double 3d
+
+{\bfseries{Category\+:}} convert
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

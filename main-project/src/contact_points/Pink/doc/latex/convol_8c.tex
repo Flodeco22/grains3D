@@ -1,0 +1,26 @@
+\doxysection{convol.\+c File Reference}
+\label{convol_8c}\index{convol.c@{convol.c}}
+
+
+convolution  
+
+
+
+
+\doxysubsection{Detailed Description}
+convolution 
+
+{\bfseries{Usage\+:}} convol in.\+pgm kernel.\+pgm [mode] out.\+pgm
+
+{\bfseries{Description\+:}} Convolution of {\bfseries{in.\+pgm}} by {\bfseries{kernel.\+pgm}}. The result is a float image. Depending on the value given for the (optional) parameter {\bfseries{mode}}\+: \begin{DoxyItemize}
+\item {\bfseries{mode}} = 0 (default) \+: naive algorithm. The image {\bfseries{in.\+pgm}} is considered as null out of its support. \item {\bfseries{mode}} = 1 \+: naive algorithm. The boundary of image {\bfseries{in.\+pgm}} is extended outside its support. \item {\bfseries{mode}} = 2 \+: convolution using the FFT. The image {\bfseries{in.\+pgm}} is considered as null out of its support. \item {\bfseries{mode}} = 3 \+: convolution using the FFT. The boundary of image {\bfseries{in.\+pgm}} is extended outside its support.\end{DoxyItemize}
+{\bfseries{Types supported\+:}} byte 2d, int32\+\_\+t 2d, float 2d
+
+{\bfseries{Category\+:}} signal
+
+\begin{DoxyWarning}{Warning}
+Naive convolution algorithm is in O($\vert$in$\vert$$\ast$$\vert$kernel$\vert$). For large kernels, use FFT version which is in O(n log n) where n = max($\vert$in$\vert$,$\vert$kernel$\vert$)
+\end{DoxyWarning}
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

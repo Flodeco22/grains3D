@@ -1,0 +1,31 @@
+\doxysection{curvesections.\+c File Reference}
+\label{curvesections_8c}\index{curvesections.c@{curvesections.c}}
+
+
+computes a series of normal 2d cross sections from a 3d curve and image  
+
+
+
+
+\doxysubsection{Detailed Description}
+computes a series of normal 2d cross sections from a 3d curve and image 
+
+{\bfseries{Usage\+:}} curvesections in.\+pgm curve.\+list tolerance n\+\_\+samples clip\+\_\+rad out\+\_\+rs out\+\_\+cs out\+\_\+prefix
+
+{\bfseries{Description\+:}} Computes a series of normal 2d cross sections from a 3d curve {\bfseries{curve.\+list}} and image {\bfseries{in.\+pgm}}.
+
+Method\+:
+
+1/ computes a cubic spline from the curve, with tolerance given by parameter {\bfseries{tolerance}} .
+
+2/ samples the spline to obtain {\bfseries{n\+\_\+samples}} points, and computes the tangents at these points
+
+3/ at each sample point, extract a 2D section from {\bfseries{in.\+pgm}} in the plane normal to the tangent. Delete the pixels at distance larger than {\bfseries{clip\+\_\+rad}} from the basis origin.
+
+{\bfseries{Types supported\+:}} byte 3d, int32\+\_\+t 3d
+
+{\bfseries{Category\+:}} geo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

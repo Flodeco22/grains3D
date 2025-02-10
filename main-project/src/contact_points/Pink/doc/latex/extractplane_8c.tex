@@ -1,0 +1,23 @@
+\doxysection{extractplane.\+c File Reference}
+\label{extractplane_8c}\index{extractplane.c@{extractplane.c}}
+
+
+extracts a plane normal to one of the directions x,y,z from a 3D image  
+
+
+
+
+\doxysubsection{Detailed Description}
+extracts a plane normal to one of the directions x,y,z from a 3D image 
+
+{\bfseries{Usage\+:}} extractplane in.\+pgm n plane out.\+pgm
+
+{\bfseries{Description\+:}} The original 3D image is {\bfseries{in.\+pgm}}. The parameter {\bfseries{n}} is an integer. The parameter {\bfseries{plane}} is set to {\bfseries{xy}}, {\bfseries{yx}}, {\bfseries{xz}}, {\bfseries{zx}}, {\bfseries{yz}}, {\bfseries{zy}}. The order of the letters x, y, z is meaningfull\+: for example, zy means that each row of the output image will correspond to a z-\/line of the original image, each column of the output image will correspond to a y-\/line of the original image. The output image {\bfseries{out.\+pgm}} contains the {\bfseries{n}}th plane of the given form extracted from {\bfseries{in.\+pgm}}.
+
+{\bfseries{Types supported\+:}} byte 3d, long 3d, float 3d
+
+{\bfseries{Category\+:}} geo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

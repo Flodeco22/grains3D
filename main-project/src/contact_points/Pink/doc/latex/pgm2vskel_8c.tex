@@ -1,0 +1,28 @@
+\doxysection{pgm2vskel.\+c File Reference}
+\label{pgm2vskel_8c}\index{pgm2vskel.c@{pgm2vskel.c}}
+
+
+decomposition of a valuated curvilinear skeleton into isolated points, end points, curves and junctions  
+
+
+
+
+\doxysubsection{Detailed Description}
+decomposition of a valuated curvilinear skeleton into isolated points, end points, curves and junctions 
+
+{\bfseries{Usage\+:}} pgm2vskel in.\+pgm val.\+pgm connex out.\+skel
+
+{\bfseries{Description\+:}} The skeleton found in {\bfseries{in.\+pgm}} is decomposed into isolated points, end points, curves and junctions ; and its description is stored in {\bfseries{out.\+skel}} . Each point of the skeleton is valuated by the corresponding value found in {\bfseries{val.\+pgm}} . The parameter {\bfseries{connex}} sets the adjacency relation used for the object (4, 8 (2d) or 6, 18, 26 (3d)).
+
+\begin{DoxyWarning}{Warning}
+No verification is done to check that the input image {\bfseries{in.\+pgm}} contains indeed a curvilinear skeleton. In the contrary case, the result would be meaningless.
+
+IMPORTANT LIMITATION\+: different junctions in the original image must not be in direct contact with each other (i.\+e., connected) otherwise they will be considered as a single junction. To prevent this to occur, one can increase image resolution.
+\end{DoxyWarning}
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} topobin
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 2004 
+\end{DoxyAuthor}

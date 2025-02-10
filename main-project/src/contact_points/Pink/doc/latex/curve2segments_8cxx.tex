@@ -1,0 +1,30 @@
+\doxysection{curve2segments.\+cxx File Reference}
+\label{curve2segments_8cxx}\index{curve2segments.cxx@{curve2segments.cxx}}
+
+
+computes a covering of a digital curve by digital straigh line segments  
+
+
+
+
+\doxysubsection{Detailed Description}
+computes a covering of a digital curve by digital straigh line segments 
+
+{\bfseries{Usage\+:}} curve2segments curve.\+list [tolerance] segments.\+list
+
+{\bfseries{Description\+:}}
+
+Computes a covering of a digital curve by digital straight line segments. The input file contains a curve which is specified by the ordered list of its points. The output file is an ordered list of points, which are the extremities of the segments.
+
+Parameter {\bfseries{tolerance}} gives the thickness of the digital straight line segments. Default value is 1.
+
+\begin{DoxyWarning}{Warning}
+Curves must be 8-\/curves in 2D of 26-\/curves in 3D. Greedy algorithm.
+\end{DoxyWarning}
+{\bfseries{Types supported\+:}} curve 2D, curve 3D
+
+{\bfseries{Category\+:}} geo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

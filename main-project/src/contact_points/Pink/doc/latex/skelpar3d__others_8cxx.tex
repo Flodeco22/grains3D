@@ -1,0 +1,27 @@
+\doxysection{skelpar3d\+\_\+others.\+cxx File Reference}
+\label{skelpar3d__others_8cxx}\index{skelpar3d\_others.cxx@{skelpar3d\_others.cxx}}
+
+
+parallel 3D binary skeleton  
+
+
+
+
+\doxysubsection{Detailed Description}
+parallel 3D binary skeleton 
+
+{\bfseries{Usage\+:}} skelpar3d in.\+pgm algorithm nsteps [inhibit] out.\+pgm
+
+{\bfseries{Description\+:}} Parallel 3D binary thinning or skeleton. The parameter {\bfseries{nsteps}} gives, if positive, the number of parallel thinning steps to be processed. If the value given for {\bfseries{nsteps}} equals -\/1, the thinning is continued until stability.
+
+The parameter {\bfseries{algorithm}} is a numerical code indicating which method will be used for the thinning. The possible choices are\+: \begin{DoxyItemize}
+\item 0\+: Palagyi-\/\+Kuba (curvilinear, 6 directions, 1998) \item 1\+: Palagyi (curvilinear, sequential, 2006) \item 2\+: Palagyi (surface, parallel directional, 2002) \item 3\+: Palagyi (surface, fully parallel, 2008) \item 4\+: Raynal (curvilinear, directional, 2011) \item 5\+: Raynal (surface, directional, 2011) \item 6\+: Lohou-\/\+Bertrand (curvilinear, symmetric, 2007) \item 7\+: Ma-\/\+Wan-\/\+Chang (curvilinear, 2 subfields, 2002) \item 8\+: Tsao-\/\+Fu (curvilinear, 6 directions, 1982) \item 9\+: Ma-\/\+Sonka (curvilinear, fully parallel, does not preserve topology 1996) \item 10\+: Ma-\/\+Wan (curvilinear (18/6) 6 directions, CVIU 2000) \item 11\+: Lohou-\/\+Bertrand (curvilinear 6 directions, DAM 2005) \item 12\+: Lohou-\/\+Bertrand (curvilinear 12 directions, DAM 2004) \item 13\+: ACK3a with isthmuses-\/ see lskel\+\_\+\+ACK3a.\+c \item 14\+: CKSC -\/ see lskeletons.\+c \item 15\+: Ma-\/\+Wan-\/\+Lee (curvilinear, 4 subfields, 2002) \item 16\+: Nemeth-\/\+Kardos-\/\+Palagyi (curvilinear, 2 subfields, 2010, var. 1) \item 17\+: Nemeth-\/\+Kardos-\/\+Palagyi (curvilinear, 2 subfields, 2010, var. 2) \item 18\+: Nemeth-\/\+Kardos-\/\+Palagyi (curvilinear, 2 subfields, 2010, var. 3) \item 19\+: Nemeth-\/\+Kardos-\/\+Palagyi (curvilinear, 4 subfields, 2010, var. 1) \item 20\+: Nemeth-\/\+Kardos-\/\+Palagyi (curvilinear, 4 subfields, 2010, var. 2) \item 21\+: Nemeth-\/\+Kardos-\/\+Palagyi (curvilinear, 4 subfields, 2010, var. 3) \item 22\+: Nemeth-\/\+Kardos-\/\+Palagyi (curvilinear, 8 subfields, 2010, var. 1) \item 23\+: Nemeth-\/\+Kardos-\/\+Palagyi (curvilinear, 8 subfields, 2010, var. 2) \item 24\+: Nemeth-\/\+Kardos-\/\+Palagyi (curvilinear, 8 subfields, 2010, var. 3) \item 25\+: She et al. (curvilinear, symmetric, DICTA 2009) \item 26\+: Tsao-\/\+Fu (surface, 6 directions, 1981) \item 27\+: Tsao-\/\+Fu (curvilinear, 6 directions, 1981) \item 28\+: Nemeth-\/\+Kardos-\/\+Palagyi (curvilinear, 2 subfields, 2010, var. 0) \item 29\+: Nemeth-\/\+Kardos-\/\+Palagyi (curvilinear, 4 subfields, 2010, var. 0) \item 30\+: Nemeth-\/\+Kardos-\/\+Palagyi (curvilinear, 8 subfields, 2010, var. 0) \item 31\+: Lohou-\/\+Bertrand (surface, symmetric, 2007) \item 32\+: Manzanera et al. (surface, symmetric, 1999) \item 33\+: Gong-\/\+Bertrand (curvilinear, 6 directions, 1990) \item 34\+: Palagyi-\/\+Kuba (curvilinear, 12 directions, 1999) \item 35\+: Bertrand-\/\+Aktouf (curvilinear, 8 subfields, 1994) \item 36\+: Palagyi-\/\+Kuba (curvilinear, hybrid, 1998) \item 37\+: Palagyi-\/\+Kuba (curvilinear, 8 directions, 1999) \item 38\+: Saha et al. (surface, 8 subfields, 1997) \item 39\+: Saha et al. (curvilinear, 8 subfields, 1997) \item 40\+: Nemeth-\/\+Kardos-\/\+Palagyi (curvilinear, 6 directions, 2011) \item 41\+: Nemeth-\/\+Palagyi (curvilinear, 6 directions, isthmus, 2012) \item 42\+: ACK3a with ends-\/ see lskel\+\_\+\+ACK3a.\+c \item 43\+: Palagyi-\/\+Kuba (curvilinear, 12 directions, isthmus, 2013) \item 44\+: Nemeth-\/\+Kardos-\/\+Palagyi (curvilinear, asymmetric, fully parallel, 2012) \item 45\+: Nemeth-\/\+Kardos-\/\+Palagyi (curvilinear, asymmetric, 6 directions, ends, 2012) \item 46\+: Nemeth-\/\+Kardos-\/\+Palagyi (curvilinear, asymmetric, 4 subfields, ends, 2012) \item 47\+: Nemeth-\/\+Palagyi (curvilinear, asymmetric, fully parallel, isthmus, 2012) \item 48\+: Nemeth-\/\+Palagyi (curvilinear, asymmetric, 4 subfields, isthmus, 2012) \item 49\+: Lohou-\/\+Dehos d\textquotesingle{}apres Ma-\/\+Sonka (curvilinear, fully parallel, 2010) \item 50\+: Nemeth-\/\+Kardos-\/\+Palagyi (curvilinear, asymmetric, 8 subfields, isthmus, 2012) \item 51\+: Nemeth-\/\+Palagyi (curvilinear, asymmetric, 8 subfields, ends, 2012) \item 52\+: Palagyi (surface, symmetric, fully parallel, 2015)\end{DoxyItemize}
+If the parameter {\bfseries{inhibit}} is given and is a binary image name, then the points of this image will be left unchanged.
+
+{\bfseries{Types supported\+:}} byte 3d
+
+{\bfseries{Category\+:}} topobin
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie, Benjamin Raynal, John Chaussard 
+\end{DoxyAuthor}

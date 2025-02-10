@@ -1,0 +1,127 @@
+\doxysection{ui\+\_\+make\+\_\+function.\+hpp File Reference}
+\label{ui__make__function_8hpp}\index{ui\_make\_function.hpp@{ui\_make\_function.hpp}}
+
+
+This is a helper function for exporting Pink C functions in Python. Note that this template file is rarely used directly and is called by the UI\+\_\+\+WRAP\+\_\+\+FUNCTION macro.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \textbf{ pink}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a helper function for exporting Pink C functions in Python. Note that this template file is rarely used directly and is called by the UI\+\_\+\+WRAP\+\_\+\+FUNCTION macro. 
+
+\doxysubsection{Note}\label{ui__wrap__function_8hpp_note}
+For debugging macro definitions you can use the
+
+\begin{DoxyVerb}g++ -E -P file.cpp -o file_pp.cpp
+\end{DoxyVerb}
+
+
+commands, which outputs the source code after preprocessing. Also
+
+\begin{DoxyVerb}astyle -A3 -z2 -k1 -s2 -j file_pp.cpp 
+\end{DoxyVerb}
+
+
+Indents the preprocessed code and inserts lot\textquotesingle{}s of newlines, which improoves very much the readability of the code.\doxysubsection{Exporting functions from C}\label{ui__wrap__function_8hpp_export}
+For exporting functions from Pink you should make them follow the \doxysectref{Conventions for developing Pink operators}{p.}{dev_conventions}{0}.
+
+You may use printf and you may call exit(1) if there\textquotesingle{}s an error. type\+\_\+k can be any type that python recognizes (int, float, ...) and xvimage$\ast$ The return value is 1 on success and 0 otherwise. To export this function you should include a function call in pypink.\+cpp of the form
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{def(\ }
+\DoxyCodeLine{\ \ \textcolor{stringliteral}{"{}function's\ name\ in\ Python"{}},}
+\DoxyCodeLine{\ \ \&make\_function<char\_image,\ T1,\ T2,\ ...,\ Tn,\ \&pink\_c\_function>,}
+\DoxyCodeLine{\ \ (arg(\textcolor{stringliteral}{"{}argument\ 1\ name"{}}),\ arg(\textcolor{stringliteral}{"{}argument\ 2\ name"{}}),\ ...,\ arg(argument\ n\ name)\ )}
+\DoxyCodeLine{\ \ doc\_\_my\_c\_function\_\_c\_\_}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+
+
+make\+\_\+function is a template. In the first parameter you specify the image type. Second, you specify the types of the parameters and last you put the pointer to your Pink function.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{def(\ \textcolor{stringliteral}{"{}ptisolated"{}},}
+\DoxyCodeLine{\ \ \ \ \ \&make\_function<char\_image,\ int,\ \&lptisolated>,}
+\DoxyCodeLine{\ \ \ \ \ (\ arg(\textcolor{stringliteral}{"{}image"{}}),\ arg(\textcolor{stringliteral}{"{}connexity"{}})\ ),}
+\DoxyCodeLine{\ \ \ \ \ doc\_\_ptisolated\_\_c\_\_}
+\DoxyCodeLine{\ \ \ );}
+
+\end{DoxyCode}
+\doxysubsection{Advanced}\label{ui__wrap__function_8hpp_advanced}
+This file contains C++ macro language and template metaprogramming, which is difficult to understand. The file is first treated with the preprocessor. The generated code looks like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\ \textcolor{keyword}{class\ }image\_type,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ int\ (*mcfunction)\ (}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ convert\_if<image\_type>::type}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ >}
+\DoxyCodeLine{image\_type\ make\_function(\ \textcolor{keyword}{const}\ image\_type\&\ image\ )}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ image\_type\ result;}
+\DoxyCodeLine{\ \ result\ =\ image.clone();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (!mcfunction(result\ ))\ \{\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ std::stringstream\ fullmessage;}
+\DoxyCodeLine{\ \ \ \ \ \ fullmessage\ <<\ \textcolor{stringliteral}{"{}in\ ui\_make\_function.hpp:\ "{}}\ <<\ \textcolor{stringliteral}{"{}mcfunction\ failed"{}};}
+\DoxyCodeLine{\ \ \ \ \ \ call\_error(fullmessage.str());}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\ \textcolor{keyword}{class\ }image\_type,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }T0\ ,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ int\ (*mcfunction)\ (}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ convert\_if<image\_type>::type\ ,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ convert\_if<T0>::type\ )}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ >}
+\DoxyCodeLine{image\_type\ make\_function(\ \textcolor{keyword}{const}\ image\_type\&\ image\ ,\ T0\ t0\ )}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ image\_type\ result;}
+\DoxyCodeLine{\ \ result\ =\ image.clone();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (!mcfunction(result\ ,\ t0))\ \{\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ std::stringstream\ fullmessage;}
+\DoxyCodeLine{\ \ \ \ \ \ fullmessage\ <<\ \textcolor{stringliteral}{"{}in\ ui\_make\_function.hpp:\ "{}}\ <<\ \textcolor{stringliteral}{"{}mcfunction\ failed"{}};}
+\DoxyCodeLine{\ \ \ \ \ \ call\_error(fullmessage.str());}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\ \textcolor{keyword}{class\ }image\_type,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }T0\ ,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }T1\ ,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ int\ (*mcfunction)\ (}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ convert\_if<image\_type>::type\ ,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ convert\_if<T0>::type\ ,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ convert\_if<T1>::type\ )}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ >}
+\DoxyCodeLine{image\_type\ make\_function(\ \textcolor{keyword}{const}\ image\_type\&\ image\ ,\ T0\ t0\ ,\ T1\ t1\ )}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ image\_type\ result;}
+\DoxyCodeLine{\ \ result\ =\ image.clone();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (!mcfunction(result\ ,\ t0\ ,\ t1))\ \{\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ std::stringstream\ fullmessage;}
+\DoxyCodeLine{\ \ \ \ \ \ fullmessage\ <<\ \textcolor{stringliteral}{"{}in\ ui\_make\_function.hpp:\ "{}}\ <<\ \textcolor{stringliteral}{"{}mcfunction\ failed"{}};}
+\DoxyCodeLine{\ \ \ \ \ \ call\_error(fullmessage.str());}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+The macro generates the make\+\_\+function template for each number of parameters. The template takes the specified parameters and wraps the function in Python. The most important part of the macro is the conversion of the \textquotesingle{}xvimage$\ast$\textquotesingle{} pointer into the appropriate image class (like \textquotesingle{}char\+\_\+image\textquotesingle{}). 

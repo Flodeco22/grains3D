@@ -1,0 +1,25 @@
+\doxysection{convexhull.\+c File Reference}
+\label{convexhull_8c}\index{convexhull.c@{convexhull.c}}
+
+
+convex hull of a set of points in the 2D plane  
+
+
+
+
+\doxysubsection{Detailed Description}
+convex hull of a set of points in the 2D plane 
+
+{\bfseries{Usage\+:}} convewhull in.\+pgm mode out
+
+{\bfseries{Description\+:}} Computes the convex hull of the set of non-\/null points in the image {\bfseries{in.\+pgm}}, by the Jarvis\textquotesingle{}s algorithm as described in "{}\+Introduction to algorithms"{}, T. Cormen, C. Leiserson, R. Rivest, MIT Press.
+
+The parameter {\bfseries{mode}} selects the format of the result\+: \begin{DoxyItemize}
+\item 0\+: list of the support points of the convex hull \item 1\+: support points of the convex hull, embedded in the image frame \item 2\+: contour of the convex hull, embedded in the image frame \item 3\+: full convex hull, embedded in the image frame\end{DoxyItemize}
+{\bfseries{Types supported\+:}} byte 2D
+
+{\bfseries{Category\+:}} geo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

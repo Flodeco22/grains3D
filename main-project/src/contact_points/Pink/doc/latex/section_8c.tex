@@ -1,0 +1,23 @@
+\doxysection{section.\+c File Reference}
+\label{section_8c}\index{section.c@{section.c}}
+
+
+computes a 2d cross section from a 3d image  
+
+
+
+
+\doxysubsection{Detailed Description}
+computes a 2d cross section from a 3d image 
+
+{\bfseries{Usage\+:}} section in.\+pgm x0 y0 z0 x1 y1 z1 x2 y2 z2 out.\+pgm
+
+{\bfseries{Description\+:}} The points P0 ( {\bfseries{x0}}, {\bfseries{y0}}, {\bfseries{z0}} ), P1 ( {\bfseries{x1}}, {\bfseries{y1}}, {\bfseries{z1}} ) and P2 ( {\bfseries{x2}}, {\bfseries{y2}}, {\bfseries{z2}} ) form a basis for a plane in the 3d space. The intersection of this plane with the domain of the 3d image {\bfseries{in.\+pgm}} form the domain of the 2d image {\bfseries{out.\+pgm}} . The grayscale values of {\bfseries{out.\+pgm}} are obtained by trilinear interpolation from the grayscale values of {\bfseries{in.\+pgm}} . The coordinates of the basis for the plane are expressed in "{}real world"{} dimensions.
+
+{\bfseries{Types supported\+:}} byte 3d, int32\+\_\+t 3d
+
+{\bfseries{Category\+:}} geo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

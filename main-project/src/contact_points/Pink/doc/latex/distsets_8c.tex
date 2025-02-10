@@ -1,0 +1,36 @@
+\doxysection{distsets.\+c File Reference}
+\label{distsets_8c}\index{distsets.c@{distsets.c}}
+
+
+distance between sets  
+
+
+
+
+\doxysubsection{Detailed Description}
+distance between sets 
+
+{\bfseries{Usage\+:}} distsets in1.\+pgm in1.\+pgm [mode [cut] out.\+list]
+
+{\bfseries{Description\+:}}
+
+Computes the distance between the object X defined by the binary image {\bfseries{in1.\+pgm}} and the object Y defined by the binary image {\bfseries{in2.\+pgm}} .
+
+Stores the result (a number) in the file {\bfseries{out.\+list}} . If only two images are given as arguments, then mode 3 is assumed as the default and the result is printed in stdout.
+
+The used pointwise distance is the exact Euclidean distance (float).
+
+The definition of the set distance used depends on the parameter {\bfseries{mode}} \+: \begin{DoxyItemize}
+\item 0\+: Hausdorff \item 1\+: Baddeley, order 1 \item 2\+: Baddeley, order 2 \item 3\+: Dubuisson-\/\+Jain\end{DoxyItemize}
+The optional parameter {\bfseries{cut}} is required only for Baddeley distances.
+
+\begin{DoxyWarning}{Warning}
+The input images {\bfseries{in1.\+pgm}} and {\bfseries{in2.\+pgm}} must be binary images. No test is done.
+\end{DoxyWarning}
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} morpho
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

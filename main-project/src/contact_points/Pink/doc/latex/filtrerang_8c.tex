@@ -1,0 +1,25 @@
+\doxysection{filtrerang.\+c File Reference}
+\label{filtrerang_8c}\index{filtrerang.c@{filtrerang.c}}
+
+
+rank filter  
+
+
+
+
+\doxysubsection{Detailed Description}
+rank filter 
+
+{\bfseries{Usage\+:}} filtrerang in.\+pgm el.\+pgm R out.\+pgm
+
+{\bfseries{Description\+:}} Let F be the input image, G be the output image, and E the structuring element. For each pixel p, G[p] is the Rth element of the sorted list (by increasing order) of the pixel values in the set \{ F[q], q in E[p] \}.
+
+Let n be the number of elements of E, particular cases are the median filter (R = n/2), the erosion (R = 0), and the dilation (R = n).
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} morpho
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

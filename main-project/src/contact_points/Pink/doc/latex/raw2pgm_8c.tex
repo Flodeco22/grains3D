@@ -1,0 +1,28 @@
+\doxysection{raw2pgm.\+c File Reference}
+\label{raw2pgm_8c}\index{raw2pgm.c@{raw2pgm.c}}
+
+
+converts from raw format into pgm format  
+
+
+
+
+\doxysubsection{Detailed Description}
+converts from raw format into pgm format 
+
+{\bfseries{Usage\+:}} raw2pgm in.\+raw rs cs ds headersize datatype littleendian [xdim ydim zdim] out.\+pgm
+
+{\bfseries{Description\+:}} Converts from raw format into pgm format.
+
+Parameters\+: \begin{DoxyItemize}
+\item {\bfseries{in.\+raw}} \+: source file in raw format \item {\bfseries{rs}} (int32\+\_\+t)\+: row size (number of voxels in a row) \item {\bfseries{cs}} (int32\+\_\+t)\+: column size (number of voxels in a column) \item {\bfseries{ds}} (int32\+\_\+t)\+: number of planes \item {\bfseries{headersize}} (int32\+\_\+t)\+: size of the header in bytes (information in the header will be ignored) \item {\bfseries{datatype}} (int32\+\_\+t)\+: (1 for byte, 2 for unsigned short int, 3 for signed short int, 4 for long int, 5 for float) \item {\bfseries{littleendian}} (int32\+\_\+t) 1\+: littleendian, 0\+: bigendian. Usual choice is 0. \item {\bfseries{xdim}} (float, optional) \+: gap (in the real world) between two adjacent voxels in a row. ~\newline
+ \item {\bfseries{ydim}} (float, optional) \+: gap (in the real world) between two adjacent voxels in a column. ~\newline
+ \item {\bfseries{zdim}} (float, optional) \+: gap (in the real world) between two adjacent planes. ~\newline
+\end{DoxyItemize}
+{\bfseries{Types supported\+:}} byte 2D-\/3D, int16\+\_\+t 2D-\/3D, int32\+\_\+t 2D-\/3D, float 2D-\/3D
+
+{\bfseries{Category\+:}} convert
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

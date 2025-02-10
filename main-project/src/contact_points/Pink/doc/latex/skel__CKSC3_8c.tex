@@ -1,0 +1,27 @@
+\doxysection{skel\+\_\+\+CKSC3.\+c File Reference}
+\label{skel__CKSC3_8c}\index{skel\_CKSC3.c@{skel\_CKSC3.c}}
+
+
+sequential 3D binary curvilinear skeleton  
+
+
+
+
+\doxysubsection{Detailed Description}
+sequential 3D binary curvilinear skeleton 
+
+{\bfseries{Usage\+:}} skel\+\_\+\+CKSC3 in.\+pgm nsteps [inhibit] out.\+pgm
+
+{\bfseries{Description\+:}} Sequential 3D binary thinning or curvilinear skeleton. The parameter {\bfseries{nsteps}} gives, if positive, the number of parallel thinning steps to be processed. If the value given for {\bfseries{nsteps}} equals -\/1, the thinning is continued until stability.
+
+If the parameter {\bfseries{inhibit}} is given and is a binary image name, then the points of this image will be left unchanged.
+
+{\bfseries{Warning\+:}} The object must not have any point on the frame of the image.
+
+{\bfseries{Types supported\+:}} byte 3d
+
+{\bfseries{Category\+:}} topobin
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

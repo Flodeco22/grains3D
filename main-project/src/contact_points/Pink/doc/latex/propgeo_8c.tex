@@ -1,0 +1,25 @@
+\doxysection{propgeo.\+c File Reference}
+\label{propgeo_8c}\index{propgeo.c@{propgeo.c}}
+
+
+geodesic propagation of image values  
+
+
+
+
+\doxysubsection{Detailed Description}
+geodesic propagation of image values 
+
+{\bfseries{Usage\+:}} propgeo in.\+pgm mask.\+pgm connex mode out.\+pgm
+
+{\bfseries{Description\+:}} Propagates certain values of the original image {\bfseries{in.\+pgm}}, geodesicaly wrt the connected components of the binary image {\bfseries{mask.\+pgm}}. The connexity is specified by the parameter {\bfseries{connex}}. The {\bfseries{mode}} is one of the following ones\+: \begin{DoxyItemize}
+\item 0 $\vert$ min \+: propagates the minimal value of the component \item 1 $\vert$ max \+: propagates the maximal value of the component \item 2 $\vert$ moy \+: propagates the mean grayscale value of the component \item 3 $\vert$ min1 \+: selects one point the value of which is equal to the min \item 4 $\vert$ max1 \+: selects one point the value of which is equal to the max \item 5 $\vert$ moy1 \+: selects one point the value of which is nearest to the mean \item 6 $\vert$ minb \+: propagates the minimal value of the external border of the component \item 7 $\vert$ maxb \+: propagates the maximal value of the external border of the component \item 8 $\vert$ moyb \+: propagates the mean value of the external border of the component \item 9 $\vert$ randb \+: fills the component with random values, with a normal distribution centered around the value computed as for moyb\end{DoxyItemize}
+Only modes min, max and moy are available for int32\+\_\+t images.
+
+{\bfseries{Types supported\+:}} byte 2d, int32\+\_\+t 2d byte 3d, int32\+\_\+t 3d
+
+{\bfseries{Category\+:}} connect
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

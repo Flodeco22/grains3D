@@ -1,0 +1,59 @@
+\doxysection{ui\+\_\+make\+\_\+malloc.\+hpp File Reference}
+\label{ui__make__malloc_8hpp}\index{ui\_make\_malloc.hpp@{ui\_make\_malloc.hpp}}
+
+
+This is a helper function for exporting Pink C functions in Python. Note that this template file is rarely used directly and is called by the UI\+\_\+\+WRAP\+\_\+\+FUNCTION macro.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \textbf{ pink}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a helper function for exporting Pink C functions in Python. Note that this template file is rarely used directly and is called by the UI\+\_\+\+WRAP\+\_\+\+FUNCTION macro. 
+
+\doxysubsection{Note}\label{ui__wrap__function_8hpp_note}
+For debugging macro definitions you can use the
+
+\begin{DoxyVerb}g++ -E -P file.cpp -o file_pp.cpp
+\end{DoxyVerb}
+
+
+commands, which outputs the source code after preprocessing. Also
+
+\begin{DoxyVerb}astyle -A3 -z2 -k1 -s2 -j file_pp.cpp 
+\end{DoxyVerb}
+
+
+Indents the preprocessed code and inserts lot\textquotesingle{}s of newlines, which improoves very much the readability of the code.\doxysubsection{Exporting functions from C}\label{ui__wrap__function_8hpp_export}
+For exporting functions from Pink you should make them follow the \doxysectref{Conventions for developing Pink operators}{p.}{dev_conventions}{0}.
+
+You may use printf and you may call exit(1) if there\textquotesingle{}s an error. type\+\_\+k can be any type that python recognizes (int, float, ...) and xvimage$\ast$ The return value is 1 on success and 0 otherwise. To export this function you should include a function call in pypink.\+cpp of the form
+
+
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
+
+
+make\+\_\+malloc is a template. In the first parameter you specify the image type. Second, you specify the types of the parameters and last you put the pointer to your Pink function.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
+\doxysubsection{Advanced}\label{ui__wrap__function_8hpp_advanced}
+This file contains C++ macro language and template metaprogramming, which is difficult to understand. The file is first treated with the preprocessor. The generated code looks like this\+:
+
+
+\begin{DoxyCode}{0}
+
+\end{DoxyCode}
+
+
+The macro generates the make\+\_\+malloc template for each number of parameters. The template takes the specified parameters and wraps the function in Python. The most important part of the macro is the conversion of the \textquotesingle{}xvimage$\ast$\textquotesingle{} pointer into the appropriate image class (like \textquotesingle{}char\+\_\+image\textquotesingle{}). 

@@ -1,0 +1,398 @@
+\doxysection{nifti\+\_\+1\+\_\+header Struct Reference}
+\label{structnifti__1__header}\index{nifti\_1\_header@{nifti\_1\_header}}
+
+
+Data structure defining the fields in the nifti1 header. This binary header should be found at the beginning of a valid NIFTI-\/1 header file.  
+
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ sizeof\+\_\+hdr}
+\item 
+char \textbf{ data\+\_\+type} [10]
+\item 
+char \textbf{ db\+\_\+name} [18]
+\item 
+int \textbf{ extents}
+\item 
+short \textbf{ session\+\_\+error}
+\item 
+char \textbf{ regular}
+\item 
+char \textbf{ dim\+\_\+info}
+\item 
+short \textbf{ dim} [8]
+\item 
+float \textbf{ intent\+\_\+p1}
+\item 
+float \textbf{ intent\+\_\+p2}
+\item 
+float \textbf{ intent\+\_\+p3}
+\item 
+short \textbf{ intent\+\_\+code}
+\item 
+short \textbf{ datatype}
+\item 
+short \textbf{ bitpix}
+\item 
+short \textbf{ slice\+\_\+start}
+\item 
+float \textbf{ pixdim} [8]
+\item 
+float \textbf{ vox\+\_\+offset}
+\item 
+float \textbf{ scl\+\_\+slope}
+\item 
+float \textbf{ scl\+\_\+inter}
+\item 
+short \textbf{ slice\+\_\+end}
+\item 
+char \textbf{ slice\+\_\+code}
+\item 
+char \textbf{ xyzt\+\_\+units}
+\item 
+float \textbf{ cal\+\_\+max}
+\item 
+float \textbf{ cal\+\_\+min}
+\item 
+float \textbf{ slice\+\_\+duration}
+\item 
+float \textbf{ toffset}
+\item 
+int \textbf{ glmax}
+\item 
+int \textbf{ glmin}
+\item 
+char \textbf{ descrip} [80]
+\item 
+char \textbf{ aux\+\_\+file} [24]
+\item 
+short \textbf{ qform\+\_\+code}
+\item 
+short \textbf{ sform\+\_\+code}
+\item 
+float \textbf{ quatern\+\_\+b}
+\item 
+float \textbf{ quatern\+\_\+c}
+\item 
+float \textbf{ quatern\+\_\+d}
+\item 
+float \textbf{ qoffset\+\_\+x}
+\item 
+float \textbf{ qoffset\+\_\+y}
+\item 
+float \textbf{ qoffset\+\_\+z}
+\item 
+float \textbf{ srow\+\_\+x} [4]
+\item 
+float \textbf{ srow\+\_\+y} [4]
+\item 
+float \textbf{ srow\+\_\+z} [4]
+\item 
+char \textbf{ intent\+\_\+name} [16]
+\item 
+char \textbf{ magic} [4]
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data structure defining the fields in the nifti1 header. This binary header should be found at the beginning of a valid NIFTI-\/1 header file. 
+
+\doxysubsection{Member Data Documentation}
+\label{structnifti__1__header_a93e288bd39c44188304677f6bdc96a6b} 
+\index{nifti\_1\_header@{nifti\_1\_header}!aux\_file@{aux\_file}}
+\index{aux\_file@{aux\_file}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{aux\_file}
+{\footnotesize\ttfamily char nifti\+\_\+1\+\_\+header\+::aux\+\_\+file[24]}
+
+auxiliary filename. ~\newline
+ \label{structnifti__1__header_a60fc36ed5afd638fd7da425ad7ecae94} 
+\index{nifti\_1\_header@{nifti\_1\_header}!bitpix@{bitpix}}
+\index{bitpix@{bitpix}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{bitpix}
+{\footnotesize\ttfamily short nifti\+\_\+1\+\_\+header\+::bitpix}
+
+Number bits/voxel. ~\newline
+ \label{structnifti__1__header_af415db2201f47d61354766245c3f2520} 
+\index{nifti\_1\_header@{nifti\_1\_header}!cal\_max@{cal\_max}}
+\index{cal\_max@{cal\_max}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{cal\_max}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::cal\+\_\+max}
+
+Max display intensity \label{structnifti__1__header_a600fb5b0c533454bbbc61b2e0696c9a8} 
+\index{nifti\_1\_header@{nifti\_1\_header}!cal\_min@{cal\_min}}
+\index{cal\_min@{cal\_min}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{cal\_min}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::cal\+\_\+min}
+
+Min display intensity \label{structnifti__1__header_a4442d6183e4dce5af7e71365d3eed1ec} 
+\index{nifti\_1\_header@{nifti\_1\_header}!data\_type@{data\_type}}
+\index{data\_type@{data\_type}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{data\_type}
+{\footnotesize\ttfamily char nifti\+\_\+1\+\_\+header\+::data\+\_\+type[10]}
+
+++UNUSED++ ~\newline
+ \label{structnifti__1__header_ad5f8888fcc5fde14d3e387653721e270} 
+\index{nifti\_1\_header@{nifti\_1\_header}!datatype@{datatype}}
+\index{datatype@{datatype}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{datatype}
+{\footnotesize\ttfamily short nifti\+\_\+1\+\_\+header\+::datatype}
+
+Defines data type! ~\newline
+ \label{structnifti__1__header_a0e0cf033d74cfae329b4ce0d1b7ece8e} 
+\index{nifti\_1\_header@{nifti\_1\_header}!db\_name@{db\_name}}
+\index{db\_name@{db\_name}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{db\_name}
+{\footnotesize\ttfamily char nifti\+\_\+1\+\_\+header\+::db\+\_\+name[18]}
+
+++UNUSED++ ~\newline
+ \label{structnifti__1__header_a8725b5f9e0ef6882200bfeb89b11eb3a} 
+\index{nifti\_1\_header@{nifti\_1\_header}!descrip@{descrip}}
+\index{descrip@{descrip}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{descrip}
+{\footnotesize\ttfamily char nifti\+\_\+1\+\_\+header\+::descrip[80]}
+
+any text you like. ~\newline
+ \label{structnifti__1__header_abd0c6bb6b71a2a6d10fbcb516af52b13} 
+\index{nifti\_1\_header@{nifti\_1\_header}!dim@{dim}}
+\index{dim@{dim}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{dim}
+{\footnotesize\ttfamily short nifti\+\_\+1\+\_\+header\+::dim[8]}
+
+Data array dimensions. \label{structnifti__1__header_a7d3eb58a5415d9c65f3df444ac94fc74} 
+\index{nifti\_1\_header@{nifti\_1\_header}!dim\_info@{dim\_info}}
+\index{dim\_info@{dim\_info}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{dim\_info}
+{\footnotesize\ttfamily char nifti\+\_\+1\+\_\+header\+::dim\+\_\+info}
+
+MRI slice ordering. ~\newline
+ \label{structnifti__1__header_ab37ea6af93cab84f95d97ee4fdbc3f4d} 
+\index{nifti\_1\_header@{nifti\_1\_header}!extents@{extents}}
+\index{extents@{extents}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{extents}
+{\footnotesize\ttfamily int nifti\+\_\+1\+\_\+header\+::extents}
+
+++UNUSED++ ~\newline
+ \label{structnifti__1__header_a07e91b15b45a914b71ff41f93fe64e56} 
+\index{nifti\_1\_header@{nifti\_1\_header}!glmax@{glmax}}
+\index{glmax@{glmax}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{glmax}
+{\footnotesize\ttfamily int nifti\+\_\+1\+\_\+header\+::glmax}
+
+++UNUSED++ ~\newline
+ \label{structnifti__1__header_acc037ae9773f9e79333f0927ed3a38ce} 
+\index{nifti\_1\_header@{nifti\_1\_header}!glmin@{glmin}}
+\index{glmin@{glmin}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{glmin}
+{\footnotesize\ttfamily int nifti\+\_\+1\+\_\+header\+::glmin}
+
+++UNUSED++ ~\newline
+ \label{structnifti__1__header_a017e9d430b66386e569c6b9cd11059ed} 
+\index{nifti\_1\_header@{nifti\_1\_header}!intent\_code@{intent\_code}}
+\index{intent\_code@{intent\_code}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{intent\_code}
+{\footnotesize\ttfamily short nifti\+\_\+1\+\_\+header\+::intent\+\_\+code}
+
+NIFTI\+\_\+\+INTENT\+\_\+$\ast$ code. ~\newline
+ \label{structnifti__1__header_ae3d911b886703c6f0976e308d83a3495} 
+\index{nifti\_1\_header@{nifti\_1\_header}!intent\_name@{intent\_name}}
+\index{intent\_name@{intent\_name}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{intent\_name}
+{\footnotesize\ttfamily char nifti\+\_\+1\+\_\+header\+::intent\+\_\+name[16]}
+
+\textquotesingle{}name\textquotesingle{} or meaning of data. ~\newline
+ \label{structnifti__1__header_a5c875c40271c15601b3389450fba85b3} 
+\index{nifti\_1\_header@{nifti\_1\_header}!intent\_p1@{intent\_p1}}
+\index{intent\_p1@{intent\_p1}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{intent\_p1}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::intent\+\_\+p1}
+
+1st intent parameter. \label{structnifti__1__header_ab39ee04eb345e95dd4e5183e0f84c02b} 
+\index{nifti\_1\_header@{nifti\_1\_header}!intent\_p2@{intent\_p2}}
+\index{intent\_p2@{intent\_p2}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{intent\_p2}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::intent\+\_\+p2}
+
+2nd intent parameter. \label{structnifti__1__header_aa1eeee8a4cd325b413c5d368ec8fc534} 
+\index{nifti\_1\_header@{nifti\_1\_header}!intent\_p3@{intent\_p3}}
+\index{intent\_p3@{intent\_p3}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{intent\_p3}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::intent\+\_\+p3}
+
+3rd intent parameter. \label{structnifti__1__header_a5c7eff0d659a6a1f69f576d40cf4d3ed} 
+\index{nifti\_1\_header@{nifti\_1\_header}!magic@{magic}}
+\index{magic@{magic}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{magic}
+{\footnotesize\ttfamily char nifti\+\_\+1\+\_\+header\+::magic[4]}
+
+MUST be "{}ni1\textbackslash{}0"{} or "{}n+1\textbackslash{}0"{}. \label{structnifti__1__header_af3b966e2936cc174b43fedadbbd933dc} 
+\index{nifti\_1\_header@{nifti\_1\_header}!pixdim@{pixdim}}
+\index{pixdim@{pixdim}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{pixdim}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::pixdim[8]}
+
+Grid spacings. ~\newline
+ \label{structnifti__1__header_a95ae85e5e0bba57c4b3cbd8a0b32168b} 
+\index{nifti\_1\_header@{nifti\_1\_header}!qform\_code@{qform\_code}}
+\index{qform\_code@{qform\_code}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{qform\_code}
+{\footnotesize\ttfamily short nifti\+\_\+1\+\_\+header\+::qform\+\_\+code}
+
+NIFTI\+\_\+\+XFORM\+\_\+$\ast$ code. ~\newline
+ \label{structnifti__1__header_a6fbfa89133238e59e6220e0b778c93ef} 
+\index{nifti\_1\_header@{nifti\_1\_header}!qoffset\_x@{qoffset\_x}}
+\index{qoffset\_x@{qoffset\_x}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{qoffset\_x}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::qoffset\+\_\+x}
+
+Quaternion x shift. ~\newline
+ \label{structnifti__1__header_a5cfb257cbd7a4b7dde2350877cd126c5} 
+\index{nifti\_1\_header@{nifti\_1\_header}!qoffset\_y@{qoffset\_y}}
+\index{qoffset\_y@{qoffset\_y}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{qoffset\_y}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::qoffset\+\_\+y}
+
+Quaternion y shift. ~\newline
+ \label{structnifti__1__header_a962002307f10b359788cea98ebcb40b6} 
+\index{nifti\_1\_header@{nifti\_1\_header}!qoffset\_z@{qoffset\_z}}
+\index{qoffset\_z@{qoffset\_z}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{qoffset\_z}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::qoffset\+\_\+z}
+
+Quaternion z shift. ~\newline
+ \label{structnifti__1__header_a530588bf405af52255dc064a6f451c71} 
+\index{nifti\_1\_header@{nifti\_1\_header}!quatern\_b@{quatern\_b}}
+\index{quatern\_b@{quatern\_b}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{quatern\_b}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::quatern\+\_\+b}
+
+Quaternion b param. ~\newline
+ \label{structnifti__1__header_a3ade0b01649a3d990ee1dfdef8c452c4} 
+\index{nifti\_1\_header@{nifti\_1\_header}!quatern\_c@{quatern\_c}}
+\index{quatern\_c@{quatern\_c}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{quatern\_c}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::quatern\+\_\+c}
+
+Quaternion c param. ~\newline
+ \label{structnifti__1__header_af47d0d4ae23f57441edcef9594fd1495} 
+\index{nifti\_1\_header@{nifti\_1\_header}!quatern\_d@{quatern\_d}}
+\index{quatern\_d@{quatern\_d}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{quatern\_d}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::quatern\+\_\+d}
+
+Quaternion d param. ~\newline
+ \label{structnifti__1__header_acd9cfc4f9d1117a803c4a619132583d7} 
+\index{nifti\_1\_header@{nifti\_1\_header}!regular@{regular}}
+\index{regular@{regular}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{regular}
+{\footnotesize\ttfamily char nifti\+\_\+1\+\_\+header\+::regular}
+
+++UNUSED++ ~\newline
+ \label{structnifti__1__header_aca24a8965851296a63d13da6c7cc3456} 
+\index{nifti\_1\_header@{nifti\_1\_header}!scl\_inter@{scl\_inter}}
+\index{scl\_inter@{scl\_inter}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{scl\_inter}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::scl\+\_\+inter}
+
+Data scaling\+: offset. \label{structnifti__1__header_a45a97dd330a77ab680ef91c47a761c29} 
+\index{nifti\_1\_header@{nifti\_1\_header}!scl\_slope@{scl\_slope}}
+\index{scl\_slope@{scl\_slope}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{scl\_slope}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::scl\+\_\+slope}
+
+Data scaling\+: slope. ~\newline
+ \label{structnifti__1__header_a1011d5320abdedcb710552cae92f86db} 
+\index{nifti\_1\_header@{nifti\_1\_header}!session\_error@{session\_error}}
+\index{session\_error@{session\_error}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{session\_error}
+{\footnotesize\ttfamily short nifti\+\_\+1\+\_\+header\+::session\+\_\+error}
+
+++UNUSED++ ~\newline
+ \label{structnifti__1__header_a48d14671528f3dfe0593320006877a8a} 
+\index{nifti\_1\_header@{nifti\_1\_header}!sform\_code@{sform\_code}}
+\index{sform\_code@{sform\_code}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{sform\_code}
+{\footnotesize\ttfamily short nifti\+\_\+1\+\_\+header\+::sform\+\_\+code}
+
+NIFTI\+\_\+\+XFORM\+\_\+$\ast$ code. ~\newline
+ \label{structnifti__1__header_af1d99efbd3af0180f9335cbb1b822248} 
+\index{nifti\_1\_header@{nifti\_1\_header}!sizeof\_hdr@{sizeof\_hdr}}
+\index{sizeof\_hdr@{sizeof\_hdr}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{sizeof\_hdr}
+{\footnotesize\ttfamily int nifti\+\_\+1\+\_\+header\+::sizeof\+\_\+hdr}
+
+MUST be 348 ~\newline
+ \label{structnifti__1__header_af25a6170a90128800e3986b68fc79e4d} 
+\index{nifti\_1\_header@{nifti\_1\_header}!slice\_code@{slice\_code}}
+\index{slice\_code@{slice\_code}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{slice\_code}
+{\footnotesize\ttfamily char nifti\+\_\+1\+\_\+header\+::slice\+\_\+code}
+
+Slice timing order. ~\newline
+ \label{structnifti__1__header_a70400549d1f42d7f777915273576549b} 
+\index{nifti\_1\_header@{nifti\_1\_header}!slice\_duration@{slice\_duration}}
+\index{slice\_duration@{slice\_duration}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{slice\_duration}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::slice\+\_\+duration}
+
+Time for 1 slice. ~\newline
+ \label{structnifti__1__header_a260d55840377fe1bcfb49bda5f85b76c} 
+\index{nifti\_1\_header@{nifti\_1\_header}!slice\_end@{slice\_end}}
+\index{slice\_end@{slice\_end}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{slice\_end}
+{\footnotesize\ttfamily short nifti\+\_\+1\+\_\+header\+::slice\+\_\+end}
+
+Last slice index. ~\newline
+ \label{structnifti__1__header_adc0e937b2b556da163772b20da729778} 
+\index{nifti\_1\_header@{nifti\_1\_header}!slice\_start@{slice\_start}}
+\index{slice\_start@{slice\_start}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{slice\_start}
+{\footnotesize\ttfamily short nifti\+\_\+1\+\_\+header\+::slice\+\_\+start}
+
+First slice index. ~\newline
+ \label{structnifti__1__header_ad88e17b7ec9a5e198bf13d82e167e643} 
+\index{nifti\_1\_header@{nifti\_1\_header}!srow\_x@{srow\_x}}
+\index{srow\_x@{srow\_x}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{srow\_x}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::srow\+\_\+x[4]}
+
+1st row affine transform. ~\newline
+ \label{structnifti__1__header_a07b0ec3e66e4dd72db3f0910cfab4c46} 
+\index{nifti\_1\_header@{nifti\_1\_header}!srow\_y@{srow\_y}}
+\index{srow\_y@{srow\_y}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{srow\_y}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::srow\+\_\+y[4]}
+
+2nd row affine transform. ~\newline
+ \label{structnifti__1__header_aea26ff366fcf2fdde19efd4e4f5b9d98} 
+\index{nifti\_1\_header@{nifti\_1\_header}!srow\_z@{srow\_z}}
+\index{srow\_z@{srow\_z}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{srow\_z}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::srow\+\_\+z[4]}
+
+3rd row affine transform. ~\newline
+ \label{structnifti__1__header_a0d2b669f776a2b7fb84807ea2f7b4231} 
+\index{nifti\_1\_header@{nifti\_1\_header}!toffset@{toffset}}
+\index{toffset@{toffset}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{toffset}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::toffset}
+
+Time axis shift. ~\newline
+ \label{structnifti__1__header_aa3a09932cda88dd765a438c9b9c46503} 
+\index{nifti\_1\_header@{nifti\_1\_header}!vox\_offset@{vox\_offset}}
+\index{vox\_offset@{vox\_offset}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{vox\_offset}
+{\footnotesize\ttfamily float nifti\+\_\+1\+\_\+header\+::vox\+\_\+offset}
+
+Offset into .nii file \label{structnifti__1__header_a6b95dab630916801b716f52513305e93} 
+\index{nifti\_1\_header@{nifti\_1\_header}!xyzt\_units@{xyzt\_units}}
+\index{xyzt\_units@{xyzt\_units}!nifti\_1\_header@{nifti\_1\_header}}
+\doxysubsubsection{xyzt\_units}
+{\footnotesize\ttfamily char nifti\+\_\+1\+\_\+header\+::xyzt\+\_\+units}
+
+Units of pixdim[1..4] 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ nifti2pgm.\+c}\end{DoxyCompactItemize}

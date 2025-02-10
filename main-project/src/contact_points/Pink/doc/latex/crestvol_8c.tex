@@ -1,0 +1,40 @@
+\doxysection{crestvol.\+c File Reference}
+\label{crestvol_8c}\index{crestvol.c@{crestvol.c}}
+
+
+enhances linear structures in a grayscale image  
+
+
+
+
+\doxysubsection{Detailed Description}
+enhances linear structures in a grayscale image 
+
+{\bfseries{Usage\+:}} crestvol in.\+pgm connex radius out.\+pgm
+
+{\bfseries{Description\+:}} Enhances linear structures in a grayscale image. The algorithm is the following\+:
+
+\begin{DoxyVerb}Let F be the original image ("in.pgm")
+Let O be the final result ("out.pgm")
+Let r be the value of parameter "radius"
+Compute k iterations of homotopic thinning, result S
+Lower all separating points p in S down to alpha8m(S, p), result Sp 
+For each point x of S which is separating
+  Let Dx be the image with D(x) = F(x), and D(y) = 0 for all y != x
+  Let Fx be the geodesic reconstruction of Dx under F 
+  O(x) = volume((Fx-Sp).Br(x)) 
+  where Br(x) is the disc centered on x with radius r
+EndFor
+\end{DoxyVerb}
+
+
+References\+:~\newline
+ "{}\+Topological operators for the detection of curvilinar structures in grayscale images"{}, in preparation.
+
+{\bfseries{Types supported\+:}} byte 2d
+
+{\bfseries{Category\+:}} topogray
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

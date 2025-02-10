@@ -1,0 +1,39 @@
+\doxysection{lengthsplines.\+c File Reference}
+\label{lengthsplines_8c}\index{lengthsplines.c@{lengthsplines.c}}
+
+
+computes the lengths of splines which are specified by their control points in a text file  
+
+
+
+
+\doxysubsection{Detailed Description}
+computes the lengths of splines which are specified by their control points in a text file 
+
+{\bfseries{Usage\+:}} lengthsplines splines.\+txt out.\+list
+
+{\bfseries{Description\+:}} Computes the lengths of splines which are specified by their control points in a text file.
+
+The file format for {\bfseries{splines.\+txt}} is the following for 2D\+:
+
+The file {\bfseries{splines.\+txt}} contains a list of splines under the format\+:~\newline
+ d nb\+\_\+splines~\newline
+ nb\+\_\+points\+\_\+spline\+\_\+1 x11 y11 x12 y12 ...~\newline
+ nb\+\_\+points\+\_\+spline\+\_\+2 x21 y21 x22 y22 ...~\newline
+ nb\+\_\+points\+\_\+spline\+\_\+3 x31 y31 x32 y32 ...~\newline
+ ...~\newline
+ or, in 3D\+:~\newline
+ D nb\+\_\+splines~\newline
+ nb\+\_\+points\+\_\+spline\+\_\+1 x11 y11 z11 x12 y12 z12 ...~\newline
+ nb\+\_\+points\+\_\+spline\+\_\+2 x21 y21 z21 x22 y22 z22 ...~\newline
+ nb\+\_\+points\+\_\+spline\+\_\+3 x31 y31 z31 x32 y32 z32 ...~\newline
+ ...~\newline
+
+
+{\bfseries{Types supported\+:}} spline 2D, spline 3D
+
+{\bfseries{Category\+:}} geo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

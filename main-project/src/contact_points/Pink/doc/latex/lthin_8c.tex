@@ -1,0 +1,48 @@
+\doxysection{lthin.\+c File Reference}
+\label{lthin_8c}\index{lthin.c@{lthin.c}}
+
+
+grayscale leveling thinning  
+
+
+
+
+\doxysubsection{Detailed Description}
+grayscale leveling thinning 
+
+{\bfseries{Usage\+:}} lthin in.\+pgm \{imcond.\+pgm$\vert$null\} connex niter out.\+pgm
+
+{\bfseries{Description\+:}} Grayscale leveling thinning (refs. [BEC97, CBB01]). The parameter {\bfseries{connex}} gives the connectivity used for the minima; possible choices are 4, 8 in 2D and 6, 26 in 3D. Let F be the function corresponding to the input image {\bfseries{in.\+pgm}}. Let G be the function corresponding to the input image {\bfseries{imcond.\+pgm}}, or the null function if the keyword {\bfseries{null}} is used. The algorithm is the following\+:
+
+\begin{DoxyVerb}Repeat niter times:
+    L = {(p,a) such that T--(p,F) = 1 and a = alpha-(p,F)}
+    While L not empty
+       extract a couple (p,a) from L
+       F(p) = max{ a, alpha-(p,F), G(p) }    
+Result: F
+\end{DoxyVerb}
+
+
+If {\bfseries{niter}} is set to -\/1, then the operator iterates until stability.
+
+References\+:~\newline
+ [BEC97] G. Bertrand, J. C. Everat and M. Couprie\+: {\texttt{ "{}\+Image segmentation through operators based upon topology"{}}}, {\itshape  Journal of Electronic Imaging}, Vol.~6, No.~4, pp.~395-\/405, 1997.~\newline
+ [CBB01] M. Couprie, F.\+N. Bezerra, Gilles Bertrand\+: {\texttt{ "{}\+Topological operators for grayscale image processing"{}}}, {\itshape  Journal of Electronic Imaging}, Vol.~10, No.~4, pp.~1003-\/1015, 2001.
+
+{\bfseries{Types supported\+:}} byte 2D, byte 3D.
+
+{\bfseries{Category\+:}} topogray
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie
+\end{DoxyAuthor}
+{\bfseries{Example\+:}}
+
+lthin ur1 null 4 -\/1 ur1\+\_\+lthin minima ur1\+\_\+lthin 4 ur1\+\_\+lthin\+\_\+m
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering  &\PBS\centering  &\PBS\centering   \\\cline{1-3}
+\PBS\centering ur1 &\PBS\centering ur1\+\_\+lthin &\PBS\centering ur1\+\_\+lthin\+\_\+m  \\\cline{1-3}
+\end{longtabu}

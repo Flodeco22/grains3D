@@ -1,0 +1,20 @@
+# Ignorer tous les fichiers d'images
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.tiff
+*.tif
+*.bmp
+*.svg
+*.webp
+*.ico
+
+# Ignorer tous les fichiers compressés
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.bz2
+*.xz

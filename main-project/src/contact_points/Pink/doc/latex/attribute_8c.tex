@@ -1,0 +1,36 @@
+\doxysection{attribute.\+c File Reference}
+\label{attribute_8c}\index{attribute.c@{attribute.c}}
+
+
+labels each connected component with its attribute value  
+
+
+
+
+\doxysubsection{Detailed Description}
+labels each connected component with its attribute value 
+
+{\bfseries{Usage\+:}} attribute in.\+pgm connex seuil typregion attrib out.\+pgm
+
+{\bfseries{Description\+:}}
+
+Labels each connected component with its attribute value.
+
+Argument {\bfseries{connex}} defines the connectivity.
+
+Argument {\bfseries{seuil}} defines a threshold\+: components with attribute value not higher than {\bfseries{seuil}} are filtered out.
+
+Argument {\bfseries{typregion}} defines the type of regions\+: \begin{DoxyItemize}
+\item 0\+: regional maxima \item 1\+: regional minima \item 2\+: plateaus\end{DoxyItemize}
+Argument {\bfseries{attrib}} defines the considered attribute\+: \begin{DoxyItemize}
+\item 0\+: area \item 1\+: perimeter \item 2\+: circularity \item 3\+: number of holes \item 4\+: excentricity \item 5\+: orientation \item 6\+: horizontal size (of bounding box) \item 7\+: vertical size (of bounding box) \item 8\+: depth size (of bounding box) \item 9\+: max of horizontal, vertical [and depth] sizes (of bounding box) \item 10\+: maximum diameter (Euclidean distance between most distant points)\+: not yet implemented\end{DoxyItemize}
+\begin{DoxyWarning}{Warning}
+In 3D only the attributes 0 and 6-\/9 are implemented.
+\end{DoxyWarning}
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} geo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

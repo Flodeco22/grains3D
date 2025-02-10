@@ -1,0 +1,33 @@
+\doxysection{nifti2pgm.\+c File Reference}
+\label{nifti2pgm_8c}\index{nifti2pgm.c@{nifti2pgm.c}}
+
+
+converts from nifti format into pgm format  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ nifti\+\_\+1\+\_\+header}
+\begin{DoxyCompactList}\small\item\em Data structure defining the fields in the nifti1 header. This binary header should be found at the beginning of a valid NIFTI-\/1 header file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+converts from nifti format into pgm format 
+
+{\bfseries{Usage\+:}} nifti2pgm in.\+nii out.\+pgm
+
+{\bfseries{Description\+:}} Converts from nifti format into pgm format.
+
+Parameters\+: \begin{DoxyItemize}
+\item {\bfseries{in.\+nii}} \+: source file in nifti format\end{DoxyItemize}
+{\bfseries{Types supported\+:}} byte 2D-\/3D, int16\+\_\+t 2D-\/3D, int32\+\_\+t 2D-\/3D, float 2D-\/3D
+
+\begin{DoxyWarning}{Warning}
+NOT ALL NIFTI FILES ARE SUPPORTED
+\end{DoxyWarning}
+{\bfseries{Category\+:}} convert
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

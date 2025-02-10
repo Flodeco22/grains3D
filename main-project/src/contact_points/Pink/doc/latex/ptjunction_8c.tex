@@ -1,0 +1,25 @@
+\doxysection{ptjunction.\+c File Reference}
+\label{ptjunction_8c}\index{ptjunction.c@{ptjunction.c}}
+
+
+detects junction points in 2d or 3d binary images  
+
+
+
+
+\doxysubsection{Detailed Description}
+detects junction points in 2d or 3d binary images 
+
+{\bfseries{Usage\+:}} ptjunction in.\+pgm connex out.\+pgm
+
+{\bfseries{Description\+:}} Detects junction points in the 2d or 3d binary image {\bfseries{in.\+pgm}}, which is supposed to contain a skeleton. A junction point is a white point x such that \#(Nn[x] inter X) $>$ 2, where Nn[x] stands for the n-\/neighborhood of x (excluding x), and n = 4, 8 in 2D or n = 6, 18, 26 in 3D, as set by the parameter {\bfseries{connex}}.
+
+When the type of {\bfseries{in.\+pgm}} is 4\+\_\+\+BYTE, the image is treated as a label image, where each label is processed as a separate binary image (all other labels are considered as background).
+
+{\bfseries{Types supported\+:}} byte 2D, byte 3D, long 3D
+
+{\bfseries{Category\+:}} topobin
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 2010 
+\end{DoxyAuthor}

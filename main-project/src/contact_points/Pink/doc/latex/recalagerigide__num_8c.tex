@@ -1,0 +1,37 @@
+\doxysection{recalagerigide\+\_\+num.\+c File Reference}
+\label{recalagerigide__num_8c}\index{recalagerigide\_num.c@{recalagerigide\_num.c}}
+
+
+rigid registration of two grayscale images  
+
+
+
+
+\doxysubsection{Detailed Description}
+rigid registration of two grayscale images 
+
+{\bfseries{Usage\+:}} recalagerigide\+\_\+num in1 in2 seuil [init] out
+
+{\bfseries{Description\+:}}
+
+Rigid registration of two grayscale images. Let X and Y be two images, given respectively by {\bfseries{in1}} and {\bfseries{in2}}. This procedure identifies the parameters of a rigid deformation R such that the "{}distance"{} between R(\+X) and Y is a local minimum. The distance D(\+Z,\+Y) between two images Z and Y is defined by\+:
+
+D(\+Z,\+Y) = sum \{ (Z[i] -\/ Y[i])$^\wedge$2 ; for all i in support(\+Y) \}
+
+The rigid deformation R is defined as the composition (in this order) of a zoom, a rotation, and a translation.
+
+In 2d, the parameters are\+: \begin{DoxyItemize}
+\item hx \+: parameter for the scaling in direction x \item hy \+: parameter for the scaling in direction y \item theta \+: angle (in degrees) of the rotation around (0,0) \item tx \+: parameter for the translation in direction x \item ty \+: parameter for the translation in direction y\end{DoxyItemize}
+The output parameter {\bfseries{out}} is the name of a text file in which these values will be written (type "{}e"{} list format, see doc/formats.\+txt).
+
+The parameter {\bfseries{seuil}} makes it possible to eliminate outliers\+: points i such that (Z[i] -\/ Y[i])$^\wedge$2 $>$ seuil$^\wedge$2 are not taken into account. A value 255 for this parameter means no outlier elimination.
+
+The optional parameter {\bfseries{init}} makes it possible to give, in the same format as the output, an initial deformation which is "{}close"{} to the expected one. The default initialisation is the identity (parameters 0, 1, 1, 0, 0).
+
+{\bfseries{Types supported\+:}} byte 2d
+
+{\bfseries{Category\+:}} geo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

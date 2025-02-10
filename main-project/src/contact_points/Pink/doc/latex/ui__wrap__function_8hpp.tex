@@ -1,0 +1,269 @@
+\doxysection{ui\+\_\+wrap\+\_\+function.\+hpp File Reference}
+\label{ui__wrap__function_8hpp}\index{ui\_wrap\_function.hpp@{ui\_wrap\_function.hpp}}
+
+
+This is a helper function for exporting Pink C functions in Python. This file defines \textquotesingle{}UI\+\_\+\+WRAP\+\_\+\+FUNCTION\textquotesingle{}.  
+
+
+
+
+\doxysubsection{Detailed Description}
+This is a helper function for exporting Pink C functions in Python. This file defines \textquotesingle{}UI\+\_\+\+WRAP\+\_\+\+FUNCTION\textquotesingle{}. 
+
+This is a helper function for exporting Pink C functions in Python. This file defines \textquotesingle{}UI\+\_\+\+WRAP\+\_\+\+MALLOC\textquotesingle{}.\doxysubsection{Note}\label{ui__wrap__function_8hpp_note}
+For debugging macro definitions uncomment the debug part at the end of and the beginning of the file. Then you can use the
+
+\begin{DoxyVerb}g++ -E -P file.cpp -o file_pp.cpp
+\end{DoxyVerb}
+
+
+commands, which outputs the source code after preprocessing. Also
+
+\begin{DoxyVerb}astyle -A3 -z2 -k1 -s2 -j file_pp.cpp 
+\end{DoxyVerb}
+
+
+Indents the preprocessed code and inserts lots of newlines, which improoves very much the readability of the code.\doxysubsection{Exporting functions from C}\label{ui__wrap__function_8hpp_export}
+For exporting functions from Pink you should make them follow the \doxysectref{Conventions for developing Pink operators}{p.}{dev_conventions}{0}.
+
+You may use printf and you may call exit(1) if there\textquotesingle{}s an error. type\+\_\+k can be any type that python recognizes (int, float, ...) and xvimage$\ast$ The return value is 1 on success and 0 otherwise. To export this function you should include a function call in pypink.\+cpp of the form
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{UI\_WRAP\_FUNCION(}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}function's\ name\ in\ Python"{}},}
+\DoxyCodeLine{pink\_c\_function,\ }
+\DoxyCodeLine{(arg(\textcolor{stringliteral}{"{}argument\ 1\ name"{}}),\ arg(\textcolor{stringliteral}{"{}argument\ 2\ name"{}}),\ ...,\ arg(argument\ n\ name)),}
+\DoxyCodeLine{doc\_\_my\_c\_function\_\_c\_\_}
+\DoxyCodeLine{)}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ BOOST\_PP\_UPDATE\_COUNTER()}}
+
+\end{DoxyCode}
+
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{UI\_WRAP\_FUNCTION(}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}ptisolated"{}},}
+\DoxyCodeLine{lptisolated,}
+\DoxyCodeLine{(\ arg(\textcolor{stringliteral}{"{}image"{}}),\ arg(\textcolor{stringliteral}{"{}connexity"{}})\ ),}
+\DoxyCodeLine{doc\_\_ptisolated\_\_c\_\_}
+\DoxyCodeLine{);}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ BOOST\_PP\_UPDATE\_COUNTER()}}
+
+\end{DoxyCode}
+\doxysubsection{Advanced}\label{ui__wrap__function_8hpp_advanced}
+This file contains C++ macro language and template metaprogramming, which is difficult to understand. The file is first treated with the preprocessor. The generated code looks like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ the\ wrapper\ uses\ boost\ enable\_if\ class\ for\ conditional\ compilation}}
+\DoxyCodeLine{\textcolor{comment}{//\ this\ is\ the\ base\ class\ declaration}}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T,\ \textcolor{keyword}{class}\ enabled\ =\ \textcolor{keywordtype}{void}>}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }instance0\ \{\ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ for\ every\ number\ of\ arguments\ there\ is\ a\ special\ wrapper\ }}
+\DoxyCodeLine{\textcolor{comment}{//\ the\ above\ instantiation\ only\ occurs\ if\ the\ number\ of\ arguments}}
+\DoxyCodeLine{\textcolor{comment}{//\ (including\ the\ 'image'\ object)\ is\ 1}}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ FA>}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }instance0<\ FA,\ typename\ enable\_if<\ is\_same<FA,\ int\_<1>\ >\ >::type\ >}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Fn,\ \textcolor{keyword}{class}\ Args>}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ define(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fname,\ Fn\ fn,\ Args\ args,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ doc)}
+\DoxyCodeLine{\ \ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ decomposition\ of\ the\ function\ for\ parameters}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }decompose<Fn>\ FT;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ for\ each\ image\ type\ in\ Pink\ the\ appropriate\ 'make\_function'}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ macro\ is\ called}}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ char\_image,\ (pink::python::ui\_cheat<typename\ FT::result\_type,\ xvimage*,\ greet>)>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ short\_image,\ (pink::python::ui\_cheat<typename\ FT::result\_type,\ xvimage*,\ greet>)>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ int\_image,\ (pink::python::ui\_cheat<typename\ FT::result\_type,\ xvimage*,\ greet>)>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ float\_image,\ (pink::python::ui\_cheat<typename\ FT::result\_type,\ xvimage*,\ greet>)>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ double\_image,\ (pink::python::ui\_cheat<typename\ FT::result\_type,\ xvimage*,\ greet>)>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ fcomplex\_image,\ (pink::python::ui\_cheat<typename\ FT::result\_type,\ xvimage*,\ greet>)>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ dcomplex\_image,\ (pink::python::ui\_cheat<typename\ FT::result\_type,\ xvimage*,\ greet>)>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ FA>\ \textcolor{keyword}{struct\ }instance0<\ FA,\ typename\ enable\_if<\ is\_same<FA,\ int\_<2>\ >\ >::type\ >}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Fn,\ \textcolor{keyword}{class}\ Args>}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ define(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fname,\ Fn\ fn,\ Args\ args,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ doc)}
+\DoxyCodeLine{\ \ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }decompose<Fn>\ FT;}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ char\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ short\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ int\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ float\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ double\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ fcomplex\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ dcomplex\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ FA>\ \textcolor{keyword}{struct\ }instance0<\ FA,\ typename\ enable\_if<\ is\_same<FA,\ int\_<3>\ >\ >::type\ >}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Fn,\ \textcolor{keyword}{class}\ Args>}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ define(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fname,\ Fn\ fn,\ Args\ args,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ doc)}
+\DoxyCodeLine{\ \ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }decompose<Fn>\ FT;}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ char\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T2\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ short\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T2\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ int\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T2\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ float\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T2\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ double\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T2\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ fcomplex\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T2\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_function<\ dcomplex\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T2\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ this\ function\ does\ the\ first\ decomposition\ and\ the\ }}
+\DoxyCodeLine{\textcolor{comment}{//\ appropriate\ wrapper\ class\ instantiation}}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Fn,\ \textcolor{keyword}{class}\ Args>}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ call0(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fname,\ Fn\ fn,\ Args\ args,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ doc)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ FA\ =\ decompose<Fn>::arity;}
+\DoxyCodeLine{\ \ instance0<\ int\_<FA>\ >\ wrapped\_function;}
+\DoxyCodeLine{\ \ wrapped\_function.define(fname,\ fn,\ args,\ doc);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ this\ is\ a\ helper\ function\ so\ we\ wouldn't\ have\ to\ }}
+\DoxyCodeLine{\textcolor{comment}{//\ call\ call0\ again\ in\ 'BOOST\_PYTHON\_MODULE'}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ export\_function0()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ call0(\textcolor{stringliteral}{"{}greet"{}},\ greet,\ (arg(\textcolor{stringliteral}{"{}image"{}}),\ (arg(\textcolor{stringliteral}{"{}int"{}}))),\ \textcolor{stringliteral}{"{}WRITE\ ME!!"{}});}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+The macro generates the wrapper \textquotesingle{}instance\textquotesingle{} for each number of parameters. The template takes the specified parameters and wraps the function in Python. The most important part of the macro is the conversion of the \textquotesingle{}xvimage$\ast$\textquotesingle{} pointer into the appropriate image class (like \textquotesingle{}char\+\_\+image\textquotesingle{}).\doxysubsection{Note}\label{ui__wrap__function_8hpp_note}
+For debugging macro definitions uncomment the debug part at the end of and the beginning of the file. Then you can use the
+
+\begin{DoxyVerb}g++ -E -P file.cpp -o file_pp.cpp
+\end{DoxyVerb}
+
+
+commands, which outputs the source code after preprocessing. Also
+
+\begin{DoxyVerb}astyle -A3 -z2 -k1 -s2 -j file_pp.cpp 
+\end{DoxyVerb}
+
+
+Indents the preprocessed code and inserts lots of newlines, which improoves very much the readability of the code.\doxysubsection{Exporting functions from C}\label{ui__wrap__function_8hpp_export}
+For exporting functions from Pink you should make them follow the \doxysectref{Conventions for developing Pink operators}{p.}{dev_conventions}{0}.
+
+You may use printf and you may call exit(1) if there\textquotesingle{}s an error. type\+\_\+k can be any type that python recognizes (int, float, ...) and xvimage$\ast$ The return value is 1 on success and 0 otherwise. To export this function you should include a function call in pypink.\+cpp of the form
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{UI\_WRAP\_FUNCION(}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}function's\ name\ in\ Python"{}},}
+\DoxyCodeLine{pink\_c\_function,\ }
+\DoxyCodeLine{(arg(\textcolor{stringliteral}{"{}argument\ 1\ name"{}}),\ arg(\textcolor{stringliteral}{"{}argument\ 2\ name"{}}),\ ...,\ arg(argument\ n\ name)),}
+\DoxyCodeLine{doc\_\_my\_c\_function\_\_c\_\_}
+\DoxyCodeLine{)}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ BOOST\_PP\_UPDATE\_COUNTER()}}
+
+\end{DoxyCode}
+
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{UI\_WRAP\_MALLOC(}
+\DoxyCodeLine{\textcolor{stringliteral}{"{}ptisolated"{}},}
+\DoxyCodeLine{lptisolated,}
+\DoxyCodeLine{(\ arg(\textcolor{stringliteral}{"{}image"{}}),\ arg(\textcolor{stringliteral}{"{}connexity"{}})\ ),}
+\DoxyCodeLine{doc\_\_ptisolated\_\_c\_\_}
+\DoxyCodeLine{);}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ BOOST\_PP\_UPDATE\_COUNTER()}}
+
+\end{DoxyCode}
+\doxysubsection{Advanced}\label{ui__wrap__function_8hpp_advanced}
+This file contains C++ macro language and template metaprogramming, which is difficult to understand. The file is first treated with the preprocessor. The generated code looks like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ the\ wrapper\ uses\ boost\ enable\_if\ class\ for\ conditional\ compilation}}
+\DoxyCodeLine{\textcolor{comment}{//\ this\ is\ the\ base\ class\ declaration}}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T,\ \textcolor{keyword}{class}\ enabled\ =\ \textcolor{keywordtype}{void}>}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }instance0\ \{\ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ for\ every\ number\ of\ arguments\ there\ is\ a\ special\ wrapper\ }}
+\DoxyCodeLine{\textcolor{comment}{//\ the\ above\ instantiation\ only\ occurs\ if\ the\ number\ of\ arguments}}
+\DoxyCodeLine{\textcolor{comment}{//\ (including\ the\ 'image'\ object)\ is\ 1}}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ FA>}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }instance0<\ FA,\ typename\ enable\_if<\ is\_same<FA,\ int\_<1>\ >\ >::type\ >}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Fn,\ \textcolor{keyword}{class}\ Args>}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ define(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fname,\ Fn\ fn,\ Args\ args,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ doc)}
+\DoxyCodeLine{\ \ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ decomposition\ of\ the\ function\ for\ parameters}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }decompose<Fn>\ FT;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ for\ each\ image\ type\ in\ Pink\ the\ appropriate\ 'make\_malloc'}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ macro\ is\ called}}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ char\_image,\ (pink::python::ui\_cheat<typename\ FT::result\_type,\ xvimage*,\ greet>)>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ short\_image,\ (pink::python::ui\_cheat<typename\ FT::result\_type,\ xvimage*,\ greet>)>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ int\_image,\ (pink::python::ui\_cheat<typename\ FT::result\_type,\ xvimage*,\ greet>)>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ float\_image,\ (pink::python::ui\_cheat<typename\ FT::result\_type,\ xvimage*,\ greet>)>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ double\_image,\ (pink::python::ui\_cheat<typename\ FT::result\_type,\ xvimage*,\ greet>)>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ fcomplex\_image,\ (pink::python::ui\_cheat<typename\ FT::result\_type,\ xvimage*,\ greet>)>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ dcomplex\_image,\ (pink::python::ui\_cheat<typename\ FT::result\_type,\ xvimage*,\ greet>)>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ FA>\ \textcolor{keyword}{struct\ }instance0<\ FA,\ typename\ enable\_if<\ is\_same<FA,\ int\_<2>\ >\ >::type\ >}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Fn,\ \textcolor{keyword}{class}\ Args>}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ define(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fname,\ Fn\ fn,\ Args\ args,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ doc)}
+\DoxyCodeLine{\ \ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }decompose<Fn>\ FT;}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ char\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ short\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ int\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ float\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ double\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ fcomplex\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ dcomplex\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ FA>\ \textcolor{keyword}{struct\ }instance0<\ FA,\ typename\ enable\_if<\ is\_same<FA,\ int\_<3>\ >\ >::type\ >}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Fn,\ \textcolor{keyword}{class}\ Args>}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ define(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fname,\ Fn\ fn,\ Args\ args,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ doc)}
+\DoxyCodeLine{\ \ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }decompose<Fn>\ FT;}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ char\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T2\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ short\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T2\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ int\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T2\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ float\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T2\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ double\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T2\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ fcomplex\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T2\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \ \ def(fname,\ make\_malloc<\ dcomplex\_image,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T1\ >::type,\ \textcolor{keyword}{typename}\ xv2pink<\ typename\ FT::T2\ >::type,\ greet>,\ args,\ doc);}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ this\ function\ does\ the\ first\ decomposition\ and\ the\ }}
+\DoxyCodeLine{\textcolor{comment}{//\ appropriate\ wrapper\ class\ instantiation}}
+\DoxyCodeLine{\textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Fn,\ \textcolor{keyword}{class}\ Args>}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ call0(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fname,\ Fn\ fn,\ Args\ args,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ doc)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ FA\ =\ decompose<Fn>::arity;}
+\DoxyCodeLine{\ \ instance0<\ int\_<FA>\ >\ wrapped\_function;}
+\DoxyCodeLine{\ \ wrapped\_function.define(fname,\ fn,\ args,\ doc);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ this\ is\ a\ helper\ function\ so\ we\ wouldn't\ have\ to\ }}
+\DoxyCodeLine{\textcolor{comment}{//\ call\ call0\ again\ in\ 'BOOST\_PYTHON\_MODULE'}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ export\_function0()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ call0(\textcolor{stringliteral}{"{}greet"{}},\ greet,\ (arg(\textcolor{stringliteral}{"{}image"{}}),\ (arg(\textcolor{stringliteral}{"{}int"{}}))),\ \textcolor{stringliteral}{"{}WRITE\ ME!!"{}});}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+The macro generates the wrapper \textquotesingle{}instance\textquotesingle{} for each number of parameters. The template takes the specified parameters and wraps the function in Python. The most important part of the macro is the conversion of the \textquotesingle{}xvimage$\ast$\textquotesingle{} pointer into the appropriate image class (like \textquotesingle{}char\+\_\+image\textquotesingle{}). 

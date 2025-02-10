@@ -1,0 +1,50 @@
+\doxysection{lambdamedialaxis.\+c File Reference}
+\label{lambdamedialaxis_8c}\index{lambdamedialaxis.c@{lambdamedialaxis.c}}
+
+
+discrete lambda-\/medial axis transform  
+
+
+
+
+\doxysubsection{Detailed Description}
+discrete lambda-\/medial axis transform 
+
+{\bfseries{Usage\+:}} lambdamedialaxis in.\+pgm [lambda] out.\+pgm
+
+{\bfseries{Description\+:}} Discrete lambda-\/medial axis, as defined in [CCT09], of the binary image {\bfseries{X}} contained in {\bfseries{in.\+pgm}}.
+
+By default, the output is a float image representing the function x-\/$>$lambda(x).
+
+If the parameter {\bfseries{lambda}} is given (bash interface only, not python), the output is a binary image obtained by thresholding the aforementioned function at the value {\bfseries{lambda}} .
+
+References\+:~\newline
+ [CCT09] John Chaussard, Michel Couprie, and Hugues Talbot. A discrete lambda-\/medial axis. 15th Discrete Geometry for Computer Imagery (DGCI\textquotesingle{}09). Lecture Notes in Computer Science. 2009. pp. 1–12. To appear.
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} morpho
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie
+\end{DoxyAuthor}
+{\bfseries{Usage\+:}} lambdamedialaxis in.\+pgm [lambda] out.\+pgm
+
+{\bfseries{Description\+:}} Discrete lambda-\/medial axis, as defined in [CCT09], of the binary image {\bfseries{X}} contained in {\bfseries{in.\+pgm}}.
+
+By default, the output is a float image representing the function x-\/$>$lambda(x).
+
+If the parameter {\bfseries{lambda}} is given (bash interface only, not python), the output is a binary image obtained by thresholding the aforementioned function at the value {\bfseries{lambda}} .
+
+If the parameter {\bfseries{lambda}} is given and set to 0, the output is a binary image obtained by thresholding the aforementioned function at the automaticaly defined (k-\/means) value {\bfseries{lambda}} .
+
+References\+:~\newline
+ [CCT09] John Chaussard, Michel Couprie, and Hugues Talbot. A discrete lambda-\/medial axis. 15th Discrete Geometry for Computer Imagery (DGCI\textquotesingle{}09). Lecture Notes in Computer Science. 2009. pp. 1–12. To appear.
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} morpho
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

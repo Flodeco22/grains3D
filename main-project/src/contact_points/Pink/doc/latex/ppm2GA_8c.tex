@@ -1,0 +1,32 @@
+\doxysection{ppm2\+GA.\+c File Reference}
+\label{ppm2GA_8c}\index{ppm2GA.c@{ppm2GA.c}}
+
+
+Computes an edge-\/weighted graph from an color .ppm image.  
+
+
+
+
+\doxysubsection{Detailed Description}
+Computes an edge-\/weighted graph from an color .ppm image. 
+
+{\bfseries{Usage\+:}} ppm2\+GA im.\+ppm param out.\+ga ~\newline
+ {\bfseries{Description\+:}}
+
+Computes a GA (an edge-\/weighted graph) from a color image. The values of an edge linking two pixels \{x,y\} is computed according to the parameter {\bfseries{param}}.
+
+If param = 0, the maximum, over the RGB chanels, of absolute differences of intensities between x and y is used.
+
+If param = 1, the Euclidean distance between the values of x and y is used.
+
+If param = 2, fuzzy affinity between x and y is used.
+
+If im.\+ppm is a 2D (resp. 3D) image, then {\bfseries{out.\+ga}} is a 2D (resp 3D GA), that is a 2D 4-\/connected edge-\/weighted graph (resp. a 2D 6-\/connected edge-\/weighted graph).
+
+{\bfseries{Types supported\+:}} ppm 2D
+
+{\bfseries{Category\+:}}
+
+\begin{DoxyAuthor}{Author}
+Jean Cousty 
+\end{DoxyAuthor}

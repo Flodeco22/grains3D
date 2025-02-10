@@ -1,0 +1,27 @@
+\doxysection{dynamiquefilter.\+c File Reference}
+\label{dynamiquefilter_8c}\index{dynamiquefilter.c@{dynamiquefilter.c}}
+
+
+filter components according to the dynamics of the maxima  
+
+
+
+
+\doxysubsection{Detailed Description}
+filter components according to the dynamics of the maxima 
+
+{\bfseries{Usage\+:}} dynamiquefilter in.\+pgm connex value [order] out.\+pgm
+
+{\bfseries{Description\+:}} Computes the ordered dynamics of the maxima, with connectivity {\bfseries{connex}}, selects the maxima with a dynamics greater or equal to {\bfseries{value}}, and find the maximal components which includes these maxima. The definition of the ordered dynamics is the one given in [Ber05]. The optional argument {\bfseries{order}} is one of the following\+: \begin{DoxyItemize}
+\item 0\+: altitude [default] \item 1\+: area \item 2\+: volume\end{DoxyItemize}
+References\+:~\newline
+ [Ber05] G. Bertrand\+: "{}\+A new definition of the dynamics"{}, {\itshape Procs. ISMM05}, Springer, series Computational Imaging and Vision, Vol.~30, pp.~197-\/206, 2005.~\newline
+
+
+{\bfseries{Types supported\+:}} byte 2D, byte 3D.
+
+{\bfseries{Category\+:}}
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

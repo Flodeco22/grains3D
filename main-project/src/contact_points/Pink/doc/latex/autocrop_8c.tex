@@ -1,0 +1,27 @@
+\doxysection{autocrop.\+c File Reference}
+\label{autocrop_8c}\index{autocrop.c@{autocrop.c}}
+
+
+eliminates null regions at the periphery of an image  
+
+
+
+
+\doxysubsection{Detailed Description}
+eliminates null regions at the periphery of an image 
+
+{\bfseries{Usage\+:}} autocrop in.\+pgm [threshold [out.\+pgm [coords.\+list]]]
+
+{\bfseries{Description\+:}} Selects the minimum rectangle (cuboid in 3d) that contain all values of the image {\bfseries{in.\+pgm}} strictly above the {\bfseries{threshold}} (default 0).
+
+If {\bfseries{out.\+pgm}} is not specified, then out.\+pgm = in.\+pgm.
+
+If {\bfseries{coords.\+list}} is specified, then the parameters of the cropping are saved in that file.
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} geo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

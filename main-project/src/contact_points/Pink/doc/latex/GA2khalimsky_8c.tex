@@ -1,0 +1,29 @@
+\doxysection{GA2khalimsky.\+c File Reference}
+\label{GA2khalimsky_8c}\index{GA2khalimsky.c@{GA2khalimsky.c}}
+
+
+Convert a 4-\/connected edge-\/weighted graph (a GA) into its representation in the Khalimsky grid.  
+
+
+
+
+\doxysubsection{Detailed Description}
+Convert a 4-\/connected edge-\/weighted graph (a GA) into its representation in the Khalimsky grid. 
+
+{\bfseries{Usage\+:}} GA2khalimsky GA.\+pgm type out.\+pgm ~\newline
+ {\bfseries{Description\+:}}
+
+Convert a 4-\/connected (6-\/connected, in 3D) edge-\/weighted graph ({\bfseries{graph.\+ga}}) into its Khalimsky grid representation (depending on the parameter {\bfseries{type}}), stored as a pgm image ({\bfseries{out.\+pgm}}). The vertices of the graph are associated to the square of the Khalimsky grid, and the edges of the graphs are associated to the line segments.
+
+If type = 0, then the closure of the set of weighted-\/edges is used (usefull for representing contours). ~\newline
+
+
+If type = 1, then the dual of the closure of the set of weighted edges is used (usefull for representing regions).
+
+ {\bfseries{Types supported\+:}} ga 2d, ga 3d
+
+{\bfseries{Category\+:}} GA
+
+\begin{DoxyAuthor}{Author}
+Jean Cousty 
+\end{DoxyAuthor}

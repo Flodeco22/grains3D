@@ -1,0 +1,67 @@
+\doxysection{xvimage Struct Reference}
+\label{structxvimage}\index{xvimage@{xvimage}}
+
+
+The image class for the C functions.  
+
+
+
+
+{\ttfamily \#include $<$mccodimage.\+h$>$}
+
+
+
+Inherited by pink\+::shallow\+\_\+xvimage.
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\label{structxvimage_a1c46e704e2842e4648bb82e8b6a00825} 
+char $\ast$ {\bfseries name}
+\begin{DoxyCompactList}\small\item\em Dummy -\/ not used anymore. \end{DoxyCompactList}\item 
+\label{structxvimage_a95e640c62dd58e4721fe80729d53751c} 
+index\+\_\+t {\bfseries row\+\_\+size}
+\begin{DoxyCompactList}\small\item\em Size of a row (number of columns) \end{DoxyCompactList}\item 
+\label{structxvimage_a929dd3c75a6bce479004924c741adeba} 
+index\+\_\+t {\bfseries col\+\_\+size}
+\begin{DoxyCompactList}\small\item\em Size of a column (number of rows) \end{DoxyCompactList}\item 
+\label{structxvimage_ad918fd2f983a99d787931f2e7eb215be} 
+index\+\_\+t {\bfseries depth\+\_\+size}
+\begin{DoxyCompactList}\small\item\em Number of planes (for 3d images) \end{DoxyCompactList}\item 
+\label{structxvimage_ad793d6bdd71bc49c3356f16c2071a9dc} 
+index\+\_\+t {\bfseries time\+\_\+size}
+\begin{DoxyCompactList}\small\item\em Number of (2d or 3d) images. \end{DoxyCompactList}\item 
+\label{structxvimage_a4cf7dc50f1b3750dccb466002b4d39c8} 
+index\+\_\+t {\bfseries num\+\_\+data\+\_\+bands}
+\begin{DoxyCompactList}\small\item\em Number of bands per data pixel, or number of bands per image, or dimension of vector data, or number of elements in a vector. \end{DoxyCompactList}\item 
+\label{structxvimage_a2dbebf77cd52931eb3cf853ee54089d9} 
+index\+\_\+t {\bfseries d}
+\begin{DoxyCompactList}\small\item\em The dimension of the image. \end{DoxyCompactList}\item 
+\label{structxvimage_a99dacbc13b84285501a1fa6f5cf60d16} 
+int32\+\_\+t {\bfseries data\+\_\+storage\+\_\+type}
+\begin{DoxyCompactList}\small\item\em Storage type for disk data. \end{DoxyCompactList}\item 
+\label{structxvimage_ac15e8604f75872952e00800f393bed5a} 
+double {\bfseries xdim}
+\begin{DoxyCompactList}\small\item\em Voxel dimensions in real world. \end{DoxyCompactList}\item 
+\label{structxvimage_a3fddc66eef0ad4f92ca3baf8daacc769} 
+index\+\_\+t {\bfseries xmin}
+\begin{DoxyCompactList}\small\item\em Region of interest\+: x coordinates. \end{DoxyCompactList}\item 
+\label{structxvimage_af8cb35e33aa1e5e59915470a798a80c9} 
+index\+\_\+t {\bfseries ymin}
+\begin{DoxyCompactList}\small\item\em Region of interest\+: y coordinates. \end{DoxyCompactList}\item 
+\label{structxvimage_add58fcb20445231a9d3e09efca73fb8d} 
+index\+\_\+t {\bfseries zmin}
+\begin{DoxyCompactList}\small\item\em Region of interest\+: z coordinates. \end{DoxyCompactList}\item 
+\label{structxvimage_a20c93222fb32def28264de9649623ef1} 
+void $\ast$ {\bfseries image\+\_\+data}
+\begin{DoxyCompactList}\small\item\em Pointer on raw data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The image class for the C functions. 
+
+This class holds the image data for the C functions of Pink. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ mccodimage.\+h}\end{DoxyCompactItemize}

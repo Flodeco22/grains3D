@@ -1,0 +1,34 @@
+\doxysection{lvkernu.\+c File Reference}
+\label{lvkernu_8c}\index{lvkernu.c@{lvkernu.c}}
+
+
+grayscale ultimate leveling thickening  
+
+
+
+
+\doxysubsection{Detailed Description}
+grayscale ultimate leveling thickening 
+
+{\bfseries{Usage\+:}} lvkernu in.\+pgm \{imcond.\+pgm$\vert$null\} connex out.\+pgm
+
+{\bfseries{Description\+:}} Grayscale ultimate leveling thickening (refs. [BEC97, CBB01]). The parameter {\bfseries{connex}} gives the connectivity used for the minima; possible choices are 4, 8 in 2D and 6, 26 in 3D. Let F be the function corresponding to the input image {\bfseries{in.\+pgm}}. Let G be the function corresponding to the input image {\bfseries{imcond.\+pgm}}, or the blanck function (constant 255) if the keyword {\bfseries{null}} is used. The algorithm is the following\+:
+
+\begin{DoxyVerb}Repeat until stability:
+    select p such that T++(p,F) = 1 and such that F(p) is maximal
+    F(p) = min{ delta+(p,F), G(p) }    
+Result: F
+\end{DoxyVerb}
+
+
+References\+:~\newline
+ [BEC97] G. Bertrand, J. C. Everat and M. Couprie\+: {\texttt{ "{}\+Image segmentation through operators based upon topology"{}}}, {\itshape  Journal of Electronic Imaging}, Vol.~6, No.~4, pp.~395-\/405, 1997.~\newline
+ [CBB01] M. Couprie, F.\+N. Bezerra, Gilles Bertrand\+: {\texttt{ "{}\+Topological operators for grayscale image processing"{}}}, {\itshape  Journal of Electronic Imaging}, Vol.~10, No.~4, pp.~1003-\/1015, 2001.
+
+{\bfseries{Types supported\+:}} byte 2D, byte 3D.
+
+{\bfseries{Category\+:}} topogray
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

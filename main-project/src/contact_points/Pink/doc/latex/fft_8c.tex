@@ -1,0 +1,61 @@
+\doxysection{fft.\+c File Reference}
+\label{fft_8c}\index{fft.c@{fft.c}}
+
+
+fast Fourier transform  
+
+
+
+
+\doxysubsection{Detailed Description}
+fast Fourier transform 
+
+{\bfseries{Usage\+:}} fft in.\+pgm [dir] out.\+pgm
+
+{\bfseries{Description\+:}} Computes the 2 dimensional Fast Fourier Transform of an image.
+
+This program will compute either a forward or inverse FFT, depending on the direction requested with the {\bfseries{dir}} option. A {\bfseries{dir}} value of 0 will result in a forward FFT, and a {\bfseries{dir}} value of 1 will result in an inverse FFT.
+
+The arguments are described as follows\+:
+
+{\bfseries{in.\+pgm}} specifies the input image, which must be of data type COMPLEX.
+
+{\bfseries{out.\+pgm}} output image, which will be an image of data type COMPLEX. If row size or column size of in.\+pgm is not an integral power of 2, then input data is padded and dimensions of out.\+pgm may be different from those of in.\+pgm .
+
+{\bfseries{dir}} (optional) specifies the FFT direction. A {\bfseries{dir}} of 0 (default) will result in a forward FFT, and a {\bfseries{dir}} of 1 will result in an inverse FFT.
+
+This particular implementation of the DFT uses the transform pair defined as follows\+:
+
+Let there be two complex arrays each with n rows and m columns.
+
+Index them as
+
+f(x,y)\+: 0 $<$= x $<$= m -\/ 1, 0 $<$= y $<$= n -\/ 1
+
+F(u,v)\+: -\/m/2 $<$= u $<$= m/2 -\/ 1, -\/n/2 $<$= v $<$= n/2 -\/ 1
+
+Then the forward and inverse transforms are related as follows.
+
+Forward\+:
+
+F(u,v) = \textbackslash{}sum\+\_\+\{x=0\}$^\wedge$\{m-\/1\} \textbackslash{}sum\+\_\+\{y=0\}$^\wedge$\{n-\/1\} f(x,y) \textbackslash{}exp\{-\/2\textbackslash{}pi i (ux/m + vy/n)\}
+
+Inverse\+:
+
+f(x,y) = 1/(mn) \textbackslash{}sum\+\_\+\{u=-\/m/2\}$^\wedge$\{m/2-\/1\} \textbackslash{}sum\+\_\+\{v=-\/n/2\}$^\wedge$\{n/2-\/1\} F(u,v) \textbackslash{}exp\{2\textbackslash{}pi i (ux/m + vy/n)\}
+
+Therefore, the transforms have these properties\+:
+
+
+\begin{DoxyEnumerate}
+\item \textbackslash{}sum\+\_\+x \textbackslash{}sum\+\_\+y f(x,y) = F(0,0)
+\item m n \textbackslash{}sum\+\_\+x \textbackslash{}sum\+\_\+y $\vert$f(x,y)$\vert$$^\wedge$2 = \textbackslash{}sum\+\_\+u \textbackslash{}sum\+\_\+v $\vert$F(u,v)$\vert$$^\wedge$2
+\end{DoxyEnumerate}
+
+{\bfseries{Types supported\+:}} complex 2d
+
+{\bfseries{Category\+:}} signal
+
+\begin{DoxyAuthor}{Author}
+Stefan Gustavson ({\texttt{ stegu@itn.\+liu.\+se}}) 2003-\/10-\/20 
+\end{DoxyAuthor}

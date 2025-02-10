@@ -1,0 +1,29 @@
+\doxysection{hthinpar.\+c File Reference}
+\label{hthinpar_8c}\index{hthinpar.c@{hthinpar.c}}
+
+
+parallel grayscale homotopic thinning  
+
+
+
+
+\doxysubsection{Detailed Description}
+parallel grayscale homotopic thinning 
+
+{\bfseries{Usage\+:}} hthinpar in.\+pgm \{imcond.\+pgm$\vert$null\} connex niter out.\+pgm
+
+{\bfseries{Description\+:}} Parallel grayscale homotopic thinning (refs. [BEC97, CBB01]). The parameter {\bfseries{connex}} gives the connectivity used for the minima; possible choices are 4, 8 in 2D and 6, 26 in 3D. Let F be the function corresponding to the input image {\bfseries{in.\+pgm}}. Let G be the function corresponding to the input image {\bfseries{imcond.\+pgm}}, or the null function if the keyword {\bfseries{null}} is used.
+
+If {\bfseries{niter}} is set to -\/1, then the operator iterates until stability.
+
+References\+:
+
+to appear
+
+{\bfseries{Types supported\+:}} byte 2D.
+
+{\bfseries{Category\+:}} topogray
+
+\begin{DoxyAuthor}{Author}
+Nivando Bezerra 
+\end{DoxyAuthor}

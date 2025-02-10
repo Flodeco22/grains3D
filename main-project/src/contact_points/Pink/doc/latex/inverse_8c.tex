@@ -1,0 +1,26 @@
+\doxysection{inverse.\+c File Reference}
+\label{inverse_8c}\index{inverse.c@{inverse.c}}
+
+
+computes the pixelwise inverse of an image  
+
+
+
+
+\doxysubsection{Detailed Description}
+computes the pixelwise inverse of an image 
+
+{\bfseries{Usage\+:}} inverse in.\+pgm [out.\+pgm]
+
+{\bfseries{Description\+:}} Byte images\+: for each pixel x, out[x] = 255 -\/ in[x].~\newline
+ Long or float images\+: for each pixel x, out[x] = VMAX -\/ in[x], where VMAX = max\{in[x]\}.
+
+If {\bfseries{out.\+pgm}} is not specified, then out.\+pgm = in.\+pgm.
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d, long 2d, long 3d, float 2d, float 3d
+
+{\bfseries{Category\+:}} arith
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

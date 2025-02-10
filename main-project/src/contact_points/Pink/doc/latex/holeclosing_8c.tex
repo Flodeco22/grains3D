@@ -1,0 +1,41 @@
+\doxysection{holeclosing.\+c File Reference}
+\label{holeclosing_8c}\index{holeclosing.c@{holeclosing.c}}
+
+
+3d hole closing  
+
+
+
+
+\doxysubsection{Detailed Description}
+3d hole closing 
+
+{\bfseries{Usage\+:}} holeclosing in connex holesize [guide] out
+
+{\bfseries{Description\+:}} Hole closing in 3d binary images. The parameter {\bfseries{connex}} gives the connectivity used for the object; possible choices are 6 and 26. Holes which have a "{}size"{} greater (strictly) than {\bfseries{holesize}} are let open (where -\/1 is used as a symbol for infinity).
+
+Let X be the set of points of the binary image {\bfseries{in}}, let Y be a full enclosing box. The algorithm is the following\+:
+
+\begin{DoxyVerb}Repeat until stability:
+    Select a point p of Y \ X such that Tb(p,Y) = 1
+        or such that Tb(p,Y) = 2 and d(p,X) > holesize
+        which is at the greatest distance from X
+    Y := Y \ {p}
+Result: Y
+\end{DoxyVerb}
+
+
+If the optional parameter {\bfseries{guide}} is given, then replace \textquotesingle{}greatest distance from X\textquotesingle{} by \textquotesingle{}greatest distance from Y\textquotesingle{} in the algorithm, Y being the set of non-\/null points of image {\bfseries{guide}}.
+
+\begin{DoxyWarning}{Warning}
+There must be no object point on the border of the image (a test is done).
+\end{DoxyWarning}
+Reference\+: Z. Aktouf, G. Bertrand, L.\+Perroton\+: "{}\+A three-\/dimensional holes closing algorithm"{}, {\itshape Pattern Recognition Letters}, No.\+23, pp.\+523-\/531, 2002.
+
+{\bfseries{Types supported\+:}} byte 3d
+
+{\bfseries{Category\+:}} topobin
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

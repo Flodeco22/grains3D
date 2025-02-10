@@ -1,0 +1,21 @@
+\doxysection{pink\+::liberator\+\_\+t Struct Reference}
+\label{structpink_1_1liberator__t}\index{pink::liberator\_t@{pink::liberator\_t}}
+
+
+This structure frees the images, that have been allocated by readimage.  
+
+
+
+
+{\ttfamily \#include $<$ujimage.\+hpp$>$}
+
+
+
+\doxysubsection{Detailed Description}
+This structure frees the images, that have been allocated by readimage. 
+
+description As readimage is a C function, it uses malloc to allocate it\textquotesingle{}s images. The images can not be pre-\/allocated as their type and size is not known at the time readimage is called. This object is used to \textquotesingle{}free\textquotesingle{} the memory when ujoi is created from an xvimage. Note that the data is not copyed, so the xvimage structure should not be automatically freed. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ ujimage.\+hpp}\end{DoxyCompactItemize}

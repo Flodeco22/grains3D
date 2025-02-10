@@ -1,0 +1,27 @@
+\doxysection{shortestpath.\+c File Reference}
+\label{shortestpath_8c}\index{shortestpath.c@{shortestpath.c}}
+
+
+finds a shortest path from x to y in image  
+
+
+
+
+\doxysubsection{Detailed Description}
+finds a shortest path from x to y in image 
+
+{\bfseries{Usage\+:}} shortestpath in.\+pgm connex mode S1 S2 [S3] D1 D2 [D3] out.\+lst
+
+{\bfseries{Description\+:}} A weighted graph G = (V,E) is defined with V = set of pixels of {\bfseries{in.\+pgm}} and E = \{(P,Q) in VxV ; P and Q are {\bfseries{connex-\/}} adjacent\}. Let F(\+P) be the value of pixel P in the image {\bfseries{in.\+pgm}}. A weight W(\+P,\+Q) is assigned to each edge, according to the value of {\bfseries{mode\+:}} 
+
+\begin{DoxyItemize}
+\item max \+: W(\+P,\+Q) = max\{F(\+P),F(\+Q)\} \item min \+: W(\+P,\+Q) = min\{F(\+P),F(\+Q)\} \item avg \+: W(\+P,\+Q) = (F(\+P) + F(\+Q)) / 2\end{DoxyItemize}
+This operator finds a shortest path from ({\bfseries{S1}}, {\bfseries{S2}}) to ({\bfseries{D1}}, {\bfseries{D2}}) in this graph. The result is given as a list of vertices (pixels) in {\bfseries{out.\+lst}}.
+
+{\bfseries{Types supported\+:}} byte 2D, byte 3D
+
+{\bfseries{Category\+:}} connect
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

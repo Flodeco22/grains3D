@@ -1,0 +1,31 @@
+\doxysection{mcube.\+c File Reference}
+\label{mcube_8c}\index{mcube.c@{mcube.c}}
+
+
+topologically correct "{}marching cubes"{}-\/like algorithm  
+
+
+
+
+\doxysubsection{Detailed Description}
+topologically correct "{}marching cubes"{}-\/like algorithm 
+
+{\bfseries{Usage\+:}} mcube in.\+pgm threshold nregul obj\+\_\+id format [connex] out
+
+{\bfseries{Description\+:}} Generates a 3d mesh from the binary or grayscale image {\bfseries{in.\+pgm}} .
+
+The original image is first thresholded (parameter {\bfseries{threshold}}, values 0 and 1 both fit for a binary image). Then the method described in [Lac96] is applied to generate the 3d mesh. The resulting mesh is then smoothed by {\bfseries{nregul}} steps of laplacian smoothing. The parameter {\bfseries{obj\+\_\+id}} is used to tag the generated mesh.
+
+The parameter {\bfseries{format}} indicate the format of the output file (choices are POV, POVB, COL, MCM, AC, GL, VTK, RAW). The keyword POVB corresponds to a bare Povray mesh\+: a header and a footer must be catenated in order to make a full Povray scene. The keyword RAW is the exchange format for the "{}mesh"{} software\+: see {\texttt{ http\+://mesh.\+berlios.\+de/}}
+
+The optional parameter {\bfseries{connex}} indicates the connexity used for the object. Possible values are 6 and 26 (default).
+
+[Lac96] J.-\/O. Lachaud, "{}\+Topologically defined iso-\/surfaces"{}, DGCI\textquotesingle{}96, LNCS 1176 (245--256), Springer Verlag, 1996.
+
+{\bfseries{Types supported\+:}} byte 3d
+
+{\bfseries{Category\+:}} mesh3d
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

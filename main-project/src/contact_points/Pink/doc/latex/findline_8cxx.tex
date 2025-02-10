@@ -1,0 +1,27 @@
+\doxysection{findline.\+cxx File Reference}
+\label{findline_8cxx}\index{findline.cxx@{findline.cxx}}
+
+
+find line into an image using bresenham definition w is the digital line size.  
+
+
+
+
+\doxysubsection{Detailed Description}
+find line into an image using bresenham definition w is the digital line size. 
+
+{\bfseries{Usage\+:}} findline in.\+fits \{w\} out.\+pgm
+
+{\bfseries{Description\+:}} On commence pas netoyer l\textquotesingle{}image afin de retirer le bruit de fond et d\textquotesingle{}ameliorer le contraste.
+
+On determine ensuite les points sur le bord de l\textquotesingle{}image qui correspondent potentiellement à une droite.
+
+On trace les droites de Bresenham entre les differents points des bords. Pour chacunes des droites on calcule le nombre de points non nul present sur la droite. La droites contenant les plus de points non nul doit correspondre à la trace du satellite.
+
+L\textquotesingle{}image finale est une image noire, avec une droite blanche correspondant à la trace du sattelite.
+
+Parameters\+: \begin{DoxyItemize}
+\item {\bfseries{in.\+fits}} \+: source file in fits format\end{DoxyItemize}
+\begin{DoxyAuthor}{Author}
+Juliette Charpentier 
+\end{DoxyAuthor}

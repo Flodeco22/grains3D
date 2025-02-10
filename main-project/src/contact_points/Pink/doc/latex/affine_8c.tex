@@ -1,0 +1,27 @@
+\doxysection{affine.\+c File Reference}
+\label{affine_8c}\index{affine.c@{affine.c}}
+
+
+affine transformation of a 2D image  
+
+
+
+
+\doxysubsection{Detailed Description}
+affine transformation of a 2D image 
+
+{\bfseries{Usage\+:}} affine in.\+pgm \{trans.\+lst $\vert$ hx hy theta tx ty\} out.\+pgm
+
+{\bfseries{Description\+:}}
+
+Applies to in.\+pgm an affine tranformation composed of a zoom (factors {\bfseries{hx}}, {\bfseries{hy}}), a rotation (angle {\bfseries{theta}} in degrees, center 0,0), and a translation (vector {\bfseries{tx}}, {\bfseries{ty}}). Alternatively, the transformation parameters may be given in a type "{}e"{} list file (see doc/formats.\+txt).
+
+Method\+: interpolation.
+
+{\bfseries{Types supported\+:}} byte 2d
+
+{\bfseries{Category\+:}} geo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

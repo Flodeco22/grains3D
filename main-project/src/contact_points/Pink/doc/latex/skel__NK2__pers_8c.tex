@@ -1,0 +1,28 @@
+\doxysection{skel\+\_\+\+NK2\+\_\+pers.\+c File Reference}
+\label{skel__NK2__pers_8c}\index{skel\_NK2\_pers.c@{skel\_NK2\_pers.c}}
+
+
+topological persistence of 1D isthmuses, based on parallel 2D asymmetric thinning  
+
+
+
+
+\doxysubsection{Detailed Description}
+topological persistence of 1D isthmuses, based on parallel 2D asymmetric thinning 
+
+{\bfseries{Usage\+:}} skel\+\_\+\+NK2\+\_\+pers in.\+pgm out.\+pgm
+
+{\bfseries{Description\+:}} Topological persistence of 1D isthmuses, based on parallel 2D asymmetric thinning.
+
+When a point x is detected as a 1D isthmus, a counter p(x) is associated to this point and initialized with value 1. This counter is incremented a each iteration as long as x is still an isthmus. When this point x is eventually deleted, the value of the counter is freezed.
+
+\begin{DoxyWarning}{Warning}
+The object must not have any point on the frame of the image.
+\end{DoxyWarning}
+{\bfseries{Types supported\+:}} byte 2d
+
+{\bfseries{Category\+:}} topobin
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

@@ -1,0 +1,27 @@
+\doxysection{dist.\+c File Reference}
+\label{dist_8c}\index{dist.c@{dist.c}}
+
+
+distance transform (external)  
+
+
+
+
+\doxysubsection{Detailed Description}
+distance transform (external) 
+
+{\bfseries{Usage\+:}} dist in.\+pgm mode out.\+pgm
+
+{\bfseries{Description\+:}} Distance to the object X defined by the binary image {\bfseries{in.\+pgm}} . The result function DX(x) is defined by\+: DX(x) = min \{d(x,y), y in X\}.
+
+The distance d used depends on the parameter {\bfseries{mode\+:}} \begin{DoxyItemize}
+\item 0\+: euclidean distance (rounded to the nearest int32) \item 1\+: approximate quadratic euclidean distance (Danielsson) \item 2\+: chamfer distance ([5,7] in 2D; [4,5,6] in 3D) \item 3\+: exact quadratic euclidean distance (int32) \item 4\+: 4-\/distance in 2d \item 5\+: exact euclidean distance (float) \item 8\+: 8-\/distance in 2d \item 6\+: 6-\/distance in 3d \item 18\+: 18-\/distance in 3d \item 26\+: 26-\/distance in 3d \item 40\+: 4-\/distance in 2d (byte coded ouput) \item 80\+: 8-\/distance in 2d (byte coded ouput) \item 60\+: 6-\/distance in 3d (byte coded ouput) \item 180\+: 18-\/distance in 3d (byte coded ouput) \item 260\+: 26-\/distance in 3d (byte coded ouput)\end{DoxyItemize}
+The output {\bfseries{out.\+pgm}} is of type int32\+\_\+t for modes $<$ 40, of type byte for other modes.
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} morpho
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie, Xavier Daragon 
+\end{DoxyAuthor}

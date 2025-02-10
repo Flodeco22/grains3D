@@ -1,0 +1,30 @@
+\doxysection{rawthreshold.\+c File Reference}
+\label{rawthreshold_8c}\index{rawthreshold.c@{rawthreshold.c}}
+
+
+converts from raw format into pgm format and applies a double threshold  
+
+
+
+
+\doxysubsection{Detailed Description}
+converts from raw format into pgm format and applies a double threshold 
+
+{\bfseries{Usage\+:}} rawthreshold in.\+raw rs cs ds headersize datatype littleendian thresh1 thresh2 [xdim ydim zdim] out.\+pgm
+
+{\bfseries{Description\+:}} Converts from raw format into pgm byte format, and selects only pixels which have values V such that thresh1 $<$= V $<$= thresh2
+
+Parameters\+: \begin{DoxyItemize}
+\item {\bfseries{in.\+pgm}} \+: source file in raw format \item {\bfseries{rs}} (int32\+\_\+t)\+: row size (number of voxels in a row) \item {\bfseries{cs}} (int32\+\_\+t)\+: column size (number of voxels in a column) \item {\bfseries{ds}} (int32\+\_\+t)\+: number of planes \item {\bfseries{headersize}} (int32\+\_\+t)\+: size of the header in bytes (information in the header will be ignored) \item {\bfseries{datatype}} (int32\+\_\+t)\+: (1 for byte, 2 for short int, 4 for long int, 5 for float) \item {\bfseries{littleendian}} (int32\+\_\+t) 1\+: littleendian, 0\+: bigendian. Usual choice is 0. \item {\bfseries{thresh1}}, thresh2 (float)\+: threshold values \item {\bfseries{xdim}} (float, optional) \+: gap (in the real world) between two adjacent voxels in a row. ~\newline
+ \item {\bfseries{ydim}} (float, optional) \+: gap (in the real world) between two adjacent voxels in a column. ~\newline
+ \item {\bfseries{zdim}} (float, optional) \+: gap (in the real world) between two adjacent planes. ~\newline
+\end{DoxyItemize}
+This operator does not load the complete image into memory.
+
+{\bfseries{Types supported\+:}} float
+
+{\bfseries{Category\+:}} convert
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

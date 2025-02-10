@@ -1,0 +1,23 @@
+\doxysection{labelfgd.\+c File Reference}
+\label{labelfgd_8c}\index{labelfgd.c@{labelfgd.c}}
+
+
+labeling of the foreground components of a binary image  
+
+
+
+
+\doxysubsection{Detailed Description}
+labeling of the foreground components of a binary image 
+
+{\bfseries{Usage\+:}} labelfgd in.\+pgm connex out.\+pgm
+
+{\bfseries{Description\+:}} Each connected component of {\bfseries{in.\+pgm}} is labeled with a unique integer, starting from 1. The background points are labeled by 0. The argument {\bfseries{connex}} selects the connectivity (4, 8 in 2D; 6, 18, 26 in 3D). The output image {\bfseries{out.\+pgm}} has the type "{}int32\+\_\+t"{}.
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d, int32\+\_\+t 2d, int32\+\_\+t 3d
+
+{\bfseries{Category\+:}} connect
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

@@ -1,0 +1,25 @@
+\doxysection{identifyplane.\+c File Reference}
+\label{identifyplane_8c}\index{identifyplane.c@{identifyplane.c}}
+
+
+identification of a best matching plane from a set of 3D points  
+
+
+
+
+\doxysubsection{Detailed Description}
+identification of a best matching plane from a set of 3D points 
+
+{\bfseries{Usage\+:}} identifyplane in.\+list out.\+list
+
+{\bfseries{Description\+:}} Identifies the parameters (a, b, c, d) of the equation of the 3D plane\+: ax+by+cz+d=0 that minimizes the least square error between this plane and the given points. Method\+: basic linear regression.
+
+The result is given as a file that contains a list of 5 numbers\+: {\bfseries{a, b, c, d}} the parameters of the equation, and {\bfseries{e}} the least square error.
+
+{\bfseries{Types supported\+:}} list 3D
+
+{\bfseries{Category\+:}} geo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

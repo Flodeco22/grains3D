@@ -1,0 +1,67 @@
+\chapter{Compiling Pink with CMake}
+\label{compiling_cmake}\index{Compiling Pink with CMake@{Compiling Pink with CMake}}
+This page describes the compilation of the Pink library including the compilation of the library, core functions and the Python front-\/end.\doxysection{Configuration}\label{compiling_windows_configuration}
+Pink uses CMake as its configuration and build automation tool. Before you could compile the library you need to configure the source tree. During the configuration CMake checks if all the necessery dependencies are installed on your system. For further reading look at {\texttt{ dependency hells}} on Wikipedia.
+
+Generally the compilation is carried out in a separate directory. To call CMake you can use the following commands\+: \begin{DoxyVerb}ls Pink_sources.tar.bz2
+tar xvf Pink_sources.tar.bz2
+\end{DoxyVerb}
+
+
+The above commands create a directory \textquotesingle{}Pink\+\_\+svn\textquotesingle{} on your system. You create a build directory and configure the repository\+:
+
+\begin{DoxyVerb}mkdir build
+cd build
+ccmake ../Pink-svn
+\end{DoxyVerb}
+
+
+The above-\/latest command will start the CMake in configuration mode. To configure the repository you type \textquotesingle{}c\textquotesingle{}.
+
+Here you have to choose your compilation options. There are four major options you can choose from\+:
+
+\begin{DoxyVerb}BASH_FRONT_END                   OFF
+BUILD_DOCUMENTATION              OFF
+DEVELOPMENT                      OFF
+PYTHON_FRONT_END                 OFF
+\end{DoxyVerb}
+
+
+For a standard compilation you have to set PYTHON\+\_\+\+FRONT\+\_\+\+END to ON\+:
+
+\begin{DoxyVerb}BASH_FRONT_END                   OFF
+BUILD_DOCUMENTATION              OFF
+DEVELOPMENT                      OFF
+PYTHON_FRONT_END                 ON
+\end{DoxyVerb}
+
+
+After setting the options you type \textquotesingle{}c\textquotesingle{} twice to invoke a second and a third configuration.\doxysection{Generation}\label{compiling_cmake_generation}
+If the configuration succeeds each time you are ready to generate the build code. Type \textquotesingle{}g\textquotesingle{} and the necessary makefiles will be generated.
+
+Note\+: If there\textquotesingle{}s an error during one of these configurations, then an appropriate error message is presented. Try to update your system according to these error messages.\doxysection{Compilation}\label{compiling_windows_compilation}
+Type
+
+\begin{DoxyVerb}make
+\end{DoxyVerb}
+
+
+to carry out necessary compilation, building and script generation. If the compilation succeeds without and error message, you can consult the page \doxysectref{Using the Python front-\/end}{p.}{using_python}{0}.\doxysection{Installation The configuration is capable of}\label{compiling_cmake_installation}
+installing the Pink-\/\+Python library on your system. For the installation you need to check two variables\+:
+
+\begin{DoxyVerb}CMAKE_INSTALL_PREFIX             /usr/local
+PYTHON_MODULE_INSTALL_PATH       /usr/lib/python2.6/site-packages
+\end{DoxyVerb}
+
+
+The \textquotesingle{}PYTHON\+\_\+\+MODULE\+\_\+\+INSTALL\+\_\+\+PATH\textquotesingle{} variable is detected automatically, so you shouldn\textquotesingle{}t have any problems. The \textquotesingle{}CMAKE\+\_\+\+INSTALL\+\_\+\+PREFIX\textquotesingle{} is the GNU standard \textquotesingle{}/usr/local\textquotesingle{}, you probably want to change it to \textquotesingle{}/usr\textquotesingle{}. Alternatively, you can specify different directories depending your system. If you are content with the configuration, type
+
+\begin{DoxyVerb}sudo make install
+\end{DoxyVerb}
+
+
+and the Pink-\/\+Python library will be installed on your system. After the installation you can consult the page \doxysectref{Using the Python front-\/end}{p.}{using_python}{0}.
+
+\begin{DoxyAuthor}{Author}
+Ujo\+Imro, 2011 
+\end{DoxyAuthor}

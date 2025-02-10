@@ -1,0 +1,35 @@
+\doxysection{GAwatershed.\+c File Reference}
+\label{GAwatershed_8c}\index{GAwatershed.c@{GAwatershed.c}}
+
+
+Compute the watershed of a 4-\/connected edge-\/weighted graph (a GA)  
+
+
+
+
+\doxysubsection{Detailed Description}
+Compute the watershed of a 4-\/connected edge-\/weighted graph (a GA) 
+
+{\bfseries{Usage\+:}} GAwatershed in.\+ga out.\+pgm [type]
+
+{\bfseries{Description\+:}}
+
+Compute the watershed of a 4-\/connected edge-\/weighted graph (a GA).
+
+If type = 0, then outputs a watershed by an M-\/border algorithm. The file out.\+pgm is a GA.
+
+If type = 1, then outputs a watershed by a non-\/recursive algorithm based on streams. The file out.\+pgm is a GA (this is the default) (not available for floats).
+
+If type = 2 outputs a watershed by a recursive algorithm based on streams. The file out.\+pgm is a GA (not available for floats).
+
+If type = 3 outputs an M-\/border watershed. The file out.\+pgm is a GA (not available for floats).
+
+If type = 4 outputs a flow mapping. The file out.\+pgm is a long integer image that represents a labeled partition induced by a watershed cut of the input GA (not available for floats).
+
+{\bfseries{Types supported\+:}} GA byte 2D, GA float 2D
+
+{\bfseries{Category\+:}} GA
+
+\begin{DoxyAuthor}{Author}
+Jean Cousty 
+\end{DoxyAuthor}

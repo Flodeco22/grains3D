@@ -1,0 +1,78 @@
+\doxysection{points2spline.\+c File Reference}
+\label{points2spline_8c}\index{points2spline.c@{points2spline.c}}
+
+
+converts a sequence of control points into a spline  
+
+
+
+
+\doxysubsection{Detailed Description}
+converts a sequence of control points into a spline 
+
+{\bfseries{Usage\+:}} points2spline points.\+txt spline.\+txt
+
+{\bfseries{Description\+:}}
+
+Let S be the sequence of control points in {\bfseries{points.\+txt}}. This program computes a parametric curve P defined by two (in 2D) or three (in 3D) splines that interpolates the points of the sequence S.
+
+If the last point equals the first point, then a closed spline is generated.
+
+The result is given in the form of the list of control points, followed by the set of coefficients for each spline segment.
+
+The input file {\bfseries{points.\+txt}} contains a list of points under the format\+:
+
+b nbpoints~\newline
+ ~\newline
+ x1 y1~\newline
+ x2 y2~\newline
+ x3 y3~\newline
+ ...~\newline
+
+
+or\+:
+
+B nbpoints~\newline
+ ~\newline
+ x1 y1 z1~\newline
+ x2 y2 z2~\newline
+ x3 y3 z3~\newline
+ ...~\newline
+
+
+The output file format is the following for 2D\+:
+
+c n+1 (where n+1 denotes the number of control points)~\newline
+ x1 y1~\newline
+ ...~\newline
+ xn+1 yn+1~\newline
+ C0\+X1 C0\+Y1 C1\+X1 C1\+Y1 C2\+X1 C2\+Y1 C3\+X1 C3\+Y1~\newline
+ ...~\newline
+ C0\+Xn C0\+Yn C1\+Xn C1\+Yn C2\+Xn C2\+Yn C3\+Xn C3\+Yn~\newline
+
+
+and in the 3D case\+:
+
+C n+1 (where n+1 denotes the number of control points)~\newline
+ x1 y1 z1~\newline
+ ...~\newline
+ xn+1 yn+1 zn+1~\newline
+ C0\+X1 C0\+Y1 C0\+Z1 C1\+X1 C1\+Y1 C1\+Z1 C2\+X1 C2\+Y1 C2\+Z1 C3\+X1 C3\+Y1 C3\+Z1~\newline
+ ...~\newline
+ C0\+Xn C0\+Yn C0\+Zn C1\+Xn C1\+Yn C1\+Zn C2\+Xn C2\+Yn C2\+Zn C3\+Xn C3\+Yn C3\+Zn~\newline
+
+
+The ith segment (starting from i=0) of the parametric curve P is then defined by\+:
+
+x(t) = C3\+Xi $\ast$ t$^\wedge$3 + C2\+Xi $\ast$ t$^\wedge$2 + C1\+Xi $\ast$ t + C0\+Xi~\newline
+ y(t) = C3\+Yi $\ast$ t$^\wedge$3 + C2\+Yi $\ast$ t$^\wedge$2 + C1\+Yi $\ast$ t + C0\+Yi~\newline
+ z(t) = C3\+Zi $\ast$ t$^\wedge$3 + C2\+Zi $\ast$ t$^\wedge$2 + C1\+Zi $\ast$ t + C0\+Zi~\newline
+ with t in [i,i+1]
+
+{\bfseries{Types supported\+:}} list 2D, list 3D
+
+{\bfseries{Category\+:}} draw geo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

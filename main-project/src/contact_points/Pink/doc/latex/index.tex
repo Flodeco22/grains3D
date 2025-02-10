@@ -1,0 +1,61 @@
+\chapter{Pink}
+\label{index}\index{Pink@{Pink}}
+Pink is an image processing library developed at {\texttt{ ESIEE Engineering}} for research and teaching purposes. It contains implementations of over 200 algorithms for image segmentation and filtering. Most of the operators come from mathematical morphology, but it contains operators from different fields. It is a free software licensed under the {\texttt{ Ce\+CILL }} license.
+
+In august 2011 Pink has been presented at the European Python Scientific Conference as a poster. Below you can see the conference poster (also in {\texttt{ pdf }} and hi-\/res {\texttt{ jpeg }}).
+
+\doxysection{Screenshots}\label{index_screenshots}
+{\texttt{ Screenshots can be found here. }}\doxysection{Download}\label{index_download}
+The source code and the binary packages can be accessed from the \doxysectref{Download}{p.}{index_download}{1} page.\doxysection{Mailing list}\label{index_mailing}
+If you are interested in the daily life of Pink, please subscribe to the {\texttt{ Pink Developer mailing list }}. You can also post questions concerning the usage or raise issues.\doxysection{Bug-\/hunt!}\label{index_bughunt}
+If you have discovered a bug, please report it at the {\texttt{ bug tracker}}.\doxysection{Credits}\label{index_credits}
+
+\begin{DoxyItemize}
+\item Code licensed under Ce\+CILL license 
+\begin{DoxyItemize}
+\item {\texttt{ {\bfseries{Michel Couprie}} }} 
+\item {\texttt{ {\bfseries{Laurent Najman}} }}\+: localextrema, saliency 
+\item {\texttt{ {\bfseries{Hugues Talbot }} }}\+: fmm 
+\item {\texttt{ {\bfseries{Jean Cousty}} }}\+: redt 3d (reverse euclidean distance transform -\/ algo de D. Coeurjolly), watershedthin, opérateurs sur les graphes d\textquotesingle{}arêtes (GA), forêts de poids min (MSF), waterfall, recalagerigide\+\_\+translateplane 
+\item {\bfseries{Xavier Daragon}}\+: dist, distc (distance euclidienne quadratique 3D) 
+\item {\bfseries{André Vital Saude}}\+: radialopening, divers scripts tcl, hma 
+\item {\bfseries{Nicolas Combaret}}\+: toposhrinkgray, ptselectgray 
+\item {\bfseries{John Chaussard}}\+: lballincl, cropondisk, shrinkondisk 
+\item {\bfseries{Christophe Doublier}}\+: zoomint 
+\item {\bfseries{Hildegard Koehler}}\+: lintophat 
+\item {\bfseries{Cédric Allène}}\+: gettree, histolisse, labeltree, nbcomp, pgm2vtk, seuilauto 
+\item {\bfseries{Gu Jun}}\+: maxdiameter 
+\item {\bfseries{Sébastien Couprie}}\+: mcsplines.\+c 
+\item {\bfseries{Rita Zrour}}\+: medialaxis (axe médian euclidien exact -\/ algo de Rémy-\/\+Thiel), dist, distc (distance euclidienne quadratique exacte -\/ algo de Saito-\/\+Toriwaki) 
+\item {\bfseries{Laurent Mercier}}\+: gestion d\textquotesingle{}un masque dans delaunay 
+\item {\texttt{ {\bfseries{Laszlo Marak (ujoimro)}} }}\+: continuous maximum flows, Unger flows, Python front-\/end, native Microsoft Windows port 
+\item {\bfseries{Benjamin Raynal}}\+: parallel 3D thinning 
+\item {\bfseries{Nivando Bezerra}}\+: parallel grayscale thinning 
+\end{DoxyItemize}
+\item Code under different free software licenses 
+\begin{DoxyItemize}
+\item {\bfseries{David Coeurjolly}}\+: lvoronoilabelling.\+c 
+\item {\bfseries{Dario Bressanini}}\+: mcpowell.\+c 
+\item {\bfseries{Andrew W. Fitzgibbon}}\+: lbresen.\+c 
+\item {\bfseries{Lilian Buzer}}\+: lbdigitalline.\+cxx 
+\end{DoxyItemize}
+\end{DoxyItemize}\doxysection{Compiling}\label{index_compiling}
+Pink can be compiled with two sets of tools. For the compilation with dependency checking and Python front-\/end, visit the page \doxysectref{Compiling Pink with CMake}{p.}{compiling_cmake}{0}. For the classical compilation look at \doxysectref{Compiling Pink with make}{p.}{compiling_make}{0}. You can also compile Pink on windows (including the Python front-\/end). For details on compiling on windows look at \doxysectref{Compiling Pink on Microsoft Windows}{p.}{compiling_windows}{0}.\doxysection{Development}\label{index_development}
+For developing Pink look at the \doxysectref{Conventions for developing Pink operators}{p.}{dev_conventions}{0} page. For exporting functions in Python look at the \doxysectref{Exporting functions to Python}{p.}{python_export}{0} page.\doxysection{Dependencies}\label{index_dependencies}
+For optimal use, the following packages should be installed\+: ~\newline
+~\newline
+ {\texttt{ imview}}~\newline
+ {\texttt{ Python}}~\newline
+ {\texttt{ Doxygen}}~\newline
+ {\texttt{ Active\+Tcl 8.\+3}}~\newline
+ {\texttt{ VTK}}~\newline
+ {\texttt{ MPlayer}}~\newline
+ {\texttt{ Gnuplot}}~\newline
+
+
+Note, that the detailed dependencies can be found in file \textquotesingle{}dependencies\textquotesingle{}.
+
+The Python front-\/end has been financially supported by {\texttt{ EDF }}. The project management is alpha-\/hosted at {\texttt{ Berli\+Os}}.
+
+\DoxyHorRuler{0}
+ Michel Couprie -\/ Professeur -\/ ESIEE Paris Laboratoire d\textquotesingle{}Informatique Gaspard-\/\+Monge, Université Paris-\/\+Est ESIEE 2, Bd Blaise Pascal -\/ B.\+P. 99 93162 Noisy-\/\+Le-\/\+Grand CEDEX m(dot)couprie(at)esiee(dot)fr url\+: {\texttt{ http\+://www.\+esiee.\+fr/$\sim$coupriem}} 

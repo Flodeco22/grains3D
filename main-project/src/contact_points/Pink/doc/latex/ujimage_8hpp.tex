@@ -1,0 +1,62 @@
+\doxysection{ujimage.\+hpp File Reference}
+\label{ujimage_8hpp}\index{ujimage.hpp@{ujimage.hpp}}
+
+
+This file contains the C++ image class declarations.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ pink\+::deep\+\_\+xvimage}
+\item 
+struct \textbf{ pink\+::liberator\+\_\+t}
+\begin{DoxyCompactList}\small\item\em This structure frees the images, that have been allocated by readimage. \end{DoxyCompactList}\item 
+class \textbf{ pink\+::pink\+\_\+image}
+\begin{DoxyCompactList}\small\item\em This class forms the base of all image classes. \end{DoxyCompactList}\item 
+class \textbf{ pink\+::ujoi$<$ pixel\+\_\+type\+\_\+ $>$}
+\begin{DoxyCompactList}\small\item\em This class represents the image types used in Pink-\/\+C++ and Pink-\/\+Python. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \textbf{ pink}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\label{namespacepink_abcbb99e7c1300101cf033582f790b4c7} 
+typedef \textbf{ ujoi}$<$ unsigned char $>$ {\bfseries pink\+::char\+\_\+image}
+\begin{DoxyCompactList}\small\item\em The char\+\_\+image specialization. \end{DoxyCompactList}\item 
+\label{namespacepink_adf50508e4dfdcfb6e166004ec6d9dd99} 
+typedef \textbf{ ujoi}$<$ unsigned short int $>$ {\bfseries pink\+::short\+\_\+image}
+\begin{DoxyCompactList}\small\item\em The short\+\_\+image specialization. \end{DoxyCompactList}\item 
+\label{namespacepink_a7c9c4148f50e26a4bd3bf113e928005e} 
+typedef \textbf{ ujoi}$<$ int32\+\_\+t $>$ {\bfseries pink\+::int\+\_\+image}
+\begin{DoxyCompactList}\small\item\em The int\+\_\+image specialization. \end{DoxyCompactList}\item 
+\label{namespacepink_a93bac8a6051a97baced377a18711d6d3} 
+typedef \textbf{ ujoi}$<$ float $>$ {\bfseries pink\+::float\+\_\+image}
+\begin{DoxyCompactList}\small\item\em The float\+\_\+image specialization. \end{DoxyCompactList}\item 
+\label{namespacepink_a43daa150707f11edf41da375929f17bb} 
+typedef \textbf{ ujoi}$<$ double $>$ {\bfseries pink\+::double\+\_\+image}
+\begin{DoxyCompactList}\small\item\em The double\+\_\+image specialization. \end{DoxyCompactList}\item 
+\label{namespacepink_a1df665d8e48aad7d413a7dacee23298f} 
+typedef \textbf{ ujoi}$<$ \textbf{ fcomplex} $>$ {\bfseries pink\+::fcomplex\+\_\+image}
+\begin{DoxyCompactList}\small\item\em The double\+\_\+image specialization. \end{DoxyCompactList}\item 
+\label{namespacepink_ace26cbf81f9d1db37f31f792d4a4bbf9} 
+typedef \textbf{ ujoi}$<$ \textbf{ dcomplex} $>$ {\bfseries pink\+::dcomplex\+\_\+image}
+\begin{DoxyCompactList}\small\item\em The double\+\_\+image specialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+boost\+::shared\+\_\+ptr$<$ types\+::vint $>$ \textbf{ pink\+::get\+Dimensions} (const index\+\_\+t x, const index\+\_\+t y, const index\+\_\+t z, const index\+\_\+t t)
+\item 
+boost\+::shared\+\_\+ptr$<$ \textbf{ deep\+\_\+xvimage} $>$ \textbf{ pink\+::py\+\_\+readimage} (std\+::string filename)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the C++ image class declarations. 
+
+\begin{DoxyAuthor}{Author}
+Ujo\+Imro, 2009-\/2011 
+\end{DoxyAuthor}

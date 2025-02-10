@@ -1,0 +1,41 @@
+\doxysection{2dskelck.\+c File Reference}
+\label{2dskelck_8c}\index{2dskelck.c@{2dskelck.c}}
+
+
+homotopic thinning based on critical kernels  
+
+
+
+
+\doxysubsection{Detailed Description}
+homotopic thinning based on critical kernels 
+
+{\bfseries{Usage\+:}} 2dskelck in.\+pgm mode niter [inhibit] out.\+pgm
+
+{\bfseries{Description\+:}}
+
+Homotopic thinning of a 2d Khalimsky image. The maximum number of steps is given by {\bfseries{niter}}. If the value given for {\bfseries{niter}} equals -\/1, the thinning is continued until stability.
+
+The parameter {\bfseries{mode}} specifies the algorithm used for thinning. Possible choices are\+: \begin{DoxyItemize}
+\item 0\+: ultimate thinning, symmetrical \item 1\+: curve thinning, symmetrical\end{DoxyItemize}
+If the parameter {\bfseries{inhibit}} is given and is a binary image name, then the points of this image will be left unchanged.
+
+\begin{DoxyWarning}{Warning}
+Input must be a complex with no point on the image border.
+\end{DoxyWarning}
+References\+:~\newline
+
+
+[Ber07] G. Bertrand\+: {\texttt{ "{}\+On critical kernels"{}}}, Comptes-\/rendus de l\textquotesingle{}Académie des Sciences, série math., Vol. I, Nb. 345, pp. 363-\/367, 2007.~\newline
+
+
+[BC09] G. Bertrand and M. Couprie\+: {\texttt{ "{}\+On parallel thinning algorithms\+: minimal non-\/simple sets, P-\/simple points and critical kernels"{}}}, Journal of Mathematical Imaging and Vision, Vol. 35, Nb. 1, pp. 23-\/35, 2009.~\newline
+
+
+{\bfseries{Types supported\+:}} byte 2d
+
+{\bfseries{Category\+:}} topobin
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

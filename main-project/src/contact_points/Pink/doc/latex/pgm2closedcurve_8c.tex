@@ -1,0 +1,43 @@
+\doxysection{pgm2closedcurve.\+c File Reference}
+\label{pgm2closedcurve_8c}\index{pgm2closedcurve.c@{pgm2closedcurve.c}}
+
+
+extracts a curve from a binary image  
+
+
+
+
+\doxysubsection{Detailed Description}
+extracts a curve from a binary image 
+
+{\bfseries{Usage\+:}} pgm2closedcurve image.\+pgm connex [x y [z]] out.\+curve
+
+{\bfseries{Description\+:}} Extracts a closed curve from a binary image, that is, a curve with the same starting and ending point. The parameter {\bfseries{connex}} is the connexity of the curve. It may be equal to 4 or 8 in 2D, and to 6, 18 or 26 in 3D. If given, the point {\bfseries{(x, y, z)}} (2D) or {\bfseries{(x, y, z)}} (3D) is taken as the starting point of the curve, and must be a curve point. The output is the text file {\bfseries{out.\+curve}}, with the following format\+:~\newline
+ b nbpoints~\newline
+ x1 y1~\newline
+ x2 y2~\newline
+ ...~\newline
+ or (3D)\+: B nbpoints~\newline
+ x1 y1 z1~\newline
+ x2 y2 z2~\newline
+ ...~\newline
+
+
+The points of the curve may also be valued. This is must be indicated by a value of 40, 80, 60, 180 or 260 for the parameter {\bfseries{connex}}, instead of 4, 8, 6, 18 or 26 respectively. In this case, the output is the text file {\bfseries{out.\+curve}}, with the following format\+:~\newline
+ n nbpoints~\newline
+ x1 y1 v1~\newline
+ x2 y2 v2~\newline
+ ...~\newline
+ or (3D)\+: N nbpoints~\newline
+ x1 y1 z1 v1~\newline
+ x2 y2 z2 v2~\newline
+ ...~\newline
+
+
+{\bfseries{Types supported\+:}} byte 2D, byte 3D
+
+{\bfseries{Category\+:}} convert geo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

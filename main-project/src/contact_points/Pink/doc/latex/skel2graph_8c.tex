@@ -1,0 +1,33 @@
+\doxysection{skel2graph.\+c File Reference}
+\label{skel2graph_8c}\index{skel2graph.c@{skel2graph.c}}
+
+
+generation of a graph from a curvilinear skeleton  
+
+
+
+
+\doxysubsection{Detailed Description}
+generation of a graph from a curvilinear skeleton 
+
+{\bfseries{Usage\+:}} skel2graph in.\+skel [mode [param]] out.\+graph
+
+{\bfseries{Description\+:}} Generation of a graph from a curvilinear skeleton.
+
+The parameter {\bfseries{mode}} has the following meaning (default is 0)\+:
+
+\begin{DoxyItemize}
+\item 0\+: vertices of the graphs are elements (ends, curves, junctions, isolated points) of the skeleton\end{DoxyItemize}
+\begin{DoxyItemize}
+\item 1\+: vertices of the graph are only ends, isolated points and junctions of the skeleton\end{DoxyItemize}
+\begin{DoxyItemize}
+\item 2\+: each curve of the skeleton (not including its ends) is represented by N edges and N-\/1 vertices of the graph, where N is set to {\bfseries{param}} \end{DoxyItemize}
+\begin{DoxyItemize}
+\item 3\+: each curve of the skeleton (not including its end) is represented by N edges and N-\/1 vertices of the graph, where N is set to max(1, trunc(len / {\bfseries{param}})), where len is the number of points of the curve.\end{DoxyItemize}
+{\bfseries{Types supported\+:}} 2Dskel, 3Dskel
+
+{\bfseries{Category\+:}} topobin
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 2009 
+\end{DoxyAuthor}

@@ -1,0 +1,27 @@
+\doxysection{ac2pink.\+c File Reference}
+\label{ac2pink_8c}\index{ac2pink.c@{ac2pink.c}}
+
+
+converts a 3D scene from AC3D format to Pink 3Dscene format  
+
+
+
+
+\doxysubsection{Detailed Description}
+converts a 3D scene from AC3D format to Pink 3Dscene format 
+
+{\bfseries{Usage\+:}} ac2pink in.\+ac out.\+3sc
+
+{\bfseries{Description\+:}}
+
+Reads the file {\bfseries{in.\+ac}}. This file must be in the AC3D format. Generates the output file {\bfseries{out.\+3sc}} in the 3Dscene format \+:
+
+FILE \+::= \textquotesingle{}3Dscene\textquotesingle{} $<$N$>$ $<$OBJ$>$$\ast$ OBJ \+::= $<$LINE$>$ $\vert$ $<$CLOSEDLINE$>$ $\vert$ $<$SPLINE$>$ $\vert$ $<$CLOSEDSPLINE$>$ $\vert$ $<$POLYGON$>$ LINE \+::= \textquotesingle{}line\textquotesingle{} $<$N$>$ $<$POINT$>$$\ast$ CLOSEDLINE \+::= \textquotesingle{}closedline\textquotesingle{} $<$N$>$ $<$POINT$>$$\ast$ SPLINE \+::= \textquotesingle{}spline\textquotesingle{} $<$N$>$ $<$POINT$>$$\ast$ CLOSEDSPLINE \+::= \textquotesingle{}closedspline\textquotesingle{} $<$N$>$ $<$POINT$>$$\ast$ POLYGON \+::= \textquotesingle{}polygon\textquotesingle{} $<$N$>$ $<$POINT$>$$\ast$ N \+::= ascii\+\_\+coded\+\_\+integer POINT \+::= ascii\+\_\+coded\+\_\+float ascii\+\_\+coded\+\_\+float ascii\+\_\+coded\+\_\+float
+
+{\bfseries{Types supported\+:}} AC3D
+
+{\bfseries{Category\+:}} convert
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

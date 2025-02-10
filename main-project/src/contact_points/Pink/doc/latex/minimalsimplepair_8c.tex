@@ -1,0 +1,29 @@
+\doxysection{minimalsimplepair.\+c File Reference}
+\label{minimalsimplepair_8c}\index{minimalsimplepair.c@{minimalsimplepair.c}}
+
+
+detects minimal simple pairs in a 3D binary image  
+
+
+
+
+\doxysubsection{Detailed Description}
+detects minimal simple pairs in a 3D binary image 
+
+{\bfseries{Usage\+:}} minimalsimplepair in.\+pgm [all] out.\+pgm
+
+{\bfseries{Description\+:}} Detects minimal simple pairs in a 3D binary image. If the optional parameter {\bfseries{all}} is used, then all minimal simple pairs are searched. Otherwise, only one pair (if any) is given.
+
+If the input image contains no simple point, consider using "{}simplepair"{} (faster) instead of "{}minimalsimplepair"{}.
+
+Reference\+:~\newline
+ [PCB08] Nicolas Passat, Michel Couprie, and Gilles Bertrand\+: {\texttt{ "{}\+Minimal simple pairs in the 3\+D cubic grid"{}}}, in {\itshape Journal of Mathematical Imaging and Vision}, 32 (3), pp.~239–249, November 2008.~\newline
+
+
+{\bfseries{Types supported\+:}} byte 3d
+
+{\bfseries{Category\+:}} topobin
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 2008 
+\end{DoxyAuthor}

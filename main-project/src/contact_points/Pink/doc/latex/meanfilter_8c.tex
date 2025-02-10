@@ -1,0 +1,35 @@
+\doxysection{meanfilter.\+c File Reference}
+\label{meanfilter_8c}\index{meanfilter.c@{meanfilter.c}}
+
+
+Mean filter operator.  
+
+
+
+
+\doxysubsection{Detailed Description}
+Mean filter operator. 
+
+{\bfseries{Usage\+:}} meanfilter in.\+pgm roi.\+pgm niter [inhibit.\+pgm] out.\+pgm
+
+{\bfseries{Description\+:}} Let F be the function stored in image {\bfseries{in.\+pgm}}. Let R be the function stored in image {\bfseries{roi.\+pgm}} (region of interest). Let I be the function stored in image {\bfseries{inhibit.\+pgm}} (if any). The algorithm is the following\+:
+
+\begin{DoxyVerb}Repeat niter times
+  G = F
+  For each image point x
+    If R[x] and not I[x] then
+      S = G[x]; C = 1;
+      For each neighbour y of x
+        If R[y] then S = S + G[y]; C = C + 1;
+      F[x] = S / C;
+Result: F
+\end{DoxyVerb}
+
+
+{\bfseries{Types supported\+:}} byte 2d, int32\+\_\+t 2d, float 2d, byte 3d, int32\+\_\+t 3d, float 3d
+
+{\bfseries{Category\+:}} signal
+
+\begin{DoxyAuthor}{Author}
+Marcin Janaszewski, Michel Couprie 
+\end{DoxyAuthor}

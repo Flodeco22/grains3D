@@ -1,0 +1,27 @@
+\doxysection{asfbin.\+c File Reference}
+\label{asfbin_8c}\index{asfbin.c@{asfbin.c}}
+
+
+alternate sequential filter for binary images  
+
+
+
+
+\doxysubsection{Detailed Description}
+alternate sequential filter for binary images 
+
+{\bfseries{Usage\+:}} asfbin in.\+pgm [rmin] rmax out.\+pgm
+
+{\bfseries{Description\+:}} Alternate sequential filter for binary images.
+
+Disc-\/shaped structuring elements of increasing radius, ranging from 1 (or {\bfseries{rmin}} if this parameter is specified) to {\bfseries{rmax}}, are generated.
+
+Let D\textsubscript{1}...D\textsubscript{n} be these structuring elements, sorted by increasing radius. Let F\textsubscript{0} = {\bfseries{in.\+pgm}}, the ith intermediate result F\textsubscript{i} is obtained by the closing of the opening of F\textsubscript{i-\/1} by the structuring element D\textsubscript{i}. The result {\bfseries{out.\+pgm}} contains the final result F\textsubscript{n}. Giving a value 0 for the optional parameter {\bfseries{rmin}} has the effect of beginning by a closing instead of an opening.
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} morpho
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

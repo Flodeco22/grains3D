@@ -1,0 +1,29 @@
+\doxysection{skel2pgm.\+c File Reference}
+\label{skel2pgm_8c}\index{skel2pgm.c@{skel2pgm.c}}
+
+
+generation of a labelled image from a curvilinear skeleton  
+
+
+
+
+\doxysubsection{Detailed Description}
+generation of a labelled image from a curvilinear skeleton 
+
+{\bfseries{Usage\+:}} skel2pgm in.\+skel [id] out.\+pgm
+
+{\bfseries{Description\+:}} Generation of a labelled image from a curvilinear skeleton.
+
+If the optional argument {\bfseries{id}} is given and positive, then only the skeleton element having this index is considered.
+
+If the optional argument {\bfseries{id}} is given and is -\/1, then points of the skeleton are labelled with their index in the skeleton structure (warning\+: no more than 255 elements)
+
+Otherwise, points of the skeleton are labelled with\+: \begin{DoxyItemize}
+\item 1\+: isolated \item 2\+: end \item 3\+: curve \item 4\+: junction\end{DoxyItemize}
+{\bfseries{Types supported\+:}} 2Dskel, 3Dskel
+
+{\bfseries{Category\+:}} topobin
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 2004 
+\end{DoxyAuthor}

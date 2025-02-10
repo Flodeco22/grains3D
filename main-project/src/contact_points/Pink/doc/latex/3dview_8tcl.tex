@@ -1,0 +1,29 @@
+\doxysection{3dview.\+tcl File Reference}
+\label{3dview_8tcl}\index{3dview.tcl@{3dview.tcl}}
+
+
+interactive visualization / segmentation of a 3D image  
+
+
+
+
+\doxysubsection{Detailed Description}
+interactive visualization / segmentation of a 3D image 
+
+{\bfseries{Usage\+:}} \doxyref{3dview.\+tcl}{p.}{3dview_8tcl} in.\+pgm out.\+pgm [mark.\+pgm]~\newline
+ 3dview in.\+pgm out.\+pgm [mark.\+pgm]
+
+{\bfseries{Description\+:}}
+
+Displays three cross sections of a 3D grayscale image, and allows for simple segmentation by thresholding. If given, the parameter {\bfseries{mark.\+pgm}} must be a binary image (to be superimposed with the input image {\bfseries{in.\+pgm}}). Segmentation result is saved in {\bfseries{out.\+pgm}}.
+
+Menus\+: \begin{DoxyItemize}
+\item File\+: choose {\bfseries{Quit}} to save and exit. \item Analyze\+: to compute the histogram of the full image (item {\bfseries{Histogram}}) or of the Region Of Interest specified by the current segmentation ~\newline
+ (item {\bfseries{ROI}} Histogram). \item Threshold\+: simple of double thresholding. \item Visualize\+: choose {\bfseries{Revert}} to inverse the gray levels, check {\bfseries{Surimp}} to superimpose the binary image to the grayscale data, check {\bfseries{Light}} for superimposition to be made with a light color, choose {\bfseries{Render}} or {\bfseries{Rendersmooth}} to launch a 3D rendering of the binary image (a smoothing of the surface is done with the last choice).\end{DoxyItemize}
+{\bfseries{Types supported\+:}} byte 3d
+
+{\bfseries{Category\+:}} inter
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

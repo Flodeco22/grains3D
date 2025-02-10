@@ -1,0 +1,444 @@
+\doxysection{pink\+::ujoi$<$ pixel\+\_\+type\+\_\+ $>$ Class Template Reference}
+\label{classpink_1_1ujoi}\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+
+
+This class represents the image types used in Pink-\/\+C++ and Pink-\/\+Python.  
+
+
+
+
+{\ttfamily \#include $<$ujimage.\+hpp$>$}
+
+Inheritance diagram for pink\+::ujoi$<$ pixel\+\_\+type\+\_\+ $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpink_1_1ujoi}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ ujoi} ()
+\item 
+\textbf{ ujoi} (std\+::string filename, std\+::string debug="{}"{})
+\begin{DoxyCompactList}\small\item\em Reads an empty image from a file. \end{DoxyCompactList}\item 
+\textbf{ ujoi} (\textbf{ xvimage} $\ast$src, std\+::string debug="{}"{})
+\begin{DoxyCompactList}\small\item\em Embedding constructor. Takes \textquotesingle{}xvimage\textquotesingle{} DOES NOT make a copy. It is embedded supposing that xvimage was created with malloc/free. \end{DoxyCompactList}\item 
+\textbf{ ujoi} (const \textbf{ xvimage} \&src, std\+::string debug="{}"{})
+\begin{DoxyCompactList}\small\item\em Deep constructor. \end{DoxyCompactList}\item 
+\textbf{ ujoi} (const \textbf{ ujoi}$<$ pixel\+\_\+type $>$ \&src, std\+::string debug="{}"{})
+\begin{DoxyCompactList}\small\item\em SHALLOW! copy\+\_\+constructor. \end{DoxyCompactList}\item 
+\textbf{ image\+\_\+type} \textbf{ operator=} (const \textbf{ image\+\_\+type} \&other)
+\begin{DoxyCompactList}\small\item\em SHALLOW! copy constructor. \end{DoxyCompactList}\item 
+void \textbf{ reset} (\textbf{ image\+\_\+type} \&other)
+\item 
+\textbf{ image\+\_\+type} \textbf{ clone} (void) const
+\begin{DoxyCompactList}\small\item\em DEEP copy This method is used, if you need a runtime deep-\/copy of the object. The object creates a new object which is a deep copy of itself. \end{DoxyCompactList}\item 
+\label{classpink_1_1ujoi_a653116b63151c28bab9f162a24cc223d} 
+\textbf{ image\+\_\+type} {\bfseries swap} (\textbf{ image\+\_\+type} other)
+\begin{DoxyCompactList}\small\item\em Content swap This method swaps the content of two images. The swap happens in constant time. The swap is achieved by exchanging the pointers guarding the content of the image. Used for iterations. \end{DoxyCompactList}\item 
+\textbf{ ujoi} (const types\+::vint \&dim, std\+::string debug="{}"{})
+\begin{DoxyCompactList}\small\item\em Creates an empty image of the given size. This constructor is mostly used from python, as it takes a python vector. \end{DoxyCompactList}\item 
+virtual \textbf{ $\sim$ujoi} ()
+\item 
+\textbf{ ujoi} (const types\+::vint \&dim, boost\+::shared\+\_\+array$<$ pixel\+\_\+type $>$ data, std\+::string debug="{}"{})
+\item 
+\textbf{ ujoi} (const types\+::vint \&dim, pixel\+\_\+type $\ast$data, std\+::string debug="{}"{})
+\item 
+pixel\+\_\+type \& \textbf{ operator[$\,$]} (index\+\_\+t pos)
+\begin{DoxyCompactList}\small\item\em Index access to the pixels With this operator you can access the pixels, as the image was a vector; regardless of its dimensions. \end{DoxyCompactList}\item 
+\label{classpink_1_1ujoi_aff5f47429d3bd2e3abf061e48c08acb3} 
+pixel\+\_\+type \& {\bfseries operator()} (index\+\_\+t pos)
+\begin{DoxyCompactList}\small\item\em Same as operator[]. Included to avoid ambiguity. \end{DoxyCompactList}\item 
+pixel\+\_\+type \& \textbf{ operator[$\,$]} (const types\+::vint \&pos)
+\begin{DoxyCompactList}\small\item\em \textquotesingle{}types\+::vint\textquotesingle{} access to the pixels With this operator you can access the pixels, by specifying the position of the pixel with a \textquotesingle{}types\+::vint\textquotesingle{} vector. \end{DoxyCompactList}\item 
+const pixel\+\_\+type \& \textbf{ get\+\_\+operator\+\_\+int} (index\+\_\+t pos) const
+\begin{DoxyCompactList}\small\item\em Python vector access to the pixels. \end{DoxyCompactList}\item 
+\label{classpink_1_1ujoi_a459e5d1ef02440b505d7b78dddb1a0d5} 
+\textbf{ xvimage} $\ast$ {\bfseries get\+\_\+output} ()
+\begin{DoxyCompactList}\small\item\em Cast operator. Casts the ujoi$<$$>$ object to \textquotesingle{}xvimage$\ast$\textquotesingle{} in constant time. \end{DoxyCompactList}\item 
+\label{classpink_1_1ujoi_a9a3268a2637f08931cf0f626040f7ee6} 
+{\bfseries operator xvimage $\ast$} ()
+\begin{DoxyCompactList}\small\item\em Cast operator. Casts the ujoi$<$$>$ object to \textquotesingle{}xvimage$\ast$\textquotesingle{} in constant time. \end{DoxyCompactList}\item 
+\label{classpink_1_1ujoi_a5f09764ef9683dad52942de7d65f4655} 
+{\bfseries operator const xvimage $\ast$} () const
+\begin{DoxyCompactList}\small\item\em Cast operator. Casts the ujoi$<$$>$ object to \textquotesingle{}xvimage$\ast$\textquotesingle{} in constant time. \end{DoxyCompactList}\item 
+\label{classpink_1_1ujoi_a9d9e375f68b273a436326b9c2e9a12f0} 
+const types\+::vint \& {\bfseries get\+\_\+size} () const
+\begin{DoxyCompactList}\small\item\em Returns a vector with the size of the image object. \end{DoxyCompactList}\item 
+\label{classpink_1_1ujoi_ad3c26e1cc008d51e2bcee88b41a7cb18} 
+const types\+::vint \& {\bfseries get\+\_\+center} () const
+\begin{DoxyCompactList}\small\item\em Returns a vector with the center of the image object. \end{DoxyCompactList}\item 
+void \textbf{ set\+\_\+center\+\_\+vint} (const types\+::vint \&new\+\_\+center)
+\begin{DoxyCompactList}\small\item\em Sets the center of the image. \end{DoxyCompactList}\item 
+boost\+::shared\+\_\+array$<$ pixel\+\_\+type $>$ \textbf{ get\+\_\+pixels} ()
+\begin{DoxyCompactList}\small\item\em Sets the center of the image. This method is called from Python. \end{DoxyCompactList}\item 
+\label{classpink_1_1ujoi_aa595c51f34fa2d65d45b93acf3c746f2} 
+void {\bfseries set\+\_\+pixels} (long ptr, long nbytes)
+\begin{DoxyCompactList}\small\item\em Takes a pointer in and copy the data it points to onto the image buffer. \end{DoxyCompactList}\item 
+\label{classpink_1_1ujoi_a4a90c6e5eb4c11197d52455dd2779f46} 
+std\+::string {\bfseries repr} () const
+\begin{DoxyCompactList}\small\item\em Returns a string with some informations about the image. Generally it\textquotesingle{}s size and pixel type. \end{DoxyCompactList}\item 
+\label{classpink_1_1ujoi_ac37f657fb7c02e37d5e5433c89370745} 
+\textbf{ image\+\_\+type} {\bfseries fill} (pixel\+\_\+type value)
+\begin{DoxyCompactList}\small\item\em Fills the image with the given value. That is sets every element of the image to the given value. \end{DoxyCompactList}\item 
+\label{classpink_1_1ujoi_aa6fc3c6a7feb7af1882eeab3b9bfb4cb} 
+\textbf{ image\+\_\+type} {\bfseries operator=} (pixel\+\_\+type value)
+\begin{DoxyCompactList}\small\item\em Fills the image with the given value. That is sets every element of the image to the given value. Same as fill, but in operator form. \end{DoxyCompactList}\item 
+\label{classpink_1_1ujoi_ab3548a1d3726eff268694c9b4be697a8} 
+index\+\_\+t {\bfseries area} ()
+\begin{DoxyCompactList}\small\item\em Counts the non zero pixels. \end{DoxyCompactList}\item 
+\label{classpink_1_1ujoi_a82883c1e9da20508950d53feaa4ead59} 
+double {\bfseries average} ()
+\begin{DoxyCompactList}\small\item\em Counts the image average value. \end{DoxyCompactList}\item 
+\label{classpink_1_1ujoi_a466edc3f150ee0d0bcc4b1d65ad5e5a1} 
+bool {\bfseries isnull} ()
+\begin{DoxyCompactList}\small\item\em Tests if every pixel is null in the image. \end{DoxyCompactList}\item 
+\label{classpink_1_1ujoi_a06a9d5a605b3258710f281514d5d4611} 
+double {\bfseries volume} ()
+\begin{DoxyCompactList}\small\item\em Calculates the volume of the image (the sum of every pixel). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class pixel\+\_\+type\+\_\+$>$\newline
+class pink\+::ujoi$<$ pixel\+\_\+type\+\_\+ $>$}
+This class represents the image types used in Pink-\/\+C++ and Pink-\/\+Python. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em pixel\+\_\+type\+\_\+} & can be \textquotesingle{}char\textquotesingle{}, \textquotesingle{}short\textquotesingle{}, \textquotesingle{}int\textquotesingle{}, \textquotesingle{}float\textquotesingle{} and \textquotesingle{}double\textquotesingle{} while int\+\_\+pixel\+\_\+type is the type\textquotesingle{}s encoding into integer. See \textquotesingle{}\doxyref{mccodimage.\+h}{p.}{mccodimage_8h}\textquotesingle{} ~\newline
+ \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\label{classpink_1_1ujoi_af35ec9febe354aef51191af229bb59fa} 
+\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}!ujoi@{ujoi}}
+\index{ujoi@{ujoi}!pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+\doxysubsubsection{ujoi()\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily template$<$class pixel\+\_\+type $>$ \\
+\textbf{ pink\+::ujoi}$<$ pixel\+\_\+type $>$\+::ujoi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Creates an empty image, used in \doxyref{ui\+Sqhool}{p.}{classpink_1_1uiSqhool} for determining the image type. \label{classpink_1_1ujoi_a20b0a8ea5665f2b3cfa6a2f2aafc46ad} 
+\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}!ujoi@{ujoi}}
+\index{ujoi@{ujoi}!pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+\doxysubsubsection{ujoi()\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily template$<$class pixel\+\_\+type $>$ \\
+\textbf{ pink\+::ujoi}$<$ pixel\+\_\+type $>$\+::ujoi (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{std\+::string}]{debug = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+
+
+Reads an empty image from a file. 
+
+\begin{DoxyNote}{Note}
+You have to know the image type prior to reading.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The image file \\
+\hline
+{\em debug} & Holds an optional name for debug purposes. Never really catched on. \\
+\hline
+\end{DoxyParams}
+
+
+References \textbf{ xvimage\+::col\+\_\+size}, \textbf{ xvimage\+::data\+\_\+storage\+\_\+type}, \textbf{ xvimage\+::depth\+\_\+size}, \textbf{ freeimage()}, \textbf{ pink\+::get\+Dimensions()}, \textbf{ xvimage\+::image\+\_\+data}, \textbf{ readimage()}, \textbf{ xvimage\+::row\+\_\+size}, \textbf{ xvimage\+::time\+\_\+size}, and \textbf{ writeimage()}.
+
+\label{classpink_1_1ujoi_af325669e093dbda02f54b5ef1c7b727a} 
+\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}!ujoi@{ujoi}}
+\index{ujoi@{ujoi}!pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+\doxysubsubsection{ujoi()\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily template$<$class pixel\+\_\+type $>$ \\
+\textbf{ pink\+::ujoi}$<$ pixel\+\_\+type $>$\+::ujoi (\begin{DoxyParamCaption}\item[{\textbf{ xvimage} $\ast$}]{src,  }\item[{std\+::string}]{debug = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+
+
+Embedding constructor. Takes \textquotesingle{}xvimage\textquotesingle{} DOES NOT make a copy. It is embedded supposing that xvimage was created with malloc/free. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source object. \\
+\hline
+{\em debug} & Holds an optional name for debug purposes. Never really catched on. \\
+\hline
+\end{DoxyParams}
+
+
+References \textbf{ xvimage\+::col\+\_\+size}, \textbf{ xvimage\+::data\+\_\+storage\+\_\+type}, \textbf{ xvimage\+::depth\+\_\+size}, \textbf{ pink\+::get\+Dimensions()}, \textbf{ xvimage\+::row\+\_\+size}, and \textbf{ xvimage\+::time\+\_\+size}.
+
+\label{classpink_1_1ujoi_a635107d8aafd9367d5832a2b69a79168} 
+\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}!ujoi@{ujoi}}
+\index{ujoi@{ujoi}!pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+\doxysubsubsection{ujoi()\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily template$<$class pixel\+\_\+type $>$ \\
+\textbf{ pink\+::ujoi}$<$ pixel\+\_\+type $>$\+::ujoi (\begin{DoxyParamCaption}\item[{const \textbf{ xvimage} \&}]{src,  }\item[{std\+::string}]{debug = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+
+
+Deep constructor. 
+
+Takes \textquotesingle{}xvimage\textquotesingle{} and makes a copy.
+
+
+\begin{DoxyParams}{Parameters}
+{\em debug} & Holds an optional name for debug purposes. Never really catched on. \\
+\hline
+\end{DoxyParams}
+
+
+References \textbf{ xvimage\+::col\+\_\+size}, \textbf{ xvimage\+::data\+\_\+storage\+\_\+type}, \textbf{ xvimage\+::depth\+\_\+size}, \textbf{ pink\+::get\+Dimensions()}, \textbf{ xvimage\+::image\+\_\+data}, \textbf{ xvimage\+::row\+\_\+size}, and \textbf{ xvimage\+::time\+\_\+size}.
+
+\label{classpink_1_1ujoi_aa47970edd44fd62c424c7ed68cb12823} 
+\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}!ujoi@{ujoi}}
+\index{ujoi@{ujoi}!pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+\doxysubsubsection{ujoi()\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily template$<$class pixel\+\_\+type\+\_\+ $>$ \\
+\textbf{ pink\+::ujoi}$<$ pixel\+\_\+type\+\_\+ $>$\+::ujoi (\begin{DoxyParamCaption}\item[{const \textbf{ ujoi}$<$ pixel\+\_\+type $>$ \&}]{src,  }\item[{std\+::string}]{debug = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+
+
+SHALLOW! copy\+\_\+constructor. 
+
+\begin{DoxyNote}{Note}
+For conversion use convert2float 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source object \\
+\hline
+{\em debug} & Holds an optional name for debug purposes. Never really catched on. \\
+\hline
+\end{DoxyParams}
+\label{classpink_1_1ujoi_a92adca1fb30fc7d70d8b99aaa4e12f77} 
+\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}!ujoi@{ujoi}}
+\index{ujoi@{ujoi}!pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+\doxysubsubsection{ujoi()\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily template$<$class pixel\+\_\+type $>$ \\
+\textbf{ pink\+::ujoi}$<$ pixel\+\_\+type $>$\+::ujoi (\begin{DoxyParamCaption}\item[{const types\+::vint \&}]{dim,  }\item[{std\+::string}]{debug = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+
+
+Creates an empty image of the given size. This constructor is mostly used from python, as it takes a python vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dim} & The dimensions of the image \\
+\hline
+{\em debug} & \\
+\hline
+\end{DoxyParams}
+Creates an empty image of the given size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dim} & The dimensions of the image \\
+\hline
+{\em debug} & \\
+\hline
+\end{DoxyParams}
+\label{classpink_1_1ujoi_a6dc8a3acca4d0a287d8fac79edb7cb6a} 
+\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}!````~ujoi@{$\sim$ujoi}}
+\index{````~ujoi@{$\sim$ujoi}!pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+\doxysubsubsection{$\sim$ujoi()}
+{\footnotesize\ttfamily template$<$class pixel\+\_\+type $>$ \\
+\textbf{ pink\+::ujoi}$<$ pixel\+\_\+type $>$\+::$\sim$\textbf{ ujoi} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+The default destructor \label{classpink_1_1ujoi_a49139833b1d3c4f9125ef3215eae84d8} 
+\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}!ujoi@{ujoi}}
+\index{ujoi@{ujoi}!pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+\doxysubsubsection{ujoi()\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily template$<$class pixel\+\_\+type $>$ \\
+\textbf{ pink\+::ujoi}$<$ pixel\+\_\+type $>$\+::ujoi (\begin{DoxyParamCaption}\item[{const types\+::vint \&}]{dim,  }\item[{boost\+::shared\+\_\+array$<$ pixel\+\_\+type $>$}]{data,  }\item[{std\+::string}]{debug = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+Used to construct from ujif. \label{classpink_1_1ujoi_a7aa4ff2de897a73aa47e138b2e9db12e} 
+\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}!ujoi@{ujoi}}
+\index{ujoi@{ujoi}!pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+\doxysubsubsection{ujoi()\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily template$<$class pixel\+\_\+type $>$ \\
+\textbf{ pink\+::ujoi}$<$ pixel\+\_\+type $>$\+::ujoi (\begin{DoxyParamCaption}\item[{const types\+::vint \&}]{dim,  }\item[{pixel\+\_\+type $\ast$}]{data,  }\item[{std\+::string}]{debug = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+Creates a deep copy from a BLAS-\/style array. The pointer, and the dimensions are specified. 
+
+\doxysubsection{Member Function Documentation}
+\label{classpink_1_1ujoi_a1739e7e7852e3df40be8d5dccf535685} 
+\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}!clone@{clone}}
+\index{clone@{clone}!pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+\doxysubsubsection{clone()}
+{\footnotesize\ttfamily template$<$class pixel\+\_\+type $>$ \\
+\textbf{ ujoi}$<$ pixel\+\_\+type $>$ \textbf{ pink\+::ujoi}$<$ pixel\+\_\+type $>$\+::clone (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+DEEP copy This method is used, if you need a runtime deep-\/copy of the object. The object creates a new object which is a deep copy of itself. 
+
+\begin{DoxyReturn}{Returns}
+The cloned image 
+\end{DoxyReturn}
+\label{classpink_1_1ujoi_ae87ad6b034e6ffd6f6f43a33cafa8114} 
+\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}!get\_operator\_int@{get\_operator\_int}}
+\index{get\_operator\_int@{get\_operator\_int}!pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+\doxysubsubsection{get\_operator\_int()}
+{\footnotesize\ttfamily template$<$class pixel\+\_\+type $>$ \\
+const pixel\+\_\+type \& \textbf{ pink\+::ujoi}$<$ pixel\+\_\+type $>$\+::get\+\_\+operator\+\_\+int (\begin{DoxyParamCaption}\item[{index\+\_\+t}]{pos }\end{DoxyParamCaption}) const}
+
+
+
+Python vector access to the pixels. 
+
+This method let\textquotesingle{}s you access the pixels using a Python vector. It is mainly used from python Example (in the Python interpreter)\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{I=pink.cpp.char\_image([10,20,30])}
+\DoxyCodeLine{print\ I[[0,3,2]]}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The vector with the position.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The position is always checked, so the vector must point somewhere in the image.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+A reference to the pixel 
+\end{DoxyReturn}
+\label{classpink_1_1ujoi_a5f95d084df0cd76604c521891d23417f} 
+\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}!get\_pixels@{get\_pixels}}
+\index{get\_pixels@{get\_pixels}!pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+\doxysubsubsection{get\_pixels()}
+{\footnotesize\ttfamily template$<$class pixel\+\_\+type $>$ \\
+boost\+::shared\+\_\+array$<$ pixel\+\_\+type $>$ \textbf{ pink\+::ujoi}$<$ pixel\+\_\+type $>$\+::get\+\_\+pixels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets the center of the image. This method is called from Python. 
+
+The image center is mainly used in masks. For example the opening operator applies the image relative to it\textquotesingle{}s center.
+
+Returns a smart pointer to the array of the pixels. \label{classpink_1_1ujoi_a0ad9524e20af083255e6e75fecc680b2} 
+\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+\doxysubsubsection{operator=()}
+{\footnotesize\ttfamily template$<$class im\+\_\+type $>$ \\
+\textbf{ ujoi}$<$ im\+\_\+type $>$ \textbf{ pink\+::ujoi}$<$ im\+\_\+type $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \textbf{ image\+\_\+type} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+SHALLOW! copy constructor. 
+
+This operator takes an object, and copies it\textquotesingle{}s data pointers. If you create an object in a function it assures the return of the object without copying it\textquotesingle{}s data.
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{char\_image\ function(\ ...\ )}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ types::vint\ size(3);}
+\DoxyCodeLine{\ \ size\ <<\ 1000,\ 1000,\ 1000;}
+\DoxyCodeLine{\ \ char\_image\ result(size);}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Normally at the end of this function the compiler calls the copy constructor. Here, however as the data is held in smart pointers, only the pointers will be copied. For this reason the above example returns the \textquotesingle{}result\textquotesingle{} in constant time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The object to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+It supports multiple attribution 
+\end{DoxyReturn}
+\label{classpink_1_1ujoi_a83e06f31d60f39fa08ae338b670edbaa} 
+\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+\doxysubsubsection{operator[]()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class pixel\+\_\+type $>$ \\
+pixel\+\_\+type \& \textbf{ pink\+::ujoi}$<$ pixel\+\_\+type $>$\+::operator[$\,$] (\begin{DoxyParamCaption}\item[{const types\+::vint \&}]{pos }\end{DoxyParamCaption})}
+
+
+
+\textquotesingle{}types\+::vint\textquotesingle{} access to the pixels With this operator you can access the pixels, by specifying the position of the pixel with a \textquotesingle{}types\+::vint\textquotesingle{} vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & A vector pointing somewhere in the image. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the pixel.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The method tests if the vector is inside the image in DEBUG mode. In RELEASE mode, for performance reasons it accepts anything. If the code fail in the line where you access the image elements, you should consider recompiling in debug mode.
+\end{DoxyNote}
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{types::vint\ size(3);}
+\DoxyCodeLine{size\ <<\ 10,20,30;}
+\DoxyCodeLine{}
+\DoxyCodeLine{types::vint\ position(3);}
+\DoxyCodeLine{position\ <<\ 3,4,2;}
+\DoxyCodeLine{}
+\DoxyCodeLine{char\_image\ I(size);}
+\DoxyCodeLine{std::cout\ <<\ I[position];}
+\DoxyCodeLine{position\ <<\ 4,4,4;}
+\DoxyCodeLine{I[position]=3;}
+
+\end{DoxyCode}
+ \label{classpink_1_1ujoi_aa67f6dd9cfa73b7f26459b8963d678f0} 
+\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+\doxysubsubsection{operator[]()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class pixel\+\_\+type $>$ \\
+pixel\+\_\+type \& \textbf{ pink\+::ujoi}$<$ pixel\+\_\+type $>$\+::operator[$\,$] (\begin{DoxyParamCaption}\item[{index\+\_\+t}]{pos }\end{DoxyParamCaption})}
+
+
+
+Index access to the pixels With this operator you can access the pixels, as the image was a vector; regardless of its dimensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The number of the pixel in the linear array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the pixel.
+\end{DoxyReturn}
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{types::vint\ size(3);}
+\DoxyCodeLine{size\ <<\ 10,20,30;}
+\DoxyCodeLine{char\_image\ I(size);}
+\DoxyCodeLine{std::cout\ <<\ I[100];}
+\DoxyCodeLine{I[200]=3;}
+
+\end{DoxyCode}
+ \label{classpink_1_1ujoi_ac48d3e8f10fd09f1e6985bf72dd5f455} 
+\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}!reset@{reset}}
+\index{reset@{reset}!pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+\doxysubsubsection{reset()}
+{\footnotesize\ttfamily template$<$class pixel\+\_\+type $>$ \\
+void \textbf{ pink\+::ujoi}$<$ pixel\+\_\+type $>$\+::reset (\begin{DoxyParamCaption}\item[{\textbf{ image\+\_\+type} \&}]{other }\end{DoxyParamCaption})}
+
+runtime shallow copy \label{classpink_1_1ujoi_a37acde63366d7b20bd3303b24ec2141f} 
+\index{pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}!set\_center\_vint@{set\_center\_vint}}
+\index{set\_center\_vint@{set\_center\_vint}!pink::ujoi$<$ pixel\_type\_ $>$@{pink::ujoi$<$ pixel\_type\_ $>$}}
+\doxysubsubsection{set\_center\_vint()}
+{\footnotesize\ttfamily template$<$class pixel\+\_\+type $>$ \\
+void \textbf{ pink\+::ujoi}$<$ pixel\+\_\+type $>$\+::set\+\_\+center\+\_\+vint (\begin{DoxyParamCaption}\item[{const types\+::vint \&}]{new\+\_\+center }\end{DoxyParamCaption})}
+
+
+
+Sets the center of the image. 
+
+The image center is mainly used in masks. For example the opening operator applies the image relative to it\textquotesingle{}s center. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ ujimage.\+hpp}\end{DoxyCompactItemize}

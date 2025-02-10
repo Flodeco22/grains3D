@@ -1,0 +1,23 @@
+\doxysection{rotate.\+c File Reference}
+\label{rotate_8c}\index{rotate.c@{rotate.c}}
+
+
+rotation of an image  
+
+
+
+
+\doxysubsection{Detailed Description}
+rotation of an image 
+
+{\bfseries{Usage\+:}} rotate in.\+pgm theta [x y] out.\+pgm
+
+{\bfseries{Description\+:}} rotates the image {\bfseries{in.\+pgm}} of the angle {\bfseries{theta}} (in degrees). Method\+: interpolation. If {\bfseries{x}} and {\bfseries{y}} are given, then the center of the rotation is the point (x,y) and the image size is left unchanged (hence parts of object may be lost). Otherwise, the center of the rotation is the point (0,0) and the resulting image size is computed such that no loss of information occur.
+
+{\bfseries{Types supported\+:}} byte 2d
+
+{\bfseries{Category\+:}} geo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

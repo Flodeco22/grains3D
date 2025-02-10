@@ -1,0 +1,29 @@
+\doxysection{skelpruning.\+c File Reference}
+\label{skelpruning_8c}\index{skelpruning.c@{skelpruning.c}}
+
+
+pruning of "{}short end branches"{} in a curvilinear skeleton  
+
+
+
+
+\doxysubsection{Detailed Description}
+pruning of "{}short end branches"{} in a curvilinear skeleton 
+
+{\bfseries{Usage\+:}} skelpruning in.\+skel length out.\+pgm
+
+{\bfseries{Description\+:}}
+
+The skeleton found in \textbackslash{}in.skel is searched for "{}small"{} branches which satisfy the following criteria\+: \begin{DoxyItemize}
+\item Branch has exactly one end \item Branch length is less than or equal to {\bfseries{length}} parameter.\end{DoxyItemize}
+Parameter {\bfseries{length}} is a number pixels.
+
+Matching arcs are written in {\bfseries{out.\+pgm}}.
+
+{\bfseries{Types supported\+:}} skel 2d, skel 3d
+
+{\bfseries{Category\+:}} topobin
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 2011 
+\end{DoxyAuthor}

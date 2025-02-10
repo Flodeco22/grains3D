@@ -1,0 +1,25 @@
+\doxysection{watershed.\+c File Reference}
+\label{watershed_8c}\index{watershed.c@{watershed.c}}
+
+
+topological binary watershed (Couprie-\/\+Bertrand algorithm)  
+
+
+
+
+\doxysubsection{Detailed Description}
+topological binary watershed (Couprie-\/\+Bertrand algorithm) 
+
+{\bfseries{Usage\+:}} watershed in.\+pgm mark.\+pgm connex [i] out.\+pgm
+
+{\bfseries{Description\+:}} Topological watershed as defined in [CB97] -\/ connectivity {\bfseries{connex}}. A marker image is supplied in {\bfseries{mark.\+pgm}}. The result is a binary image. If the parameter {\bfseries{i}} is given, then the dual operator is applied.
+
+[CB97] M. Couprie and G. Bertrand\+: \`{}`Topological Grayscale Watershed Transformation'\textquotesingle{}, SPIE Vision Geometry V Proceedings, 3168 (136--146), 1997.
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} connect
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

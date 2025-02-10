@@ -1,0 +1,34 @@
+\doxysection{pgm2\+GA.\+c File Reference}
+\label{pgm2GA_8c}\index{pgm2GA.c@{pgm2GA.c}}
+
+
+Computes an edge-\/weighted graph from an image.  
+
+
+
+
+\doxysubsection{Detailed Description}
+Computes an edge-\/weighted graph from an image. 
+
+{\bfseries{Usage\+:}} pgm2\+GA im.\+pgm param [alpha] out.\+ga ~\newline
+ {\bfseries{Description\+:}}
+
+Computes a GA (an edge-\/weighted graph) from an image. The values of an edge linking two pixels \{x,y\} is computed according to the parameter {\bfseries{param}}.
+
+If param = 0, the absolute difference of intensity between x and y is used.
+
+If param = 1, the maximum between the intensities of x and y is used.
+
+If param = 2, the minimum between the intensities of x and y is used.
+
+If param = 3, a Deriche-\/like gradient is used, the optional parameter alpha specifies the spatial extention of the filter (by default alpha is set to 1]),
+
+If im.\+pgm is a 2D (resp. 3D) image, then {\bfseries{out.\+ga}} is a 2D (resp 3D GA), that is a 2D 4-\/connected edge-\/weighted graph (resp. a 2D 6-\/connected edge-\/weighted graph).
+
+{\bfseries{Types supported\+:}} GA byte 2D, GA byte 3D, GA float 2D
+
+{\bfseries{Category\+:}}
+
+\begin{DoxyAuthor}{Author}
+Jean Cousty 
+\end{DoxyAuthor}

@@ -1,0 +1,43 @@
+\doxysection{drawsplineorient.\+c File Reference}
+\label{drawsplineorient_8c}\index{drawsplineorient.c@{drawsplineorient.c}}
+
+
+draw spline orientations in a vector field  
+
+
+
+
+\doxysubsection{Detailed Description}
+draw spline orientations in a vector field 
+
+{\bfseries{Usage\+:}} drawsplineorient in.\+pgm in.\+spline out.\+pgm
+
+{\bfseries{Description\+:}} Draws spline orientations in a vector field. The spline is specified by its control points in a text file. The parameter {\bfseries{in.\+pgm}} gives a vector field into which the spline is to be drawn. The file format for {\bfseries{in.\+spline}} is the following for 2D\+:
+
+c n+1 (where n+1 denotes the number of control points)~\newline
+ x1 y1~\newline
+ ...~\newline
+ xn+1 yn+1~\newline
+ C0\+X1 C0\+Y1 C1\+X1 C1\+Y1 C2\+X1 C2\+Y1 C3\+X1 C3\+Y1~\newline
+ ...~\newline
+ C0\+Xn C0\+Yn C1\+Xn C1\+Yn C2\+Xn C2\+Yn C3\+Xn C3\+Yn~\newline
+
+
+and in the 3D case\+:
+
+C n+1 (where n+1 denotes the number of control points)~\newline
+ x1 y1 z1~\newline
+ ...~\newline
+ xn+1 yn+1 zn+1~\newline
+ C0\+X1 C0\+Y1 C0\+Z1 C1\+X1 C1\+Y1 C1\+Z1 C2\+X1 C2\+Y1 C2\+Z1 C3\+X1 C3\+Y1 C3\+Z1~\newline
+ ...~\newline
+ C0\+Xn C0\+Yn C0\+Zn C1\+Xn C1\+Yn C1\+Zn C2\+Xn C2\+Yn C2\+Zn C3\+Xn C3\+Yn C3\+Zn~\newline
+
+
+{\bfseries{Types supported\+:}} spline 2D, spline 3D
+
+{\bfseries{Category\+:}} draw geo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

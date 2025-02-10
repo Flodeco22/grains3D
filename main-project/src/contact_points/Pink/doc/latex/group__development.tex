@@ -1,0 +1,36 @@
+\doxysection{Development}
+\label{group__development}\index{Development@{Development}}
+\doxysubsubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \textbf{ mccodimage.\+h}
+\begin{DoxyCompactList}\small\item\em This file hold the basic type declarations used in the C functions of Pink. \end{DoxyCompactList}\item 
+file \textbf{ mcimage.\+h}
+\begin{DoxyCompactList}\small\item\em This file holds the basic image allocation functions. \end{DoxyCompactList}\item 
+file \textbf{ pyexport.\+hpp}
+\begin{DoxyCompactList}\small\item\em This file defines the macros, which facilitate the export of functions in Python. The emphasis is given to multiple inclusion of template functions with all different types. As python cannot \textquotesingle{}compile\textquotesingle{} in runtime, you must compile the template functions with all the possible image types. The macros and templates in this file ease you do that. \end{DoxyCompactList}\item 
+file \textbf{ ui\+\_\+convert\+\_\+if.\+hpp}
+\begin{DoxyCompactList}\small\item\em This function is used for automated type casting. It contains template algorithms that cast the \textquotesingle{}ujoi$<$$>$\textquotesingle{} classes to \textquotesingle{}xvimage$\ast$\textquotesingle{}. As it is a casting it is done in constant time, no pixel values are copied. \end{DoxyCompactList}\item 
+file \textbf{ ui\+\_\+make\+\_\+function.\+hpp}
+\begin{DoxyCompactList}\small\item\em This is a helper function for exporting Pink C functions in Python. Note that this template file is rarely used directly and is called by the UI\+\_\+\+WRAP\+\_\+\+FUNCTION macro. \end{DoxyCompactList}\item 
+file \textbf{ ui\+\_\+make\+\_\+malloc.\+hpp}
+\begin{DoxyCompactList}\small\item\em This is a helper function for exporting Pink C functions in Python. Note that this template file is rarely used directly and is called by the UI\+\_\+\+WRAP\+\_\+\+FUNCTION macro. \end{DoxyCompactList}\item 
+file \textbf{ ui\+\_\+make\+\_\+result.\+hpp}
+\begin{DoxyCompactList}\small\item\em This is a helper function for exporting Pink C functions in Python. Note that this template file is rarely used directly and is called by the UI\+\_\+\+WRAP\+\_\+\+RESULT macro. \end{DoxyCompactList}\item 
+file \textbf{ ui\+\_\+make\+\_\+value.\+hpp}
+\begin{DoxyCompactList}\small\item\em This is a helper function for exporting Pink C functions in Python. Note that this template file is rarely used directly and is called by the UI\+\_\+\+WRAP\+\_\+\+VALUE macro. \end{DoxyCompactList}\item 
+file \textbf{ ui\+\_\+wrap\+\_\+function.\+hpp}
+\begin{DoxyCompactList}\small\item\em This is a helper function for exporting Pink C functions in Python. This file defines \textquotesingle{}UI\+\_\+\+WRAP\+\_\+\+FUNCTION\textquotesingle{}. \end{DoxyCompactList}\item 
+file \textbf{ ujimage.\+hpp}
+\begin{DoxyCompactList}\small\item\em This file contains the C++ image class declarations. \end{DoxyCompactList}\item 
+file \textbf{ gradient\+\_\+abs.\+cpp}
+\begin{DoxyCompactList}\small\item\em Computes the absolute value of the gradient of the spline approximation of the image. \end{DoxyCompactList}\item 
+file \textbf{ maxflow.\+cpp}
+\begin{DoxyCompactList}\small\item\em Calculates the optimal surface segmentation with the maximum flow algorithm [1]. \end{DoxyCompactList}\item 
+file \textbf{ measure.\+cpp}
+\begin{DoxyCompactList}\small\item\em Normalized absolute measure calculated from the image. \end{DoxyCompactList}\item 
+file \textbf{ ungerflow.\+cpp}
+\begin{DoxyCompactList}\small\item\em Noise filtering with the Ungerflow algorithm [1]. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}

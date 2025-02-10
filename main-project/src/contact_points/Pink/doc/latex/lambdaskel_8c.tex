@@ -1,0 +1,34 @@
+\doxysection{lambdaskel.\+c File Reference}
+\label{lambdaskel_8c}\index{lambdaskel.c@{lambdaskel.c}}
+
+
+grayscale filtered topological skeleton  
+
+
+
+
+\doxysubsection{Detailed Description}
+grayscale filtered topological skeleton 
+
+{\bfseries{Usage\+:}} lambdaskel in.\+pgm \{imcond.\+pgm$\vert$null\} connex lambda out.\+pgm
+
+{\bfseries{Description\+:}} Filtered topological skeleton for 2D grayscale images. The parameter {\bfseries{connex}} gives the connectivity used for the minima; possible choices are 4 and 8. The parameter {\bfseries{lambda}} is a contrast parameter (positive integer). Let F be the function corresponding to the input image {\bfseries{in.\+pgm}}. The parameter {\bfseries{imcond.\+pgm}} is a constraint function G. The algorithm is the following\+:
+
+\begin{DoxyVerb}Repeat until stability:
+    Select a point p which is lambda-destructible for F or a peak
+        such that F(p) > G(p) and such that F(p) is minimal
+    F(p) = alpha-(p,F)
+Result: F
+\end{DoxyVerb}
+
+
+Reference\+:~\newline
+ M. Couprie, F.\+N. Bezerra, Gilles Bertrand\+: {\texttt{ "{}\+Topological operators for grayscale image processing"{}}}, {\itshape  Journal of Electronic Imaging}, Vol.~10, No.~4, pp.~1003-\/1015, 2001.
+
+{\bfseries{Types supported\+:}} byte 2d
+
+{\bfseries{Category\+:}} topogray
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

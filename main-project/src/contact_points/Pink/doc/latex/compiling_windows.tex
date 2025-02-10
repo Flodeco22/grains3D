@@ -1,0 +1,45 @@
+\chapter{Compiling Pink on Microsoft Windows}
+\label{compiling_windows}\index{Compiling Pink on Microsoft Windows@{Compiling Pink on Microsoft Windows}}
+This page describes the compilation of the Pink library on Microsoft Windows. Note that Python front-\/end is ALSO supported on Microsoft Windows.\doxysection{Dependencies}\label{index_dependencies}
+For a successfull compilation on Microsoft Windows you need at least the following tools\+: 
+\begin{DoxyItemize}
+\item Microsoft Visual Studio Express C++ (tested with 2010) 
+\item Python for Microsoft Windows (tested with version 2.\+7; installer available on {\texttt{ www.\+python.\+org}}) 
+\item Boost Libraries (sources available on {\texttt{ boost.\+org}}) 
+\end{DoxyItemize}\doxysection{Configuration}\label{compiling_windows_configuration}
+There is no configuration utility on Microsoft Windows, so you have to alter the \textquotesingle{}Jamroot\textquotesingle{}, \textquotesingle{}boost-\/config.\+jam\textquotesingle{} and \textquotesingle{}boost-\/build.\+jam\textquotesingle{} files, which you can find in the Pink source\textquotesingle{}s root directory. Open up the three files in question and adjust the directories.
+
+{\bfseries{ There is no mechanism for creating the built in documentation yet, so you have to copy \textquotesingle{}python\+\_\+doc.\+h\textquotesingle{} from a Linux build. }}\doxysection{Preparing the Boost sources}\label{compiling_windows_preparing_bjam}
+For the compilation on Microsoft Windows Pink uses \textquotesingle{}bjam\textquotesingle{} as it\textquotesingle{}s build tool. You can create the \textquotesingle{}bjam.\+exe\textquotesingle{} file by executing \textquotesingle{}bootstrap.\+bat\textquotesingle{} in Boost\textquotesingle{}s root directory.\doxysection{Compilation}\label{compiling_windows_compilation}
+Open up a command prompt and change to the Pink source directory; then launch the \textquotesingle{}bjam\textquotesingle{} build-\/tool.
+
+\begin{DoxyVerb}cd C:\Pink-svn
+C:\boost_1_45_0\bjam.exe
+\end{DoxyVerb}
+
+
+In the end of the compilation you will have \textquotesingle{}libcpp\+\_\+pink.\+pyd\textquotesingle{} created somewhere in the \textquotesingle{}Pink-\/svn/bin\textquotesingle{} directory.
+
+You can copy this file into the Python package-\/directory\+:
+
+\begin{DoxyVerb}copy bin\msvc-10.0\debug\link-static\threading-multi\libcpp_pink.pyd c:\Python27\DLLs\
+\end{DoxyVerb}
+
+
+Now the library should work the same way as in linux\+: \begin{DoxyVerb}import libcpp_pink
+\end{DoxyVerb}
+
+
+If you want to use the rest of the interface, you should copy the \textquotesingle{}Pink-\/svn/python/pink\textquotesingle{} directory among the Python modules, or you can use\+:
+
+\begin{DoxyVerb}from sys import path
+path.append("C:/Pink-svn/python")
+import pink
+\end{DoxyVerb}
+
+
+enviroment variable (note the slashes insteed of backslashes).
+
+\begin{DoxyAuthor}{Author}
+Ujo\+Imro, 2011 
+\end{DoxyAuthor}

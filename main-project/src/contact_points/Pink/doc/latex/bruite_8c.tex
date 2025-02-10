@@ -1,0 +1,40 @@
+\doxysection{bruite.\+c File Reference}
+\label{bruite_8c}\index{bruite.c@{bruite.c}}
+
+
+adds noise to an image  
+
+
+
+
+\doxysubsection{Detailed Description}
+adds noise to an image 
+
+adds kanungo noise to an image
+
+{\bfseries{Usage\+:}} bruite in.\+pgm n alpha p out.\+pgm
+
+{\bfseries{Description\+:}} Adds a uniform or gaussian noise, of mean 0 and standard deviation {\bfseries{alpha}}, to a proportion {\bfseries{p}} of the pixels of the image in.\+pgm .
+
+OPTIONS {\bfseries{n}} = 0 uniform noise {\bfseries{n}} = 1 gaussian noise
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} signal
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie
+\end{DoxyAuthor}
+{\bfseries{Usage\+:}} kanungonoise in.\+pgm eta alpha0 alpha beta0 beta k out.\+pgm
+
+{\bfseries{Description\+:}} Adds kanungo noise to the image in.\+pgm .
+
+\textbackslash{}reference T. Kanungo, R.\+M. Haralick, H.\+S. Baird, W. Stuetzle, D. Madigan, A statistical, nonparametric methodology for document degradation model validation, IEEE Trans. on Pattern Analysis and Machine Intelligence 22 (2000) 1209–1223.
+
+{\bfseries{Types supported\+:}} byte 2d
+
+{\bfseries{Category\+:}} signal
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

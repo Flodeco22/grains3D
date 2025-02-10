@@ -1,0 +1,27 @@
+\doxysection{segmentarea.\+c File Reference}
+\label{segmentarea_8c}\index{segmentarea.c@{segmentarea.c}}
+
+
+segmentation by filtering components on an area criterion  
+
+
+
+
+\doxysubsection{Detailed Description}
+segmentation by filtering components on an area criterion 
+
+{\bfseries{Usage\+:}} segmentarea in.\+pgm connex area [m] out.\+pgm
+
+{\bfseries{Note\+:}} in the python front-\/end \textquotesingle{}m\textquotesingle{} is mandatory, set 0 without maximization and 1 with maximization.
+
+{\bfseries{Description\+:}} Segmentation by selection of cross-\/section components, based on an area criterion. Connexity = {\bfseries{connex}} ; area threshold = {\bfseries{area}}.
+
+Segmentation is followed by a maximization if option {\bfseries{m}} is set.
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} connect
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

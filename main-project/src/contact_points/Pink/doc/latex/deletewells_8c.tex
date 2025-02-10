@@ -1,0 +1,27 @@
+\doxysection{deletewells.\+c File Reference}
+\label{deletewells_8c}\index{deletewells.c@{deletewells.c}}
+
+
+deletes wells in a grayscale image  
+
+
+
+
+\doxysubsection{Detailed Description}
+deletes wells in a grayscale image 
+
+{\bfseries{Usage\+:}} deletewells filein.\+pgm [mask] connexmin fileout.\+pgm
+
+{\bfseries{Description\+:}} Deletes wells in a grayscale image. A point p is a well if T-\/(p) = 0 (see ref. [BEC97]).
+
+References\+:~\newline
+ [BEC97] G. Bertrand, J. C. Everat and M. Couprie\+: {\texttt{ "{}\+Image segmentation through operators based upon topology"{}}}, {\itshape  Journal of Electronic Imaging}, Vol.~6, No.~4, pp.~395-\/405, 1997.~\newline
+
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} topogray
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

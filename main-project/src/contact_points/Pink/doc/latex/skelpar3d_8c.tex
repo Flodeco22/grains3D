@@ -1,0 +1,39 @@
+\doxysection{skelpar3d.\+c File Reference}
+\label{skelpar3d_8c}\index{skelpar3d.c@{skelpar3d.c}}
+
+
+parallel 3D binary skeleton  
+
+
+
+
+\doxysubsection{Detailed Description}
+parallel 3D binary skeleton 
+
+{\bfseries{Usage\+:}} skelpar3d in.\+pgm algorithm nsteps [inhibit] out.\+pgm
+
+{\bfseries{Description\+:}}
+
+Parallel 3D binary thinning or skeleton.
+
+The parameter {\bfseries{nsteps}} gives, if positive, the number of parallel thinning steps to be processed. If the value given for {\bfseries{nsteps}} equals -\/1, the thinning is continued until stability.
+
+For some algorithms (16 to ??), the parameter {\bfseries{nsteps}} has a different meaning which is related to the notion of persistence (see [REF A AJOUTER]). It plays the role of a filtering parameter.
+
+The parameter {\bfseries{algorithm}} is a numerical code indicating which method will be used for the thinning. The possible choices are\+: \begin{DoxyItemize}
+\item 0\+: ultimate, symmetric, without constraint (MK3a) \item 1\+: curvilinear, symmetric, based on 1D isthmus (CK3a) \item 2\+: medial axis preservation (AK3) -\/ parameter inhibit represents the minimal radius of medial axis balls which are considered \item 3\+: ultimate, symmetric (MK3) -\/ if nsteps = -\/2, returns the topological distance \item 4\+: curvilinear, symmetric, based on ends (EK3) \item 5\+: curvilinear, symmetric, based on ends, with end reconstruction (CK3b) \item 6\+: topological axis (not homotopic) \item 7\+: curvilinear, symmetric, based on residual points and 2D isthmus (CK3) \item 8\+: ultimate, asymmetric (AMK3) \item 9\+: curvilinear, asymmetric, based on thin 1D isthmus (ACK3a) \item 10\+: curvilinear, asymmetric, based on 3D and 2D residuals (ACK3) \item 11\+: surface, symmetric, based on residual points (RK3) \item 12\+: surface, symmetric, based on 2D isthmuses (SK3) \item 13\+: ultimate, directional, (DK3) \item 14\+: surface, directional, based on residual points (DRK3) \item 15\+: surface, directional, based on 2D isthmuses (DSK3) \item 16\+: curvilinear, asymmetric, based on thin 1D isthmus with persistence (ACK3p) \item 17\+: surface, asymmetric, based on thin 2D isthmus with persistence (ASK3p) \item 18\+: curvilinear, symmetric, based on 1D isthmus with persistence (CK3p) \item 19\+: surface, symmetric, based on 2D isthmus with persistence (SK3p) \item 20\+: surface and curvilinear, symmetric, based on 1D and 2D isthmus with persistence (SCK3p) \item 21\+: surface, symmetric, based on residual points (RK3), variant (uses 26-\/connectivity to define residual points) \item 22\+: surface and curvilinear, asymmetric, based on 1D and 2D isthmus with persistence (ASCK3p) \item 23\+: curvilinear, asymmetric, based on ends (AEK3) \item 24\+: surface, symmetric, based on 2D and 1D isthmuses (SCK3) \item 25\+: surface, directional, based on 2D and 1D isthmuses (DSCK3)\end{DoxyItemize}
+In modes other than 2, if the parameter {\bfseries{inhibit}} is given and is a binary image name, then the points of this image will be left unchanged.
+
+The following codes give access to auxiliary functions, for isthmus detection. Parameter {\bfseries{nsteps}} will not be used in this case (any value can be given).
+
+\begin{DoxyItemize}
+\item 100\+: 1D isthmus points\end{DoxyItemize}
+{\bfseries{Warning\+:}} The object must not have any point on the frame of the image.
+
+{\bfseries{Types supported\+:}} byte 3d
+
+{\bfseries{Category\+:}} topobin
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

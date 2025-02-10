@@ -1,0 +1,23 @@
+\doxysection{pgm2\+GA4d.\+c File Reference}
+\label{pgm2GA4d_8c}\index{pgm2GA4d.c@{pgm2GA4d.c}}
+
+
+Create a 4D edge-\/weighted graph from a series of 3D images.  
+
+
+
+
+\doxysubsection{Detailed Description}
+Create a 4D edge-\/weighted graph from a series of 3D images. 
+
+{\bfseries{Usage\+:}} pgm2\+GA4d prefix\+\_\+in first last mode GA4d\+\_\+out.\+ga
+
+{\bfseries{Description\+:}} Create a 4D GA (edge-\/weighted graph) from the 4D image obtained by concatenation of the series of 3D images $<$ {\bfseries{prefix\+\_\+inxxxx.\+pgm}} $\vert$ xxxx is a four digit decimal integer of the interval [ {\bfseries{first}} , {\bfseries{last}}] $>$ . The values of the edges are computed according to the parameter {\bfseries{mode}}. If {\bfseries{mode}} is set to 0, then the value of an edge \{ x,y \} is the absolute diference of intensity between the pixels x and y and if {\bfseries{mode}} is set to 1 the maximum of intensity between x and y is used. The output {\bfseries{GA4d\+\_\+out.\+ga}} is a 4D GA, that is a 4D, 8-\/connected, edge-\/weighted grah, (i.\+e. the adjacency is the direct adjacency in dimension 4).
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d, byte 4d
+
+{\bfseries{Category\+:}} convert
+
+\begin{DoxyAuthor}{Author}
+Jean Cousty -\/ janvier 2006 
+\end{DoxyAuthor}

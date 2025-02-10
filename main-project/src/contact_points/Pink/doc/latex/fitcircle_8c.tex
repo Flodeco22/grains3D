@@ -1,0 +1,23 @@
+\doxysection{fitcircle.\+c File Reference}
+\label{fitcircle_8c}\index{fitcircle.c@{fitcircle.c}}
+
+
+fits a circle which locally minimizes gray levels  
+
+
+
+
+\doxysubsection{Detailed Description}
+fits a circle which locally minimizes gray levels 
+
+{\bfseries{Usage\+:}} fitcircle in.\+pgm x y r [translate] out.\+pgm
+
+{\bfseries{Description\+:}} Identifies the circle C which locally minimizes the mean gray level of the image {\bfseries{in.\+pgm}} in the vincinity of the circle of parameters {\bfseries{x}} , {\bfseries{y}} and {\bfseries{r}}. If the parameter {\bfseries{translate}} is added, then the minimization is done only for dimensions x and y. Draws this circle in {\bfseries{out.\+pgm}} .
+
+{\bfseries{Types supported\+:}} byte 2d
+
+{\bfseries{Category\+:}} geo
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

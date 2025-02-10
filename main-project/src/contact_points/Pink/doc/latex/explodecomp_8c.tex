@@ -1,0 +1,23 @@
+\doxysection{explodecomp.\+c File Reference}
+\label{explodecomp_8c}\index{explodecomp.c@{explodecomp.c}}
+
+
+converts single 2D pgm file into a series of 2D pgm files, where each file of the series contains one component of the original image  
+
+
+
+
+\doxysubsection{Detailed Description}
+converts single 2D pgm file into a series of 2D pgm files, where each file of the series contains one component of the original image 
+
+{\bfseries{Usage\+:}} explodecomp in.\+pgm connex \{min$\vert$max$\vert$pla\} name\+\_\+prefix
+
+{\bfseries{Description\+:}} Generated file names are of the form\+: {\bfseries{name\+\_\+prefix}}nnnn.\+pgm, where nnnn is a four digit decimal integer. The argument {\bfseries{connex}} selects the connectivity (4, 8 in 2D; 6, 18, 26 in 3D). The argument {\bfseries{$<$min$\vert$max$\vert$pla$>$}} selects the kind of flat zone to be labeled\+: \begin{DoxyItemize}
+\item {\bfseries{min}} selects regional minima (or background components for a binary image) \item {\bfseries{max}} selects regional maxima (or foreground components for a binary image) \item {\bfseries{pla}} selects all flat zones (plateaux).\end{DoxyItemize}
+{\bfseries{Types supported\+:}} byte 2d
+
+{\bfseries{Category\+:}} convert
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

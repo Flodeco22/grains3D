@@ -1,0 +1,23 @@
+\doxysection{selectcomp.\+c File Reference}
+\label{selectcomp_8c}\index{selectcomp.c@{selectcomp.c}}
+
+
+selects a connected component  
+
+
+
+
+\doxysubsection{Detailed Description}
+selects a connected component 
+
+{\bfseries{Usage\+:}} selectcomp in.\+pgm connex x y z out.\+pgm
+
+{\bfseries{Description\+:}} The connected component of the binary image {\bfseries{in.\+pgm}} (according to the connectivity {\bfseries{connex}}) which contains the point ({\bfseries{x}},{\bfseries{y}},{\bfseries{z}}) is preserved. All other points are deleted. Possible values for {\bfseries{connex}} are 4, 8 (2D), 6, 18, 26, 60, 260 (3D). Values 60 and 260 correspond to restrictions of 6 and 26 connectivities to the current xy plane.
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} connect
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

@@ -1,0 +1,28 @@
+\doxysection{MSF.\+c File Reference}
+\label{MSF_8c}\index{MSF.c@{MSF.c}}
+
+
+Compute a minimum spanning forest of a GA from a set of markers.  
+
+
+
+
+\doxysubsection{Detailed Description}
+Compute a minimum spanning forest of a GA from a set of markers. 
+
+{\bfseries{Usage\+:}} MSF GAin.\+ga marqueurs.\+pgm type\+Resul Result.?? ~\newline
+
+
+{\bfseries{Description\+:}}
+
+Compute a minimum spanning forest of {\bfseries{GAin.\+ga}} (a 4-\/connected 2D or 6-\/connected 3D edge-\/weighted graph) relative to the connected components of the non-\/zero pixels of {\bfseries{marqueurs.\+pgm}}. If Type\+Result = 0, then Result.?? is a GA whose non-\/zero edges form the induced MSF cut, otherwise Result.?? is a label image that represents the vertex partition induced by the MSF (the connected components of the MSF are marked with distinct labels).
+
+See [COUSTYet\+Al-\/\+PAMI2009] and [COUSTYet\+Al-\/\+PAMI2010] for more details.
+
+{\bfseries{Types supported\+:}} GA byte 2D, GA byte 3D
+
+{\bfseries{Category\+:}}
+
+\begin{DoxyAuthor}{Author}
+Jean Cousty 
+\end{DoxyAuthor}

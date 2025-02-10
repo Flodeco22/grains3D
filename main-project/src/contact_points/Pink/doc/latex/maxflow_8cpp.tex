@@ -1,0 +1,29 @@
+\doxysection{maxflow.\+cpp File Reference}
+\label{maxflow_8cpp}\index{maxflow.cpp@{maxflow.cpp}}
+
+
+Calculates the optimal surface segmentation with the maximum flow algorithm [1].  
+
+
+
+
+\doxysubsection{Detailed Description}
+Calculates the optimal surface segmentation with the maximum flow algorithm [1]. 
+
+{\bfseries{Usage\+:}} maxflow( (char\+\_\+image)source and sink, (float\+\_\+image)constraint image, (int)iterations, (float)tau [, (int)number of threads=0]) -\/$>$ float\+\_\+image
+
+{\bfseries{Description\+:}} In the input, you specify the constraint image \textquotesingle{}g\textquotesingle{} and two subsets of the image \textquotesingle{}S\textquotesingle{}==1 and \textquotesingle{}P\textquotesingle{}==-\/1. The operator will return a binary flow \textquotesingle{}result\textquotesingle{}, which is 0 or 1 almost everywhere. The surface around the volume with value 1 will be the optimum in the sense, that it will contain \textquotesingle{}S\textquotesingle{}, not contain \textquotesingle{}P\textquotesingle{} and and it\textquotesingle{}s integral will be the smallest possible.
+
+Generally, we choose the inverse of the gradient for \textquotesingle{}g\textquotesingle{}. Sometimes the inverse is weighted circularly, so gaps in the border are interpolated with circles.
+
+Usually the values, that are known to be in the object (which you want to segment) are set to sink (value 1). You can set sink (value -\/1) the points, which you know to be outside the object, but generally the border is sufficient.
+
+{\bfseries{Types supported\+:}} float 2d, float 3d, float 4d, ..., float xd
+
+{\bfseries{Category\+:}} signal, development ,
+
+{\bfseries{References\+:}} [1] Appleton, B. and Talbot, H. (2006). Globally minimal surfaces by continuous maximal ﬂows. IEEE Transactions on Pattern Analysis and Machine Intelligence, 28(1)\+:106–118.
+
+\begin{DoxyAuthor}{Author}
+Laszlo Marak, 2009-\/2010 
+\end{DoxyAuthor}

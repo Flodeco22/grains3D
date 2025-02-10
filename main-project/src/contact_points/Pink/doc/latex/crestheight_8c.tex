@@ -1,0 +1,26 @@
+\doxysection{crestheight.\+c File Reference}
+\label{crestheight_8c}\index{crestheight.c@{crestheight.c}}
+
+
+measures the height of crests in a thinned grayscale image  
+
+
+
+
+\doxysubsection{Detailed Description}
+measures the height of crests in a thinned grayscale image 
+
+{\bfseries{Usage\+:}} crestheight skel.\+pgm connex out.\+pgm
+
+{\bfseries{Description\+:}} Let F be the input image (parameter {\bfseries{skel.\+pgm}}), and let R be the output image (parameter {\bfseries{out.\+pgm}}). For each point p which is separating for F (connexity given by the parameter {\bfseries{connex}}), the output value R(p) is equal to calpha8m(\+F,\+S,p).
+
+References\+:~\newline
+ "{}\+Topological operators for the detection of curvilinar structures in grayscale images"{}, in preparation, 2003.
+
+{\bfseries{Types supported\+:}} byte 2d
+
+{\bfseries{Category\+:}} topogray
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

@@ -1,0 +1,33 @@
+\doxysection{skelcurvfilter.\+c File Reference}
+\label{skelcurvfilter_8c}\index{skelcurvfilter.c@{skelcurvfilter.c}}
+
+
+thresholds a skeleton map (hierarchy) to obtain a maximal curve skeleton without multiple points  
+
+
+
+
+\doxysubsection{Detailed Description}
+thresholds a skeleton map (hierarchy) to obtain a maximal curve skeleton without multiple points 
+
+{\bfseries{Usage\+:}} skelcurvfilter in.\+pgm out.\+pgm
+
+{\bfseries{Description\+:}} Thresholds a skeleton map (hierarchy) to obtain a maximal curve skeleton without junction points. The pseudo-\/code is given below\+:
+
+\begin{DoxyVerb}Input: F
+Result: X
+LMAX = 0
+For all x in E
+  Let f1,...,fk be the values of F for x and its k neighbors sorted in decreasing order
+  If f4 > LMAX Then LMAX = f4
+X = { x in E | F[x] > LMAX)
+\end{DoxyVerb}
+
+
+{\bfseries{Types supported\+:}} float 2d, float 3d
+
+{\bfseries{Category\+:}} topobin
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

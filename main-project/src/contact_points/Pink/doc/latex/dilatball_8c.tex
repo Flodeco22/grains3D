@@ -1,0 +1,38 @@
+\doxysection{dilatball.\+c File Reference}
+\label{dilatball_8c}\index{dilatball.c@{dilatball.c}}
+
+
+morphological binary dilation by a ball  
+
+
+
+
+\doxysubsection{Detailed Description}
+morphological binary dilation by a ball 
+
+{\bfseries{Usage\+:}} dilatball in.\+pgm r [dist] out.\+pgm
+
+{\bfseries{Description\+:}} Morphological binary dilation by a metric ball. If the parameter {\bfseries{r}} is a positive integer, then the structuring element for this dilation is a ball (or a disc) of radius {\bfseries{r}}. In this case the result of the dilation is defined by Y = \{x; d(x,\+X) $<$= r\} where X represents the original point set (non-\/null pixels in the original image). If the parameter {\bfseries{r}} is -\/1, then the structuring element for each point x is a ball (or a disc) of radius {\bfseries{F(x)}}, where F is the greyscale image {\bfseries{in.\+pgm}} .
+
+The dilation is computed by thresholding a distance map. The distance used depends on the optional parameter {\bfseries{dist}} (default is 0) \+: \begin{DoxyItemize}
+\item 0\+: rounded Euclidean distance \item 1\+: approximate quadratic Euclidean distance \item 2\+: chamfer distance \item 3\+: exact quadratic Euclidean distance \item 4\+: 4-\/distance in 2d \item 8\+: 8-\/distance in 2d \item 6\+: 6-\/distance in 3d \item 18\+: 18-\/distance in 3d \item 26\+: 26-\/distance in 3d\end{DoxyItemize}
+\begin{DoxyWarning}{Warning}
+Except for the case r=-\/1, the input image {\bfseries{in.\+pgm}} must be a binary image. No test is done.
+\end{DoxyWarning}
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} morpho
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 2002
+\end{DoxyAuthor}
+{\bfseries{Example\+:}}
+
+dilatball cells 4 cells\+\_\+dilatball
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering  &\PBS\centering   \\\cline{1-2}
+\PBS\centering cells &\PBS\centering cells\+\_\+dilatball  \\\cline{1-2}
+\end{longtabu}

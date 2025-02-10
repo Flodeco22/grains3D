@@ -1,0 +1,23 @@
+\doxysection{gammacor.\+c File Reference}
+\label{gammacor_8c}\index{gammacor.c@{gammacor.c}}
+
+
+performs gamma correction on image  
+
+
+
+
+\doxysubsection{Detailed Description}
+performs gamma correction on image 
+
+{\bfseries{Usage\+:}} gammacor in.\+pgm gamma out.\+pgm
+
+{\bfseries{Description\+:}} Applies the following steps to {\bfseries{in.\+pgm}} \+: \begin{DoxyItemize}
+\item normalization between 0 and 1 \item raise pixel values to the power {\bfseries{gamma}} \item reverts the normalization\end{DoxyItemize}
+{\bfseries{Types supported\+:}} byte 2d, byte 3d, int32\+\_\+t 2d, int32\+\_\+t 3d, float 2d, float 3d
+
+{\bfseries{Category\+:}} arith
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

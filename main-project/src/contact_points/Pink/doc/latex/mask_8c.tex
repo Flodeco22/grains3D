@@ -1,0 +1,23 @@
+\doxysection{mask.\+c File Reference}
+\label{mask_8c}\index{mask.c@{mask.c}}
+
+
+applies a binary mask to an image  
+
+
+
+
+\doxysubsection{Detailed Description}
+applies a binary mask to an image 
+
+{\bfseries{Usage\+:}} mask in.\+pgm mask.\+pgm out.\+pgm
+
+{\bfseries{Description\+:}} For each pixel x, if mask[x] == 0 then out[x] = 0 else out[x] = in[x] Images must be of the same dimensions.
+
+{\bfseries{Types supported\+:}} byte 2D-\/3D, long 2D-\/3D, float 2D-\/3D, complex 2D-\/3D
+
+{\bfseries{Category\+:}} arith
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

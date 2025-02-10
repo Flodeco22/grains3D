@@ -1,0 +1,30 @@
+\doxysection{3dkhalimskize.\+c File Reference}
+\label{3dkhalimskize_8c}\index{3dkhalimskize.c@{3dkhalimskize.c}}
+
+
+converts a 3D image into a 3D Khalimsky order  
+
+
+
+
+\doxysubsection{Detailed Description}
+converts a 3D image into a 3D Khalimsky order 
+
+{\bfseries{Usage\+:}} 3dkhalimskize in.\+pgm \{6$\vert$26$\vert$h$\vert$m$\vert$\+M$\vert$a$\vert$\+R$\vert$b\} out.\+pgm
+
+{\bfseries{Description\+:}} Converts a 3D image into a 3D Khalimsky order.
+
+Modes {\bfseries{6}}, {\bfseries{26}} and {\bfseries{h}} are for binary images.
+
+Modes {\bfseries{m}}, {\bfseries{M}} and {\bfseries{a}} are for grayscale images.
+
+Mode = \begin{DoxyItemize}
+\item 6 \+: emulates 6-\/connectivity, idem "{}miss"{}, \item 26 \+: emulates 26-\/connectivity ("{}hit"{} transform followed by a kernel transform), ~\newline
+ \item h \+: "{}hit"{}, \item m \+: min, \item M \+: max, \item a \+: average, \item R \+: reverse, \item b \+: border.\end{DoxyItemize}
+{\bfseries{Types supported\+:}} byte 3d, long 3d, float 3d
+
+{\bfseries{Category\+:}} orders
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

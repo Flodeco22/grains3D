@@ -1,0 +1,37 @@
+\doxysection{ungerflow.\+cpp File Reference}
+\label{ungerflow_8cpp}\index{ungerflow.cpp@{ungerflow.cpp}}
+
+
+Noise filtering with the Ungerflow algorithm [1].  
+
+
+
+
+\doxysubsection{Detailed Description}
+Noise filtering with the Ungerflow algorithm [1]. 
+
+{\bfseries{Usage\+:}} ungerflow( (char\+\_\+image)source and sink, (float\+\_\+image)gradient image, (float\+\_\+image)lambda image, (float\+\_\+image)guidence image, (int)number of iterations, (float)tau, (float)theta) -\/$>$ float\+\_\+image
+
+{\bfseries{Description\+:}}
+
+The input image is noise filtered according to the following relation\+:  \[
+  \min\limits_{u, v}\left\{
+    \int\limits_\Omega g(x)|\nabla u|d\Omega + 
+    \frac{1}{\theta}\int\limits_\Omega(u-v)^2d\Omega + 
+    \int\limits_\Omega \lambda(x)|v-f|d\Omega
+    \right\}
+  \]
+
+{\bfseries{Types supported\+:}} float 2d, float 3d, float 4d, ..., float xd
+
+{\bfseries{Category\+:}} signal, development ,
+
+{\bfseries{References\+:}} ~\newline
+[1] Horst Bischof Markus Unger, Thomas Pock. Interactive globally optimal image segmentation. Technical Report ICGTR08/02, Institute for Computer Graphics and Vision Graz University of Technology, Austria, July 2008. ~\newline
+[2] M. Unger, T. Pock, and H. Bischof. Continuous globally optimal image segmentation with local constraints. In Computer Vision Winter Workshop 2008, Moravske Toplice, Slovenija, February 2008.
+
+{\bfseries{Examples\+:}} can be found in \textquotesingle{}tutorial/python/ungerflow\textquotesingle{}
+
+\begin{DoxyAuthor}{Author}
+Laszlo Marak, 2009-\/2010 
+\end{DoxyAuthor}

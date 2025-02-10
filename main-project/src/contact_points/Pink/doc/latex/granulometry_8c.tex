@@ -1,0 +1,23 @@
+\doxysection{granulometry.\+c File Reference}
+\label{granulometry_8c}\index{granulometry.c@{granulometry.c}}
+
+
+granulometry of a binary image  
+
+
+
+
+\doxysubsection{Detailed Description}
+granulometry of a binary image 
+
+{\bfseries{Usage\+:}} granulometry in.\+pgm [rmin] rmax out.\+list
+
+{\bfseries{Description\+:}} Let X be the set of non-\/null points in {\bfseries{in.\+pgm}}. This operator computes the area (volume in 3d) of the opening of X by euclidean balls of increasing radius, ranging from 1 (or {\bfseries{rmin}} if this parameter is specified) to {\bfseries{rmax}}. The result {\bfseries{out.\+list}} contains a list of couples {\bfseries{r a}} where {\bfseries{r}} is a radius and {\bfseries{a}} is the corresponding area (or volume).
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} morpho
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

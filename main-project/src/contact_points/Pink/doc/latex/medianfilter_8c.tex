@@ -1,0 +1,25 @@
+\doxysection{medianfilter.\+c File Reference}
+\label{medianfilter_8c}\index{medianfilter.c@{medianfilter.c}}
+
+
+median filter  
+
+
+
+
+\doxysubsection{Detailed Description}
+median filter 
+
+{\bfseries{Usage\+:}} medianfilter in.\+pgm el.\+pgm out.\+pgm
+
+{\bfseries{Description\+:}} Let F be the input image, G be the output image, and E the structuring element. then for each pixel p, G[p] is the median element of the sorted list (by increasing order) of the pixel values in the set \{ F[q], q in E[p] \}.
+
+The median filter is a particular case of rank filter (see \doxyref{rankfilter.\+c}{p.}{rankfilter_8c}), with rank = (N+1)/2, where N = $\vert$\+E$\vert$ .
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} morpho
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 1997 
+\end{DoxyAuthor}

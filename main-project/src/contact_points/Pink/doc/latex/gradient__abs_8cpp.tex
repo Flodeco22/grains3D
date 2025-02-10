@@ -1,0 +1,28 @@
+\doxysection{gradient\+\_\+abs.\+cpp File Reference}
+\label{gradient__abs_8cpp}\index{gradient\_abs.cpp@{gradient\_abs.cpp}}
+
+
+Computes the absolute value of the gradient of the spline approximation of the image.  
+
+
+
+
+\doxysubsection{Detailed Description}
+Computes the absolute value of the gradient of the spline approximation of the image. 
+
+{\bfseries{Usage\+:}} gradient\+\_\+abs( (float\+\_\+image)image) -\/$>$ float\+\_\+image
+
+{\bfseries{Description\+:}} The an image can be considered as a continuous field. This function approximates the image in all directions (x, y, z), with a 1D spline. Than it calculates the absolute value of the gradient for every point in form
+
+g[[x,y,z]] = fabs([ pd\+\_\+x g, pd\+\_\+y g, pd\+\_\+z g ])
+
+here \textquotesingle{}pd\+\_\+x\textquotesingle{} stands for the partial derivative in the \textquotesingle{}x\textquotesingle{} direction.
+
+{\bfseries{Types supported\+:}} float 2d, float 3d
+
+{\bfseries{Category\+:}} signal, development ,
+
+{\bfseries{References\+:}} ~\newline
+[1] $<$href url="{}http\+://www.\+gnu.\+org/software/gsl"{}$>$ GNU Scientific Library $<$/href$>$ \begin{DoxyAuthor}{Author}
+Laszlo Marak, 2009-\/2010 
+\end{DoxyAuthor}

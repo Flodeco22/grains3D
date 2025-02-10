@@ -1,0 +1,36 @@
+\doxysection{closeball.\+c File Reference}
+\label{closeball_8c}\index{closeball.c@{closeball.c}}
+
+
+morphological binary closing by a ball  
+
+
+
+
+\doxysubsection{Detailed Description}
+morphological binary closing by a ball 
+
+{\bfseries{Usage\+:}} closeball in.\+pgm r [dist] out.\+pgm
+
+{\bfseries{Description\+:}} The closing consists in a dilation (dilatball) followed by an erosion (erosball). The structuring element for this closing is a ball (or a disc) of radius {\bfseries{r}}. The erosion and dilation are computed by thresholding a distance map. The distance used depends on the optional parameter {\bfseries{dist}} (default is 0) \+: \begin{DoxyItemize}
+\item 0\+: rounded euclidean distance \item 2\+: chamfer distance \item 3\+: exact quadratic euclidean distance \item 4\+: 4-\/distance in 2d \item 8\+: 8-\/distance in 2d \item 6\+: 6-\/distance in 3d \item 18\+: 18-\/distance in 3d \item 26\+: 26-\/distance in 3d\end{DoxyItemize}
+\begin{DoxyWarning}{Warning}
+The input image {\bfseries{in.\+pgm}} must be a binary image. No test is done.
+\end{DoxyWarning}
+{\bfseries{Types supported\+:}} binary byte 2D, byte 3D
+
+{\bfseries{Category\+:}} morpho
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 2002
+\end{DoxyAuthor}
+{\bfseries{Example\+:}}
+
+closeball cells 3 cells\+\_\+closeball
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering  &\PBS\centering   \\\cline{1-2}
+\PBS\centering cells &\PBS\centering cells\+\_\+closeball  \\\cline{1-2}
+\end{longtabu}

@@ -1,0 +1,26 @@
+\doxysection{GA2pgm.\+c File Reference}
+\label{GA2pgm_8c}\index{GA2pgm.c@{GA2pgm.c}}
+
+
+Convert a 4-\/connected edge-\/weighted graph (a GA) into a pgm image.  
+
+
+
+
+\doxysubsection{Detailed Description}
+Convert a 4-\/connected edge-\/weighted graph (a GA) into a pgm image. 
+
+{\bfseries{Usage\+:}} GA2pgm graph.\+ga param out.\+pgm ~\newline
+ {\bfseries{Description\+:}}
+
+Convert a 4-\/connected edge-\/weighted graph ({\bfseries{graph.\+ga}}) into a pgm image ({\bfseries{out.\+pgm}}) where each pixel represents a vertex of the input graph and the gray level of a pixel is obtained from the values of its incident edges by means of an operation depending of the parameter {\bfseries{param}}.
+
+If param = 1, then max is used, and if param = 2, min is used.
+
+ {\bfseries{Types supported\+:}} ga 2d, ga 3d
+
+{\bfseries{Category\+:}} GA
+
+\begin{DoxyAuthor}{Author}
+Jean Cousty 
+\end{DoxyAuthor}

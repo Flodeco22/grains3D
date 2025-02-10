@@ -1,0 +1,215 @@
+\doxysection{pyexport.\+hpp File Reference}
+\label{pyexport_8hpp}\index{pyexport.hpp@{pyexport.hpp}}
+
+
+This file defines the macros, which facilitate the export of functions in Python. The emphasis is given to multiple inclusion of template functions with all different types. As python cannot \textquotesingle{}compile\textquotesingle{} in runtime, you must compile the template functions with all the possible image types. The macros and templates in this file ease you do that.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ UI\+\_\+\+EXPORT\+\_\+\+FUNCTION}(FNAME,  FN,  ARGS,  DOC)
+\begin{DoxyCompactList}\small\item\em Generates a Python wrapper function for a C++ function using all image types. \end{DoxyCompactList}\item 
+\#define \textbf{ UI\+\_\+\+DEFINE\+\_\+\+FUNCTION}(FNAME,  FN,  ARGS,  DOC)
+\begin{DoxyCompactList}\small\item\em Generates a Python wrapper function for a C++ function using all image types. \end{DoxyCompactList}\item 
+\#define \textbf{ UI\+\_\+\+WRAP\+\_\+\+CPP}(FNAME,  FN,  ARGS,  DOC)
+\begin{DoxyCompactList}\small\item\em Generates a Python wrapper function for a C++ function using all image types. \end{DoxyCompactList}\item 
+\#define \textbf{ UI\+\_\+\+EXPORT\+\_\+\+ONE\+\_\+\+FUNCTION}(FNAME,  FN,  ARGS,  DOC)
+\begin{DoxyCompactList}\small\item\em Generates a Python wrapper function for a C++ function using all image types. \end{DoxyCompactList}\item 
+\label{pyexport_8hpp_aa1dc94399f4a8982c2baf64f4dcd9a66} 
+\#define {\bfseries EXPORT\+\_\+\+FUNCTION}(z,  n,  text)~  export\+\_\+function\#\#n();
+\begin{DoxyCompactList}\small\item\em Generates and \textquotesingle{}void export\+\_\+function15();\textquotesingle{} declaration. It is used by the UI\+\_\+\+WRAP\+\_\+\+FUNCTION in \textquotesingle{}pypink.\+cpp\textquotesingle{} Generates and \textquotesingle{}export\+\_\+function15();\textquotesingle{} declaration. It is used by the UI\+\_\+\+WRAP\+\_\+\+FUNCTION in \textquotesingle{}pypink.\+cpp\textquotesingle{}. \end{DoxyCompactList}\item 
+\#define \textbf{ CALL\+\_\+\+EXPORTED\+\_\+\+FUNCTIONS}(n)~  BOOST\+\_\+\+PP\+\_\+\+REPEAT(n, \textbf{ EXPORT\+\_\+\+FUNCTION}, $\sim$)
+\begin{DoxyCompactList}\small\item\em Call the exported functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file defines the macros, which facilitate the export of functions in Python. The emphasis is given to multiple inclusion of template functions with all different types. As python cannot \textquotesingle{}compile\textquotesingle{} in runtime, you must compile the template functions with all the possible image types. The macros and templates in this file ease you do that. 
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ py\_maxflow\_export()\{}
+\DoxyCodeLine{\ }
+\DoxyCodeLine{\ boost::python::def(\ \textcolor{stringliteral}{"{}cpp\_maxflow\_float"{}},\ \&maxflow\_float,}
+\DoxyCodeLine{\ \ \ \ \ \ args(\textcolor{stringliteral}{"{}source\ and\ sink"{}},\ \textcolor{stringliteral}{"{}boundaries"{}},\ \textcolor{stringliteral}{"{}iteration"{}},\ \textcolor{stringliteral}{"{}tau"{}},\ \textcolor{stringliteral}{"{}the\ number\ of\ threads"{}}),}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{stringliteral}{"{}maximal\ flows,\ returns\ the\ image\ (potential\ field)\ \(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \(\backslash\)n"{}}}
+\DoxyCodeLine{\textcolor{comment}{//\ end\ of\ the\ documenation}}
+\DoxyCodeLine{\ \ \ );}
+\DoxyCodeLine{\ }
+\DoxyCodeLine{\ boost::python::def(\ \textcolor{stringliteral}{"{}cpp\_maxflow\_cami\_float"{}},\ \&maxflow\_cami,}
+\DoxyCodeLine{\ \ \ \ \ \ args(\textcolor{stringliteral}{"{}source\ and\ sink"{}},\ \textcolor{stringliteral}{"{}boundaries"{}},\ \textcolor{stringliteral}{"{}iteration"{}},\ \textcolor{stringliteral}{"{}tau"{}},\ \textcolor{stringliteral}{"{}the\ number\ of\ threads"{}}),}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{stringliteral}{"{}maximal\ flows,\ returns\ the\ flow\ (float\ array\ of\ size\ pixels\ *\ dimension\ )\ \(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \(\backslash\)n"{}}}
+\DoxyCodeLine{\textcolor{comment}{//\ end\ of\ the\ documenation}}
+\DoxyCodeLine{\ \ \ );}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\label{pyexport_8hpp_aeb74b07352e8b4ac4ba4be2ffd6af867} 
+\index{pyexport.hpp@{pyexport.hpp}!CALL\_EXPORTED\_FUNCTIONS@{CALL\_EXPORTED\_FUNCTIONS}}
+\index{CALL\_EXPORTED\_FUNCTIONS@{CALL\_EXPORTED\_FUNCTIONS}!pyexport.hpp@{pyexport.hpp}}
+\doxysubsubsection{CALL\_EXPORTED\_FUNCTIONS}
+{\footnotesize\ttfamily \#define CALL\+\_\+\+EXPORTED\+\_\+\+FUNCTIONS(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~  BOOST\+\_\+\+PP\+\_\+\+REPEAT(n, \textbf{ EXPORT\+\_\+\+FUNCTION}, $\sim$)}
+
+
+
+Call the exported functions. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{export\_function0();}
+\DoxyCodeLine{export\_function1();}
+\DoxyCodeLine{export\_function2();}
+\DoxyCodeLine{export\_function3();}
+\DoxyCodeLine{export\_function4();}
+\DoxyCodeLine{...}
+\DoxyCodeLine{export\_function\#\#n();\ \ \ \ }
+
+\end{DoxyCode}
+
+
+The exported functions are generated by the WRAP macros. \label{pyexport_8hpp_a6d1045c89d9ddcda21ee8b8011b014c0} 
+\index{pyexport.hpp@{pyexport.hpp}!UI\_DEFINE\_FUNCTION@{UI\_DEFINE\_FUNCTION}}
+\index{UI\_DEFINE\_FUNCTION@{UI\_DEFINE\_FUNCTION}!pyexport.hpp@{pyexport.hpp}}
+\doxysubsubsection{UI\_DEFINE\_FUNCTION}
+{\footnotesize\ttfamily \#define UI\+\_\+\+DEFINE\+\_\+\+FUNCTION(\begin{DoxyParamCaption}\item[{}]{FNAME,  }\item[{}]{FN,  }\item[{}]{ARGS,  }\item[{}]{DOC }\end{DoxyParamCaption})}
+
+
+
+Generates a Python wrapper function for a C++ function using all image types. 
+
+This macro generates a block with function calls for all image functions. You can call it from BOOST\+\_\+\+PYTHON\+\_\+\+MODULE.
+
+
+\begin{DoxyParams}{Parameters}
+{\em FNAME} & The function name in Python (a string) \\
+\hline
+{\em FN} & The C++ template function to wrap \\
+\hline
+{\em ARGS} & The description of the arguments (see \doxysectref{Exporting functions to Python}{p.}{python_export}{0}) \\
+\hline
+{\em DOC} & The documentation string. This string appears in Python if the help function is called. \\
+\hline
+\end{DoxyParams}
+\label{pyexport_8hpp_a21cc63956b87ab91321e198a564acef1} 
+\index{pyexport.hpp@{pyexport.hpp}!UI\_EXPORT\_FUNCTION@{UI\_EXPORT\_FUNCTION}}
+\index{UI\_EXPORT\_FUNCTION@{UI\_EXPORT\_FUNCTION}!pyexport.hpp@{pyexport.hpp}}
+\doxysubsubsection{UI\_EXPORT\_FUNCTION}
+{\footnotesize\ttfamily \#define UI\+\_\+\+EXPORT\+\_\+\+FUNCTION(\begin{DoxyParamCaption}\item[{}]{FNAME,  }\item[{}]{FN,  }\item[{}]{ARGS,  }\item[{}]{DOC }\end{DoxyParamCaption})}
+
+
+
+Generates a Python wrapper function for a C++ function using all image types. 
+
+This macro generates a function named "{}\+FNAME\+\_\+export()"{} which you can call from \textquotesingle{}pypink.\+cpp\textquotesingle{}. You can use this function to export a template function. It takes an image type as template parameter and it substitutes all the image types in it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em FNAME} & The function name in Python (a string) \\
+\hline
+{\em FN} & The C++ template function to wrap \\
+\hline
+{\em ARGS} & The description of the arguments (see \doxysectref{Exporting functions to Python}{p.}{python_export}{0}) \\
+\hline
+{\em DOC} & The documentation string. This string appears in Python if the help function is called. \\
+\hline
+\end{DoxyParams}
+\label{pyexport_8hpp_ad4012375b3fdcbfef6f64c46d7f97cb7} 
+\index{pyexport.hpp@{pyexport.hpp}!UI\_EXPORT\_ONE\_FUNCTION@{UI\_EXPORT\_ONE\_FUNCTION}}
+\index{UI\_EXPORT\_ONE\_FUNCTION@{UI\_EXPORT\_ONE\_FUNCTION}!pyexport.hpp@{pyexport.hpp}}
+\doxysubsubsection{UI\_EXPORT\_ONE\_FUNCTION}
+{\footnotesize\ttfamily \#define UI\+\_\+\+EXPORT\+\_\+\+ONE\+\_\+\+FUNCTION(\begin{DoxyParamCaption}\item[{}]{FNAME,  }\item[{}]{FN,  }\item[{}]{ARGS,  }\item[{}]{DOC }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ FNAME\#\#\_export()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ boost::python::def(\ BOOST\_PP\_STRINGIZE(FNAME),\ \&BOOST\_PP\_EXPAND(FN),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ ARGS,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ DOC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ );\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \}}
+
+\end{DoxyCode}
+
+
+Generates a Python wrapper function for a C++ function using all image types. 
+
+This macro generates a function named "{}\+FNAME\+\_\+export()"{} which you can call from \textquotesingle{}pypink.\+cpp\textquotesingle{}. You can use this function to export a template function. It takes an image type as template parameter and it substitutes all the image types in it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em FNAME} & The function name in Python (a string) \\
+\hline
+{\em FN} & The C++ template function to wrap \\
+\hline
+{\em ARGS} & The description of the arguments (see \doxysectref{Exporting functions to Python}{p.}{python_export}{0}) \\
+\hline
+{\em DOC} & The documentation string. This string appears in Python if the help function is called. \\
+\hline
+\end{DoxyParams}
+\label{pyexport_8hpp_a6a1558e2b4d61d871633fd3816fe2939} 
+\index{pyexport.hpp@{pyexport.hpp}!UI\_WRAP\_CPP@{UI\_WRAP\_CPP}}
+\index{UI\_WRAP\_CPP@{UI\_WRAP\_CPP}!pyexport.hpp@{pyexport.hpp}}
+\doxysubsubsection{UI\_WRAP\_CPP}
+{\footnotesize\ttfamily \#define UI\+\_\+\+WRAP\+\_\+\+CPP(\begin{DoxyParamCaption}\item[{}]{FNAME,  }\item[{}]{FN,  }\item[{}]{ARGS,  }\item[{}]{DOC }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ BOOST\_PP\_CAT(export\_function,\ BOOST\_PP\_COUNTER)()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ boost::python::def(\ FNAME,\ BOOST\_PP\_EXPAND(FN)<pink::char\_image>,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ ARGS,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ DOC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ );\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ boost::python::def(\ FNAME,\ BOOST\_PP\_EXPAND(FN)<pink::short\_image>,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ ARGS,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ DOC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ );\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ boost::python::def(\ FNAME,\ BOOST\_PP\_EXPAND(FN)<pink::int\_image>,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ ARGS,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ DOC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ );\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ boost::python::def(\ FNAME,\ BOOST\_PP\_EXPAND(FN)<pink::float\_image>,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ ARGS,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ DOC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ );\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ boost::python::def(\ FNAME,\ BOOST\_PP\_EXPAND(FN)<pink::double\_image>,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ ARGS,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ DOC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ );\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \}}
+
+\end{DoxyCode}
+
+
+Generates a Python wrapper function for a C++ function using all image types. 
+
+You can use this function to export a template function from within \textquotesingle{}pypink.\+cpp\textquotesingle{}. It takes an image type as template parameter and it substitutes all the image types in it.
+
+\begin{DoxyNote}{Note}
+This macro calls the boost python\textquotesingle{}s \textquotesingle{}def\textquotesingle{} function with all the image types.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em FNAME} & The function name in Python (a string) \\
+\hline
+{\em FN} & The C++ template function to wrap \\
+\hline
+{\em ARGS} & The description of the arguments (see \doxysectref{Exporting functions to Python}{p.}{python_export}{0}) \\
+\hline
+{\em DOC} & The documentation string. This string appears in Python if the help function is called. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,27 @@
+\doxysection{float2long.\+c File Reference}
+\label{float2long_8c}\index{float2long.c@{float2long.c}}
+
+
+converts a "{}float"{} image to a "{}int32\+\_\+t"{} image  
+
+
+
+
+\doxysubsection{Detailed Description}
+converts a "{}float"{} image to a "{}int32\+\_\+t"{} image 
+
+{\bfseries{Usage\+:}} float2long in.\+pgm offset factor out.\+pgm
+
+{\bfseries{Description\+:}}
+
+Applies the following tranformation to each value x in {\bfseries{in.\+pgm}} \+:
+
+X = round(offset + factor $\ast$ x)
+
+{\bfseries{Types supported\+:}} float 2d, float 3d
+
+{\bfseries{Category\+:}} convert
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

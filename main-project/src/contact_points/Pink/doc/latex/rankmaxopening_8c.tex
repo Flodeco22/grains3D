@@ -1,0 +1,27 @@
+\doxysection{rankmaxopening.\+c File Reference}
+\label{rankmaxopening_8c}\index{rankmaxopening.c@{rankmaxopening.c}}
+
+
+rank-\/max opening  
+
+
+
+
+\doxysubsection{Detailed Description}
+rank-\/max opening 
+
+{\bfseries{Usage\+:}} rankmaxopening in.\+pgm el.\+pgm r out.\+pgm
+
+{\bfseries{Description\+:}} Let F be the input image, G be the output image, and E the structuring element.
+
+The rank-\/max opening [Ron86] of structuring element \$\+E\$ and parameter {\bfseries{r}} in [0...1] may be defined by G = min(F,dilation(rankfilter(F,E,1-\/r),E))
+
+[Ron86] C. Ronse\+: "{}\+Erosion of narrow image features by combination of local low rank and max filters"{}, Proc. 2nd Int. Conf. on Image Processing and int32\+\_\+t Applications, pages 77-\/81, 1986.
+
+{\bfseries{Types supported\+:}} byte 2d, byte 3d
+
+{\bfseries{Category\+:}} morpho
+
+\begin{DoxyAuthor}{Author}
+Michel Couprie 
+\end{DoxyAuthor}

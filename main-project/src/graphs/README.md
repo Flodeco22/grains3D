@@ -42,6 +42,9 @@ Label	Zpos	Ypos	Xpos
 
 Pour des tests, vous pouvez télécharger des données réelles de ces fichiers txt via ce site : https://zenodo.org/records/8014905
 
+Vous pouvez aussi aller dans la section "Polyscope" de ce google drive :
+https://drive.google.com/drive/folders/1Js6EvltIOVVMZXwInvqEsXcCLXHrGpQo?usp=sharing
+
 ## Lancement
 
 **Information**

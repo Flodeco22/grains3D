@@ -5,15 +5,18 @@ This folder contains utility functions meant to help dealing with non-grain part
 # remove_cylinder
 
 ### in:
- * **"file"**: tif image to remove cylinders from. Should be a 3D image.
+ * **"file"**: tif image to remove cylinders from. Should be a full 3D image.
+ *Note: in Lysandre's repository, the full images we used are named "EFRGPXX_YY.tif", where XX is the number of the video and YY is the number of the frame (so, a 3D image) in video XX.*
 
 ### out:
  * **"file_cylinders_removed"**: original tif image with black bars instead of the cylinders. May give an undetermined result if there are no cylinders in the original image.
 
 
-Execute from /src/ folder. Command example:
+Execute from /src/ folder. Command examples:
 ---
 `python3 ./removal_utils/remove_cylinder.py "image.tif"`
+
+`python3 ./removal_utils/remove_cylinder.py "EFRGP01_01.tif"`
 
 # apply_cylinder_centroid_label
 

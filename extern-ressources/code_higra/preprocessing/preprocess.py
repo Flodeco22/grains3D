@@ -8,7 +8,9 @@ __contact__ = "lmacke@unistra.com"
 
 # ========================================================
 # Imports
-# ========================================================import numpy as np
+# ========================================================
+
+import numpy as np
 import argparse
 import tifffile
 

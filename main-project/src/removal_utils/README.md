@@ -16,7 +16,7 @@ Execute from /src/ folder. Command examples:
 ---
 `python3 ./removal_utils/remove_cylinder.py "image.tif"`
 
-`python3 ./removal_utils/remove_cylinder.py "EFRGP01_01.tif"`
+`python3 ./removal_utils/remove_cylinder.py "EFRGP01_00.tif"`
 
 # apply_cylinder_centroid_label
 
